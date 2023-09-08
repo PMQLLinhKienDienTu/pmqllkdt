@@ -19,7 +19,7 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            MessageBox.Show("NGoc Thien Bulul");
         }
     }
 }
