@@ -12,7 +12,7 @@ namespace GUI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,24 +26,24 @@ namespace GUI.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string email {
+        public string taikhoan {
             get {
-                return ((string)(this["email"]));
+                return ((string)(this["taikhoan"]));
             }
             set {
-                this["email"] = value;
+                this["taikhoan"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string password {
+        public string mạtkhau {
             get {
-                return ((string)(this["password"]));
+                return ((string)(this["mạtkhau"]));
             }
             set {
-                this["password"] = value;
+                this["mạtkhau"] = value;
             }
         }
         
@@ -62,6 +62,8 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DA92CAH\\SQLEXPRESS01;Initial Catalog=QL_LINHKIENDIENTU;Persis" +
+            "t Security Info=True;User ID=sa;Password=123")]
         public string QL_LINHKIENDIENTU {
             get {
                 return ((string)(this["QL_LINHKIENDIENTU"]));
