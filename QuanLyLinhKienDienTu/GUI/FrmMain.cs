@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,20 @@ namespace GUI
 {
     public partial class FrmMain : Form
     {
-        public FrmMain()
+        BUS_NhanVien busEmployee = new BUS_NhanVien();
+        public FrmMain(string taikhoan)
         {
             InitializeComponent();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("NGoc Thien Bulul");
+            
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
