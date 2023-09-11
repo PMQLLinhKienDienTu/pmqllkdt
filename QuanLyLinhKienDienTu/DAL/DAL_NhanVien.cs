@@ -34,8 +34,8 @@ namespace DAL
             }
             return false;
         }
-        // Kiểm tra sự tồn tại của Email
-        public bool IsExistTaiKhoan(string email)
+        // Kiểm tra sự tồn tại của tài khoản
+        public bool IsExistTaiKhoan(string taikhoan)
         {
             try
             {
@@ -44,7 +44,34 @@ namespace DAL
                 cmd.Connection = _conn;
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "IsExistTaiKhoan";
-                cmd.Parameters.AddWithValue("taikhoan", email);
+                cmd.Parameters.AddWithValue("taikhoan", taikhoan);
+                if (Convert.ToInt16(cmd.ExecuteScalar()) == 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+        // Lấy chức vụ của nhân viên 
+        public bool GetChucVu(string taikhoan)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "LayChucVuNhanVien";
+                cmd.Parameters.AddWithValue("taikhoan", taikhoan);
                 if (Convert.ToInt16(cmd.ExecuteScalar()) == 1)
                     return true;
                 else
