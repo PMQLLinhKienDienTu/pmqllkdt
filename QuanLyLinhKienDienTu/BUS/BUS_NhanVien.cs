@@ -29,9 +29,13 @@ namespace BUS
             password = Encrytion(password);
             return dalEmployee.Login(username, password);
         }
-        public bool IsExistEmail(string username)
+        public bool IsExistUserName(string username)
         {
             return dalEmployee.IsExistTaiKhoan(username);
+        }
+        public bool GetChucVu(string username)
+        {
+            return dalEmployee.GetChucVu(username);
         }
     }
 }
