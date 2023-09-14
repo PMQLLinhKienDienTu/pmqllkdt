@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class FrmMain : Form
     {
+
         BUS_NhanVien busEmployee = new BUS_NhanVien();
 
         FrmTrangChu frmTrangChu= new FrmTrangChu();
@@ -62,13 +63,18 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         // đăng xuất
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn có muốn đăng xuất không không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+           
         }
         // Thoát phần mềm 
         private void btnExit_Click(object sender, EventArgs e)
@@ -119,6 +125,24 @@ namespace GUI
             pnlBody.Controls.Add(FrmQuanLyNhanVien);
             FrmQuanLyNhanVien.Dock = DockStyle.Fill;
             FrmQuanLyNhanVien.Show();
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            FrmBanHang.TopLevel = false;
+            pnlBody.Controls.Add(FrmBanHang);
+            FrmBanHang.Dock = DockStyle.Fill;
+            FrmBanHang.Show();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát phầm mềm không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Application.Exit();
+            } 
+           
         }
     }
 }

@@ -35,7 +35,7 @@
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDoanhThu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnBill = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnBanHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnKhachHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -45,6 +45,7 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnthongtintk = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -54,12 +55,13 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel1.Controls.Add(this.btnthongtintk);
             this.guna2Panel1.Controls.Add(this.btn_TrangChu);
             this.guna2Panel1.Controls.Add(this.btnLogout);
             this.guna2Panel1.Controls.Add(this.btnNhanVien);
             this.guna2Panel1.Controls.Add(this.btnDoanhThu);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
-            this.guna2Panel1.Controls.Add(this.btnBill);
+            this.guna2Panel1.Controls.Add(this.btnBanHang);
             this.guna2Panel1.Controls.Add(this.btnKhachHang);
             this.guna2Panel1.Controls.Add(this.btnSanPham);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
@@ -212,37 +214,38 @@
             this.guna2Separator1.Size = new System.Drawing.Size(267, 12);
             this.guna2Separator1.TabIndex = 3;
             // 
-            // btnBill
+            // btnBanHang
             // 
-            this.btnBill.Animated = true;
-            this.btnBill.BackColor = System.Drawing.Color.Transparent;
-            this.btnBill.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnBill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBill.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBill.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBill.FillColor = System.Drawing.Color.Empty;
-            this.btnBill.FillColor2 = System.Drawing.Color.Empty;
-            this.btnBill.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnBill.ForeColor = System.Drawing.Color.White;
-            this.btnBill.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
-            this.btnBill.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
-            this.btnBill.Image = ((System.Drawing.Image)(resources.GetObject("btnBill.Image")));
-            this.btnBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBill.ImageSize = new System.Drawing.Size(45, 40);
-            this.btnBill.Location = new System.Drawing.Point(0, 380);
-            this.btnBill.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBill.Name = "btnBill";
-            this.btnBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnBill.Size = new System.Drawing.Size(269, 62);
-            this.btnBill.TabIndex = 6;
-            this.btnBill.Text = "Hoá đơn";
-            this.btnBill.TextFormatNoPrefix = true;
-            this.btnBill.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.btnBill.UseTransparentBackground = true;
+            this.btnBanHang.Animated = true;
+            this.btnBanHang.BackColor = System.Drawing.Color.Transparent;
+            this.btnBanHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBanHang.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBanHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBanHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBanHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBanHang.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBanHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBanHang.FillColor = System.Drawing.Color.Empty;
+            this.btnBanHang.FillColor2 = System.Drawing.Color.Empty;
+            this.btnBanHang.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnBanHang.ForeColor = System.Drawing.Color.White;
+            this.btnBanHang.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
+            this.btnBanHang.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
+            this.btnBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btnBanHang.Image")));
+            this.btnBanHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBanHang.ImageSize = new System.Drawing.Size(45, 40);
+            this.btnBanHang.Location = new System.Drawing.Point(0, 380);
+            this.btnBanHang.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnBanHang.Size = new System.Drawing.Size(269, 62);
+            this.btnBanHang.TabIndex = 6;
+            this.btnBanHang.Text = "Bán hàng";
+            this.btnBanHang.TextFormatNoPrefix = true;
+            this.btnBanHang.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.btnBanHang.UseTransparentBackground = true;
+            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
             // btnKhachHang
             // 
@@ -354,6 +357,7 @@
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.Animated = true;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.CustomClick = true;
             this.btnExit.FillColor = System.Drawing.Color.Transparent;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.IconColor = System.Drawing.Color.White;
@@ -362,6 +366,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 36);
             this.btnExit.TabIndex = 1;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // guna2ControlBox1
             // 
@@ -401,6 +406,35 @@
             this.pnlBody.Size = new System.Drawing.Size(1015, 750);
             this.pnlBody.TabIndex = 12;
             // 
+            // btnthongtintk
+            // 
+            this.btnthongtintk.Animated = true;
+            this.btnthongtintk.BackColor = System.Drawing.Color.Transparent;
+            this.btnthongtintk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthongtintk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnthongtintk.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnthongtintk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnthongtintk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnthongtintk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthongtintk.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthongtintk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnthongtintk.FillColor = System.Drawing.Color.Empty;
+            this.btnthongtintk.FillColor2 = System.Drawing.Color.Empty;
+            this.btnthongtintk.Font = new System.Drawing.Font("Candara", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnthongtintk.ForeColor = System.Drawing.Color.White;
+            this.btnthongtintk.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
+            this.btnthongtintk.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
+            this.btnthongtintk.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnthongtintk.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.btnthongtintk.Location = new System.Drawing.Point(0, 631);
+            this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
+            this.btnthongtintk.Name = "btnthongtintk";
+            this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnthongtintk.Size = new System.Drawing.Size(229, 28);
+            this.btnthongtintk.TabIndex = 10;
+            this.btnthongtintk.Text = "Thông tin tài khoản";
+            this.btnthongtintk.TextFormatNoPrefix = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -430,7 +464,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnNhanVien;
         private Guna.UI2.WinForms.Guna2GradientButton btnDoanhThu;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnBill;
+        private Guna.UI2.WinForms.Guna2GradientButton btnBanHang;
         private Guna.UI2.WinForms.Guna2GradientButton btnKhachHang;
         private Guna.UI2.WinForms.Guna2GradientButton btnSanPham;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
@@ -440,6 +474,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2Panel pnlBody;
+        private Guna.UI2.WinForms.Guna2GradientButton btnthongtintk;
     }
 }
 

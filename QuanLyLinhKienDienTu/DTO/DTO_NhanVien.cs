@@ -9,9 +9,11 @@ namespace DTO
         private string _tenNhanVien;
         private string _taiKhoan;
         private string _matKhau;
-        private string _chucVu;
+        private bool _chucVu;
         private string _email;
         private string _ngayVaoLam;
+        private bool _tinhtrang;
+        private string _sodienthoai;
 
         public int MaNhanVien
         {
@@ -37,11 +39,22 @@ namespace DTO
             set { _matKhau = value; }
         }
 
-        public string ChucVu
+        public bool ChucVu
         {
             get { return _chucVu; }
             set { _chucVu = value; }
         }
+        public bool TinhTrang
+        {
+            get { return _tinhtrang; }
+            set { _tinhtrang = value; }
+        }
+        public string SoDienThoai
+        {
+            get { return _sodienthoai; }
+            set { _sodienthoai = value; }
+        }
+
 
         public string Email
         {
@@ -54,5 +67,47 @@ namespace DTO
             get { return _ngayVaoLam; }
             set { _ngayVaoLam = value; }
         }
+
+        public DTO_NhanVien() { }
+
+        public DTO_NhanVien(int manhanvien, string tennhanvien, string taikhoan,string email,string sdt, bool chucvu, bool tinhtrang) 
+        {
+            MaNhanVien = manhanvien;
+            TenNhanVien= tennhanvien;
+            TaiKhoan= taikhoan;
+            Email= email;
+            SoDienThoai= sdt;
+            ChucVu = chucvu;
+            TinhTrang= tinhtrang;
+        }
+        public DTO_NhanVien(string hoten, string taikhoan, string email, string sdt, bool chucvu, bool tinhtrang,string matkhau)
+        {
+            TenNhanVien= hoten;
+            TaiKhoan= taikhoan;
+            Email= email;
+            SoDienThoai= sdt;
+            ChucVu= chucvu;
+            TinhTrang= tinhtrang;
+            MatKhau= matkhau;
+        }
+        public DTO_NhanVien(string hoten, string taikhoan, string email, string sdt, bool chucvu, bool tinhtrang)
+        {
+            TenNhanVien = hoten;
+            TaiKhoan = taikhoan;
+            Email = email;
+            SoDienThoai = sdt;
+            ChucVu = chucvu;
+            TinhTrang = tinhtrang;
+        
+        }
+        public DTO_NhanVien( string taikhoan, string sdt, string email)
+        {
+            
+            TaiKhoan = taikhoan;
+            SoDienThoai = sdt;
+            Email = email;
+
+        }
+
     }
 }
