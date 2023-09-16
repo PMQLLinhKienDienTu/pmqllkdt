@@ -7,10 +7,12 @@ namespace DTO
     {
         private int _maKhachHang;
         private string _hoTen;
-        private int _sdt;
+        private string _sdt;
         private string _taiKhoan;
         private string _matKhau;
         private string _hangTV;
+        private string _diachi;
+        private string _email;
         private DateTime _ngayTaoThe;
 
         public int MaKhachHang
@@ -25,7 +27,7 @@ namespace DTO
             set { _hoTen = value; }
         }
 
-        public int SDT
+        public string SDT
         {
             get { return _sdt; }
             set { _sdt = value; }
@@ -48,11 +50,32 @@ namespace DTO
             get { return _hangTV; }
             set { _hangTV = value; }
         }
+        public string Diachi
+        {
+            get { return _diachi; }
+            set { _diachi = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
 
         public DateTime NgayTaoThe
         {
             get { return _ngayTaoThe; }
             set { _ngayTaoThe = value; }
+        }
+
+        public DTO_KhachHang() { }
+
+        public DTO_KhachHang(string hoten, string diachi,string email, string sdt)
+        {
+            this.HoTen= hoten;
+            this.Diachi= diachi;
+            this.Email= email;
+            this.SDT = sdt;
         }
     }
 }

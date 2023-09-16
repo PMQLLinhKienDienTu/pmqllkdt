@@ -165,9 +165,9 @@
             this.guna2Panel3.Controls.Add(this.guna2Panel4);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel3.Location = new System.Drawing.Point(518, 40);
+            this.guna2Panel3.Location = new System.Drawing.Point(510, 40);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(497, 710);
+            this.guna2Panel3.Size = new System.Drawing.Size(505, 710);
             this.guna2Panel3.TabIndex = 7;
             // 
             // guna2Panel7
@@ -178,7 +178,7 @@
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel7.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(497, 205);
+            this.guna2Panel7.Size = new System.Drawing.Size(505, 205);
             this.guna2Panel7.TabIndex = 12;
             // 
             // label7
@@ -230,7 +230,7 @@
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 650);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(497, 60);
+            this.guna2Panel4.Size = new System.Drawing.Size(505, 60);
             this.guna2Panel4.TabIndex = 1;
             // 
             // linkLabel1
@@ -264,7 +264,7 @@
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(106, 199);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(114, 199);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(363, 445);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

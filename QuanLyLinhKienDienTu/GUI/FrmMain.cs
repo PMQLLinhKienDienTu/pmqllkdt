@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class FrmMain : Form
     {
+        string email = "";
 
         BUS_NhanVien busEmployee = new BUS_NhanVien();
 
@@ -25,6 +26,8 @@ namespace GUI
         FrmQuanLyDonDatHang FrmQuanLyDonDatHang = new FrmQuanLyDonDatHang();
         FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe();
         FrmBanHang FrmBanHang = new FrmBanHang();
+        FrmThongTinTaiKhoan FrmThongTinTaiKhoan;
+
 
 
         public FrmMain(string taikhoan)
@@ -55,9 +58,11 @@ namespace GUI
                 frmTrangChu.Show();
 
             }
-            ////Khởi tạo form accout và Bill
+            ////Khởi tạo tài khoản accout và Bán hoàng
+            ///
+            email = busEmployee.LayMailNhanVien(taikhoan);
+            FrmThongTinTaiKhoan = new FrmThongTinTaiKhoan(email);
 
-            //fAccount = new frmTaiKhoan(email);
             //fBill = new frmHoadon(email);
         }
 
@@ -123,7 +128,7 @@ namespace GUI
             pnlBody.Controls.Clear();
             FrmQuanLyNhanVien.TopLevel = false;
             pnlBody.Controls.Add(FrmQuanLyNhanVien);
-            FrmQuanLyNhanVien.Dock = DockStyle.Fill;
+            FrmQuanLyNhanVien.Dock = DockStyle.Fill;         
             FrmQuanLyNhanVien.Show();
         }
 
@@ -135,6 +140,14 @@ namespace GUI
             FrmBanHang.Dock = DockStyle.Fill;
             FrmBanHang.Show();
         }
+        private void btnthongtintk_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            FrmThongTinTaiKhoan.TopLevel = false;
+            pnlBody.Controls.Add(FrmThongTinTaiKhoan);
+            FrmThongTinTaiKhoan.Dock = DockStyle.Fill;
+            FrmThongTinTaiKhoan.Show();
+        }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
@@ -144,5 +157,7 @@ namespace GUI
             } 
            
         }
+
+       
     }
 }
