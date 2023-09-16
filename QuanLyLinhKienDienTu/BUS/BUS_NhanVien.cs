@@ -89,6 +89,10 @@ namespace BUS
         {
             return dalEmployee.LayTKandSDT(email);
         }
+        public string LayMailNhanVien(string taikhoan)
+        {
+            return dalEmployee.LayMailNhanVien(taikhoan);
+        }
         public string GetRandomPassword()
         {
             Random r = new Random();

@@ -343,6 +343,24 @@ namespace DAL
                 _conn.Close();
             }
         }
+        // Lấy Mail nhân viên
+        public string LayMailNhanVien(string taikhoan)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayMailNhanVien";
+                cmd.Parameters.AddWithValue("taikhoan", taikhoan);
+                return Convert.ToString(cmd.ExecuteScalar());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
 
         // Thay đổi mật khẩu chức vụ của nhân viên
         public bool ThayDoiMKChucVu(string email, string oldPassword, string newPassword)

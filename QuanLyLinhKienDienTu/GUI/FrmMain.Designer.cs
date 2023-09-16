@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnthongtintk = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_TrangChu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -45,7 +46,6 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlBody = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnthongtintk = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -69,8 +69,38 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(233, 750);
+            this.guna2Panel1.Size = new System.Drawing.Size(240, 750);
             this.guna2Panel1.TabIndex = 10;
+            // 
+            // btnthongtintk
+            // 
+            this.btnthongtintk.Animated = true;
+            this.btnthongtintk.BackColor = System.Drawing.Color.Transparent;
+            this.btnthongtintk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthongtintk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnthongtintk.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnthongtintk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnthongtintk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnthongtintk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthongtintk.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthongtintk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnthongtintk.FillColor = System.Drawing.Color.Empty;
+            this.btnthongtintk.FillColor2 = System.Drawing.Color.Empty;
+            this.btnthongtintk.Font = new System.Drawing.Font("Candara", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnthongtintk.ForeColor = System.Drawing.Color.White;
+            this.btnthongtintk.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
+            this.btnthongtintk.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
+            this.btnthongtintk.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnthongtintk.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.btnthongtintk.Location = new System.Drawing.Point(0, 631);
+            this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
+            this.btnthongtintk.Name = "btnthongtintk";
+            this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnthongtintk.Size = new System.Drawing.Size(229, 28);
+            this.btnthongtintk.TabIndex = 10;
+            this.btnthongtintk.Text = "Thông tin tài khoản";
+            this.btnthongtintk.TextFormatNoPrefix = true;
+            this.btnthongtintk.Click += new System.EventHandler(this.btnthongtintk_Click);
             // 
             // btn_TrangChu
             // 
@@ -131,7 +161,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedColor = System.Drawing.Color.BlueViolet;
-            this.btnLogout.Size = new System.Drawing.Size(233, 49);
+            this.btnLogout.Size = new System.Drawing.Size(240, 49);
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseTransparentBackground = true;
@@ -334,9 +364,9 @@
             this.guna2Panel3.Controls.Add(this.guna2Panel2);
             this.guna2Panel3.Controls.Add(this.pnlBody);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(233, 0);
+            this.guna2Panel3.Location = new System.Drawing.Point(240, 0);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1015, 750);
+            this.guna2Panel3.Size = new System.Drawing.Size(1008, 750);
             this.guna2Panel3.TabIndex = 12;
             // 
             // guna2Panel2
@@ -349,7 +379,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1015, 36);
+            this.guna2Panel2.Size = new System.Drawing.Size(1008, 36);
             this.guna2Panel2.TabIndex = 5;
             // 
             // btnExit
@@ -361,7 +391,7 @@
             this.btnExit.FillColor = System.Drawing.Color.Transparent;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(955, 0);
+            this.btnExit.Location = new System.Drawing.Point(948, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 36);
@@ -376,7 +406,7 @@
             this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(835, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(828, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
@@ -390,7 +420,7 @@
             this.guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(895, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(888, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(60, 36);
@@ -403,37 +433,8 @@
             this.pnlBody.Location = new System.Drawing.Point(0, 0);
             this.pnlBody.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1015, 750);
+            this.pnlBody.Size = new System.Drawing.Size(1008, 750);
             this.pnlBody.TabIndex = 12;
-            // 
-            // btnthongtintk
-            // 
-            this.btnthongtintk.Animated = true;
-            this.btnthongtintk.BackColor = System.Drawing.Color.Transparent;
-            this.btnthongtintk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnthongtintk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnthongtintk.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnthongtintk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnthongtintk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnthongtintk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnthongtintk.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnthongtintk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnthongtintk.FillColor = System.Drawing.Color.Empty;
-            this.btnthongtintk.FillColor2 = System.Drawing.Color.Empty;
-            this.btnthongtintk.Font = new System.Drawing.Font("Candara", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnthongtintk.ForeColor = System.Drawing.Color.White;
-            this.btnthongtintk.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
-            this.btnthongtintk.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
-            this.btnthongtintk.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnthongtintk.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.btnthongtintk.Location = new System.Drawing.Point(0, 631);
-            this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
-            this.btnthongtintk.Name = "btnthongtintk";
-            this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnthongtintk.Size = new System.Drawing.Size(229, 28);
-            this.btnthongtintk.TabIndex = 10;
-            this.btnthongtintk.Text = "Thông tin tài khoản";
-            this.btnthongtintk.TextFormatNoPrefix = true;
             // 
             // FrmMain
             // 
