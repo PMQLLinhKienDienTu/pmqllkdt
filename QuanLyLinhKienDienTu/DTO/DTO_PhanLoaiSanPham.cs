@@ -24,5 +24,20 @@ namespace DTO
             get { return _nhaSanXuat; }
             set { _nhaSanXuat = value; }
         }
+        public DTO_PhanLoaiSanPham() { }
+
+        public DTO_PhanLoaiSanPham(string tenloai, string nhaSX) 
+        {
+            this.TenPhanLoai = tenloai;
+            this.NhaSanXuat= nhaSX;
+        }
+
+        public DTO_PhanLoaiSanPham(int id, string tenloai, string nhaSX)
+        {
+            this.MaPhanLoai= id;
+            this.TenPhanLoai = tenloai;
+            this.NhaSanXuat = nhaSX;
+        }
+
     }
 }
