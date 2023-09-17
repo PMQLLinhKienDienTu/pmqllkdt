@@ -119,31 +119,6 @@ namespace GUI
             SetValue(true, false);
         }
 
-        private void gvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnSua.Enabled = btnXoa.Enabled = radLam.Enabled = true;
-            radNghiLam.Enabled = true;
-            radNhanVien.Enabled = true;
-            radQuanLy.Enabled = true;
-            txtEmail.ReadOnly = true;
-
-            txtHoTen.Text = gvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            txtTaiKhoan.Text = gvNhanVien.CurrentRow.Cells[2].Value.ToString();
-            txtEmail.Text = gvNhanVien.CurrentRow.Cells[3].Value.ToString();
-            txtSoDienThoai.Text = gvNhanVien.CurrentRow.Cells[4].Value.ToString();
-            role = bool.Parse(gvNhanVien.CurrentRow.Cells[5].Value.ToString());
-            status = bool.Parse(gvNhanVien.CurrentRow.Cells[6].Value.ToString());
-
-            if (role)
-                radQuanLy.Checked = true;
-            else
-                radNhanVien.Checked = true;
-            if (status)
-                radLam.Checked = true;
-            else
-                radNghiLam.Checked = true;
-        }
-
         private void txtTimKiemNhanVien_TextChanged(object sender, EventArgs e)
         {
             name = txtTimKiemNhanVien.Text.Trim();
@@ -224,6 +199,30 @@ namespace GUI
                     MsgBox("Xóa nhân viên không thành công", true);
             }
         }
-      
+
+        private void gvNhanVien_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            btnSua.Enabled = btnXoa.Enabled = radLam.Enabled = true;
+            radNghiLam.Enabled = true;
+            radNhanVien.Enabled = true;
+            radQuanLy.Enabled = true;
+            txtEmail.ReadOnly = true;
+
+            txtHoTen.Text = gvNhanVien.CurrentRow.Cells[1].Value.ToString();
+            txtTaiKhoan.Text = gvNhanVien.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = gvNhanVien.CurrentRow.Cells[3].Value.ToString();
+            txtSoDienThoai.Text = gvNhanVien.CurrentRow.Cells[4].Value.ToString();
+            role = bool.Parse(gvNhanVien.CurrentRow.Cells[5].Value.ToString());
+            status = bool.Parse(gvNhanVien.CurrentRow.Cells[6].Value.ToString());
+
+            if (role)
+                radQuanLy.Checked = true;
+            else
+                radNhanVien.Checked = true;
+            if (status)
+                radLam.Checked = true;
+            else
+                radNghiLam.Checked = true;
+        }
     }
 }

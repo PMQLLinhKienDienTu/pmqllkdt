@@ -101,16 +101,7 @@ namespace GUI
             {
                 return false;
             }
-        }
-
-        private void gvKhachhang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnSua.Enabled = btnXoa.Enabled = true;              
-            txtHoTen.Text = gvKhachhang.CurrentRow.Cells[1].Value.ToString();
-            txtDiaChi.Text = gvKhachhang.CurrentRow.Cells[2].Value.ToString();
-            txtEmail.Text = gvKhachhang.CurrentRow.Cells[3].Value.ToString();
-            txtSoDienThoai.Text = gvKhachhang.CurrentRow.Cells[4].Value.ToString();  
-        }
+        }      
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -189,6 +180,15 @@ namespace GUI
                 DataTable data = busKhachHang.TimKiemKhachHang(name);
                 gvKhachhang.DataSource = data;
             }
+        }
+
+        private void gvKhachhang_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            btnSua.Enabled = btnXoa.Enabled = true;
+            txtHoTen.Text = gvKhachhang.CurrentRow.Cells[1].Value.ToString();
+            txtDiaChi.Text = gvKhachhang.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = gvKhachhang.CurrentRow.Cells[3].Value.ToString();
+            txtSoDienThoai.Text = gvKhachhang.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

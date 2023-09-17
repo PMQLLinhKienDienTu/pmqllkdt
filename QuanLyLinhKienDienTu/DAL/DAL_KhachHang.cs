@@ -88,7 +88,7 @@ namespace DAL
             return false;
         }
 
-        // Sửa khác hàng
+        // Xóa khác hàng
         public bool XoaKhachHang(int id )
         {
             try
