@@ -109,6 +109,35 @@ namespace DAL
             }
         }
 
+        // Thêm ảnh nhân viên
+        public bool ThemAnhNhanVien(DTO_NhanVien nhanvien)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ThemAnhNhanVien";           
+                cmd.Parameters.AddWithValue("taikhoan", nhanvien.TaiKhoan);
+                cmd.Parameters.AddWithValue("hinhanh", nhanvien.HinhAnh);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+
         // Thêm nhân viên
         public bool ThemNhanVien(DTO_NhanVien nhanvien)
         {
@@ -307,6 +336,41 @@ namespace DAL
             return false;
         }
 
+        // Lấy ảnh nhân viên
+        public byte[] LayAnhNhanVien(string name)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "LayAnhNhanVien";
+                cmd.Parameters.AddWithValue("taikhoan", name);
+
+                // Sử dụng SqlDataReader để đọc dữ liệu ảnh từ stored procedure
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        // Kiểm tra xem có dữ liệu ảnh hay không
+                        if (reader["HinhAnh"] != DBNull.Value)
+                        {
+                            // Chuyển đổi dữ liệu ảnh thành mảng byte
+                            return (byte[])reader["HinhAnh"];
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            // Trả về null nếu không tìm thấy ảnh hoặc có lỗi
+            return null;
+        }
+
         // Lấy nhân viên theo ID, HoTen
         public string LayNhanVienIDHoTen(string email)
         {
@@ -318,6 +382,24 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "LayIdHoTenNhanVien";
                 cmd.Parameters.AddWithValue("email", email);
+                return Convert.ToString(cmd.ExecuteScalar());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+        // Lấy nhân viên theo ID, HoTen
+        public string LayNameChucVuNhanVien(string taikhoan)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayNameChucVuNhanVien";
+                cmd.Parameters.AddWithValue("taikhoan", taikhoan);
                 return Convert.ToString(cmd.ExecuteScalar());
             }
             finally

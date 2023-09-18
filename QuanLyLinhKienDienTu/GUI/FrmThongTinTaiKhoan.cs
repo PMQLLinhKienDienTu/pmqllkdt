@@ -1,14 +1,17 @@
 ﻿using BUS;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GUI.FrmMain;
 
 namespace GUI
 {
@@ -16,16 +19,25 @@ namespace GUI
     {
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
         DTO_NhanVien dtoNhanVien;
+        private byte[] img; // mã hóa hình ảnh lưu trử
 
+        private string fileAddress;
         private string email, str;
         private char separator = '|';
         private string[] strlist;
+        string taikhoan;
 
-
-        public FrmThongTinTaiKhoan(string email)
+        public FrmThongTinTaiKhoan(string email,string taikhoan)
         {
             InitializeComponent();
             this.email = email;
+            this.taikhoan = taikhoan;
+
+            ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
+        }
+        private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
+        {
+           guna2Panel1.BackColor = e.NewColor;
         }
 
         private void LoadData()
@@ -45,7 +57,7 @@ namespace GUI
             //Tách chuổi và phân cách 
             strlist = str.Split(separator);
 
-            //Gán Address.text = chuổi vừa tách
+            //Gán txtTaiKhoan.text = chuổi vừa tách
             txtTaiKhoan.Text = strlist[0].Trim();
 
             //Gán txtPhoneNumber.Text = chuổi vừa tách
@@ -97,10 +109,26 @@ namespace GUI
             }
             else MessageBox.Show("Vui lòng nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+     
+        private void loadanh()
+        {
+            img = busNhanVien.LayAnhNhanVien(taikhoan);
+
+
+            if (img == null)
+            {               
+            }
+            else
+            {
+                MemoryStream memoryStream = new MemoryStream(img);
+                pic_profile.Image = Image.FromStream(memoryStream);
+            }
+        }
 
         private void FrmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadData(); // Load dữ liệu lên form
+            loadanh();
         }
     }
 }

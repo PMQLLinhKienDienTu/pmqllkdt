@@ -14,6 +14,7 @@ namespace DTO
         private byte[] _hinhAnh;
         private int _maPhanLoai;
         private string _ghichu;
+       
 
         public int MaSP
         {

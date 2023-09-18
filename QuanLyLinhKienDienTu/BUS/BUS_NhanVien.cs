@@ -25,6 +25,10 @@ namespace BUS
             return builder.ToString();
         }
 
+        public bool ThemAnhNhanVien(DTO_NhanVien nhanvien)
+        {
+            return dalEmployee.ThemAnhNhanVien(nhanvien);
+        }
         public bool Login(string username, string password)
         {
             password = Encrytion(password);
@@ -53,6 +57,10 @@ namespace BUS
             nhanvien.MatKhau = Encrytion(nhanvien.MatKhau);
             return dalEmployee.ThemNhanVien(nhanvien);
         }
+        public byte[] LayAnhNhanVien(string name)
+        {
+            return dalEmployee.LayAnhNhanVien(name);
+        }
 
         public bool LayChucVuNhanVien(string email)
         {
@@ -80,7 +88,10 @@ namespace BUS
         {
             return dalEmployee.CapNhatTKandSDT(nhanvien);
         }
-
+        public string LayNameChucVuNhanVien(string taikhoan)
+        {
+            return dalEmployee.LayNameChucVuNhanVien(taikhoan);
+        }
         public string LayIDandHoten(string email)
         {
             return dalEmployee.LayNhanVienIDHoTen(email);
