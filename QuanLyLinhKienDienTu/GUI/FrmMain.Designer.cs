@@ -30,6 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.sw_nen = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btn_game = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_list = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.label_noti = new System.Windows.Forms.Label();
+            this.pic_profile = new System.Windows.Forms.PictureBox();
+            this.pic_edit = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lb_name = new System.Windows.Forms.Label();
+            this.lb_chucvu = new System.Windows.Forms.Label();
             this.btnthongtintk = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_TrangChu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -39,7 +48,6 @@
             this.btnBanHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnKhachHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -47,7 +55,8 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlBody = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +64,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Controls.Add(this.btnthongtintk);
             this.guna2Panel1.Controls.Add(this.btn_TrangChu);
             this.guna2Panel1.Controls.Add(this.btnLogout);
@@ -64,13 +74,144 @@
             this.guna2Panel1.Controls.Add(this.btnBanHang);
             this.guna2Panel1.Controls.Add(this.btnKhachHang);
             this.guna2Panel1.Controls.Add(this.btnSanPham);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(240, 750);
+            this.guna2Panel1.Size = new System.Drawing.Size(222, 750);
             this.guna2Panel1.TabIndex = 10;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.btn_game);
+            this.guna2Panel4.Controls.Add(this.sw_nen);
+            this.guna2Panel4.Controls.Add(this.btn_list);
+            this.guna2Panel4.Controls.Add(this.label_noti);
+            this.guna2Panel4.Controls.Add(this.pic_profile);
+            this.guna2Panel4.Controls.Add(this.pic_edit);
+            this.guna2Panel4.Controls.Add(this.lb_name);
+            this.guna2Panel4.Controls.Add(this.lb_chucvu);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(222, 188);
+            this.guna2Panel4.TabIndex = 45;
+            // 
+            // sw_nen
+            // 
+            this.sw_nen.BackColor = System.Drawing.Color.Transparent;
+            this.sw_nen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sw_nen.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sw_nen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sw_nen.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.sw_nen.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.sw_nen.Location = new System.Drawing.Point(169, 159);
+            this.sw_nen.Name = "sw_nen";
+            this.sw_nen.Size = new System.Drawing.Size(50, 26);
+            this.sw_nen.TabIndex = 52;
+            this.sw_nen.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.sw_nen.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.sw_nen.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.sw_nen.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.sw_nen.CheckedChanged += new System.EventHandler(this.sw_nen_CheckedChanged);
+            // 
+            // btn_game
+            // 
+            this.btn_game.BackColor = System.Drawing.Color.Transparent;
+            this.btn_game.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_game.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_game.HoverState.Image = global::GUI.Properties.Resources.icons8_game_48__1_;
+            this.btn_game.HoverState.ImageSize = new System.Drawing.Size(24, 24);
+            this.btn_game.Image = global::GUI.Properties.Resources.icons8_game_48;
+            this.btn_game.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btn_game.ImageRotate = 0F;
+            this.btn_game.ImageSize = new System.Drawing.Size(24, 24);
+            this.btn_game.IndicateFocus = true;
+            this.btn_game.Location = new System.Drawing.Point(165, 42);
+            this.btn_game.Name = "btn_game";
+            this.btn_game.PressedState.ImageSize = new System.Drawing.Size(26, 26);
+            this.btn_game.Size = new System.Drawing.Size(40, 28);
+            this.btn_game.TabIndex = 51;
+            // 
+            // btn_list
+            // 
+            this.btn_list.BackColor = System.Drawing.Color.Transparent;
+            this.btn_list.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_list.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_list.HoverState.Image = global::GUI.Properties.Resources.icons8_list_48__1_;
+            this.btn_list.HoverState.ImageSize = new System.Drawing.Size(24, 24);
+            this.btn_list.Image = global::GUI.Properties.Resources.icons8_list_48;
+            this.btn_list.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btn_list.ImageRotate = 0F;
+            this.btn_list.ImageSize = new System.Drawing.Size(24, 24);
+            this.btn_list.IndicateFocus = true;
+            this.btn_list.Location = new System.Drawing.Point(165, 13);
+            this.btn_list.Name = "btn_list";
+            this.btn_list.PressedState.ImageSize = new System.Drawing.Size(26, 26);
+            this.btn_list.Size = new System.Drawing.Size(40, 24);
+            this.btn_list.TabIndex = 50;
+            // 
+            // label_noti
+            // 
+            this.label_noti.AutoSize = true;
+            this.label_noti.BackColor = System.Drawing.Color.Transparent;
+            this.label_noti.ForeColor = System.Drawing.Color.Yellow;
+            this.label_noti.Location = new System.Drawing.Point(41, 54);
+            this.label_noti.Name = "label_noti";
+            this.label_noti.Size = new System.Drawing.Size(81, 16);
+            this.label_noti.TabIndex = 49;
+            this.label_noti.Text = "Chưa có ảnh";
+            // 
+            // pic_profile
+            // 
+            this.pic_profile.BackColor = System.Drawing.Color.Black;
+            this.pic_profile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_profile.Location = new System.Drawing.Point(23, 13);
+            this.pic_profile.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_profile.Name = "pic_profile";
+            this.pic_profile.Size = new System.Drawing.Size(115, 103);
+            this.pic_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_profile.TabIndex = 48;
+            this.pic_profile.TabStop = false;
+            // 
+            // pic_edit
+            // 
+            this.pic_edit.BackColor = System.Drawing.Color.Transparent;
+            this.pic_edit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.pic_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_edit.HoverState.Image = global::GUI.Properties.Resources.icons8_add_image_48__1_;
+            this.pic_edit.HoverState.ImageSize = new System.Drawing.Size(24, 24);
+            this.pic_edit.Image = global::GUI.Properties.Resources.icons8_add_image_48__2_;
+            this.pic_edit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.pic_edit.ImageRotate = 0F;
+            this.pic_edit.ImageSize = new System.Drawing.Size(24, 24);
+            this.pic_edit.IndicateFocus = true;
+            this.pic_edit.Location = new System.Drawing.Point(165, 83);
+            this.pic_edit.Name = "pic_edit";
+            this.pic_edit.PressedState.ImageSize = new System.Drawing.Size(26, 26);
+            this.pic_edit.Size = new System.Drawing.Size(40, 33);
+            this.pic_edit.TabIndex = 46;
+            this.pic_edit.Click += new System.EventHandler(this.pic_edit_Click);
+            // 
+            // lb_name
+            // 
+            this.lb_name.AutoSize = true;
+            this.lb_name.ForeColor = System.Drawing.Color.Yellow;
+            this.lb_name.Location = new System.Drawing.Point(3, 133);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(49, 16);
+            this.lb_name.TabIndex = 0;
+            this.lb_name.Text = "Họ tên:";
+            // 
+            // lb_chucvu
+            // 
+            this.lb_chucvu.AutoSize = true;
+            this.lb_chucvu.ForeColor = System.Drawing.Color.Yellow;
+            this.lb_chucvu.Location = new System.Drawing.Point(3, 161);
+            this.lb_chucvu.Name = "lb_chucvu";
+            this.lb_chucvu.Size = new System.Drawing.Size(57, 16);
+            this.lb_chucvu.TabIndex = 1;
+            this.lb_chucvu.Text = "Chức vụ:";
             // 
             // btnthongtintk
             // 
@@ -92,7 +233,7 @@
             this.btnthongtintk.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.btnthongtintk.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthongtintk.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.btnthongtintk.Location = new System.Drawing.Point(0, 631);
+            this.btnthongtintk.Location = new System.Drawing.Point(0, 665);
             this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
             this.btnthongtintk.Name = "btnthongtintk";
             this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -116,14 +257,14 @@
             this.btn_TrangChu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_TrangChu.FillColor = System.Drawing.Color.Empty;
             this.btn_TrangChu.FillColor2 = System.Drawing.Color.Empty;
-            this.btn_TrangChu.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TrangChu.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btn_TrangChu.ForeColor = System.Drawing.Color.White;
             this.btn_TrangChu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btn_TrangChu.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.btn_TrangChu.Image = ((System.Drawing.Image)(resources.GetObject("btn_TrangChu.Image")));
             this.btn_TrangChu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_TrangChu.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_TrangChu.Location = new System.Drawing.Point(0, 148);
+            this.btn_TrangChu.Location = new System.Drawing.Point(0, 195);
             this.btn_TrangChu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TrangChu.Name = "btn_TrangChu";
             this.btn_TrangChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -161,7 +302,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedColor = System.Drawing.Color.BlueViolet;
-            this.btnLogout.Size = new System.Drawing.Size(240, 49);
+            this.btnLogout.Size = new System.Drawing.Size(222, 49);
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseTransparentBackground = true;
@@ -181,7 +322,7 @@
             this.btnNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNhanVien.FillColor = System.Drawing.Color.Empty;
             this.btnNhanVien.FillColor2 = System.Drawing.Color.Empty;
-            this.btnNhanVien.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btnNhanVien.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
@@ -189,7 +330,7 @@
             this.btnNhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNhanVien.ImageOffset = new System.Drawing.Point(7, 0);
             this.btnNhanVien.ImageSize = new System.Drawing.Size(48, 32);
-            this.btnNhanVien.Location = new System.Drawing.Point(-20, 538);
+            this.btnNhanVien.Location = new System.Drawing.Point(-20, 585);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -215,7 +356,7 @@
             this.btnDoanhThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDoanhThu.FillColor = System.Drawing.Color.Empty;
             this.btnDoanhThu.FillColor2 = System.Drawing.Color.Empty;
-            this.btnDoanhThu.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btnDoanhThu.ForeColor = System.Drawing.Color.White;
             this.btnDoanhThu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btnDoanhThu.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
@@ -223,7 +364,7 @@
             this.btnDoanhThu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDoanhThu.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnDoanhThu.ImageSize = new System.Drawing.Size(45, 42);
-            this.btnDoanhThu.Location = new System.Drawing.Point(0, 459);
+            this.btnDoanhThu.Location = new System.Drawing.Point(0, 506);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(4);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -238,7 +379,7 @@
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 611);
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 655);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(267, 12);
@@ -258,14 +399,14 @@
             this.btnBanHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBanHang.FillColor = System.Drawing.Color.Empty;
             this.btnBanHang.FillColor2 = System.Drawing.Color.Empty;
-            this.btnBanHang.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnBanHang.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btnBanHang.ForeColor = System.Drawing.Color.White;
             this.btnBanHang.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btnBanHang.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.btnBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btnBanHang.Image")));
             this.btnBanHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBanHang.ImageSize = new System.Drawing.Size(45, 40);
-            this.btnBanHang.Location = new System.Drawing.Point(0, 380);
+            this.btnBanHang.Location = new System.Drawing.Point(0, 427);
             this.btnBanHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -291,7 +432,7 @@
             this.btnKhachHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnKhachHang.FillColor = System.Drawing.Color.Empty;
             this.btnKhachHang.FillColor2 = System.Drawing.Color.Empty;
-            this.btnKhachHang.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHang.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnKhachHang.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btnKhachHang.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
@@ -299,7 +440,7 @@
             this.btnKhachHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKhachHang.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnKhachHang.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKhachHang.Location = new System.Drawing.Point(-9, 299);
+            this.btnKhachHang.Location = new System.Drawing.Point(-9, 346);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -325,7 +466,7 @@
             this.btnSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSanPham.FillColor = System.Drawing.Color.Empty;
             this.btnSanPham.FillColor2 = System.Drawing.Color.Empty;
-            this.btnSanPham.Font = new System.Drawing.Font("Candara", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham.Font = new System.Drawing.Font("Candara", 12.8F, System.Drawing.FontStyle.Bold);
             this.btnSanPham.ForeColor = System.Drawing.Color.White;
             this.btnSanPham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             this.btnSanPham.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
@@ -333,7 +474,7 @@
             this.btnSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSanPham.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSanPham.ImageSize = new System.Drawing.Size(48, 48);
-            this.btnSanPham.Location = new System.Drawing.Point(-20, 222);
+            this.btnSanPham.Location = new System.Drawing.Point(-20, 269);
             this.btnSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -345,28 +486,14 @@
             this.btnSanPham.UseTransparentBackground = true;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.thankiem;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(47, 13);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(133, 121);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 3;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.guna2Panel2);
             this.guna2Panel3.Controls.Add(this.pnlBody);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(240, 0);
+            this.guna2Panel3.Location = new System.Drawing.Point(222, 0);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1008, 750);
+            this.guna2Panel3.Size = new System.Drawing.Size(1026, 750);
             this.guna2Panel3.TabIndex = 12;
             // 
             // guna2Panel2
@@ -376,11 +503,13 @@
             this.guna2Panel2.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel2.Controls.Add(this.guna2ControlBox2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1008, 36);
+            this.guna2Panel2.Size = new System.Drawing.Size(1026, 36);
             this.guna2Panel2.TabIndex = 5;
+            this.guna2Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel2_MouseDown);
             // 
             // btnExit
             // 
@@ -391,7 +520,7 @@
             this.btnExit.FillColor = System.Drawing.Color.Transparent;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(948, 0);
+            this.btnExit.Location = new System.Drawing.Point(966, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 36);
@@ -406,7 +535,7 @@
             this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(828, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(846, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
@@ -420,7 +549,7 @@
             this.guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(888, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(906, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(60, 36);
@@ -433,7 +562,7 @@
             this.pnlBody.Location = new System.Drawing.Point(0, 0);
             this.pnlBody.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1008, 750);
+            this.pnlBody.Size = new System.Drawing.Size(1026, 750);
             this.pnlBody.TabIndex = 12;
             // 
             // FrmMain
@@ -450,7 +579,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -468,7 +599,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnBanHang;
         private Guna.UI2.WinForms.Guna2GradientButton btnKhachHang;
         private Guna.UI2.WinForms.Guna2GradientButton btnSanPham;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2ControlBox btnExit;
@@ -476,6 +606,15 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2Panel pnlBody;
         private Guna.UI2.WinForms.Guna2GradientButton btnthongtintk;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label lb_name;
+        private System.Windows.Forms.Label lb_chucvu;
+        private Guna.UI2.WinForms.Guna2ImageButton pic_edit;
+        private System.Windows.Forms.PictureBox pic_profile;
+        private System.Windows.Forms.Label label_noti;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_list;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_game;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch sw_nen;
     }
 }
 

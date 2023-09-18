@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GUI.FrmMain;
 
 namespace GUI
 {
@@ -21,6 +22,15 @@ namespace GUI
         public FrmQuanLyLoaiSanPham()
         {
             InitializeComponent();
+            ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
+        }
+        private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1,guna2Panel2 };
+            foreach (var panel in panels)
+            {
+                panel.BackColor = e.NewColor;
+            }
         }
 
         private void FrmQuanLyLoaiSanPham_Load(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace DTO
         private string _ngayVaoLam;
         private bool _tinhtrang;
         private string _sodienthoai;
-
+        private byte[] _hinhAnh;
         public int MaNhanVien
         {
             get { return _maNhanVien; }
@@ -53,6 +53,11 @@ namespace DTO
         {
             get { return _sodienthoai; }
             set { _sodienthoai = value; }
+        }
+        public byte[] HinhAnh
+        {
+            get { return _hinhAnh; }
+            set { _hinhAnh = value; }
         }
 
 
@@ -108,6 +113,16 @@ namespace DTO
             Email = email;
 
         }
+        public DTO_NhanVien(string taikhoan, byte[] hinhanh) 
+        {
+            this.TaiKhoan = taikhoan;
+            this.HinhAnh= hinhanh;
+        }
+        public DTO_NhanVien(string taikhoan)
+        {
+            this.TaiKhoan = taikhoan;
+        }
+
 
     }
 }
