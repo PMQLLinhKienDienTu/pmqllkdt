@@ -26,7 +26,7 @@ namespace GUI
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
-            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1,guna2Panel2 };
+            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2};
             foreach (var panel in panels)
             {
                 panel.BackColor = e.NewColor;

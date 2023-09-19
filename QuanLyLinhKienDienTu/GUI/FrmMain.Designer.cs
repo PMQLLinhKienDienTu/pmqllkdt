@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.sw_nen = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btn_game = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.sw_nen = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btn_list = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label_noti = new System.Windows.Forms.Label();
             this.pic_profile = new System.Windows.Forms.PictureBox();
@@ -64,6 +64,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Controls.Add(this.btnthongtintk);
             this.guna2Panel1.Controls.Add(this.btn_TrangChu);
@@ -97,24 +98,6 @@
             this.guna2Panel4.Size = new System.Drawing.Size(222, 188);
             this.guna2Panel4.TabIndex = 45;
             // 
-            // sw_nen
-            // 
-            this.sw_nen.BackColor = System.Drawing.Color.Transparent;
-            this.sw_nen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.sw_nen.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sw_nen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sw_nen.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.sw_nen.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.sw_nen.Location = new System.Drawing.Point(169, 159);
-            this.sw_nen.Name = "sw_nen";
-            this.sw_nen.Size = new System.Drawing.Size(50, 26);
-            this.sw_nen.TabIndex = 52;
-            this.sw_nen.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.sw_nen.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.sw_nen.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.sw_nen.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.sw_nen.CheckedChanged += new System.EventHandler(this.sw_nen_CheckedChanged);
-            // 
             // btn_game
             // 
             this.btn_game.BackColor = System.Drawing.Color.Transparent;
@@ -132,6 +115,24 @@
             this.btn_game.PressedState.ImageSize = new System.Drawing.Size(26, 26);
             this.btn_game.Size = new System.Drawing.Size(40, 28);
             this.btn_game.TabIndex = 51;
+            // 
+            // sw_nen
+            // 
+            this.sw_nen.BackColor = System.Drawing.Color.Transparent;
+            this.sw_nen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sw_nen.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sw_nen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sw_nen.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.sw_nen.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.sw_nen.Location = new System.Drawing.Point(169, 159);
+            this.sw_nen.Name = "sw_nen";
+            this.sw_nen.Size = new System.Drawing.Size(50, 26);
+            this.sw_nen.TabIndex = 52;
+            this.sw_nen.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.sw_nen.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.sw_nen.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.sw_nen.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.sw_nen.CheckedChanged += new System.EventHandler(this.sw_nen_CheckedChanged);
             // 
             // btn_list
             // 
@@ -237,7 +238,7 @@
             this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
             this.btnthongtintk.Name = "btnthongtintk";
             this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnthongtintk.Size = new System.Drawing.Size(229, 28);
+            this.btnthongtintk.Size = new System.Drawing.Size(229, 37);
             this.btnthongtintk.TabIndex = 10;
             this.btnthongtintk.Text = "Thông tin tài khoản";
             this.btnthongtintk.TextFormatNoPrefix = true;
@@ -379,7 +380,7 @@
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 655);
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 658);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(267, 12);
@@ -499,6 +500,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel2.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2Panel2.Controls.Add(this.btnExit);
             this.guna2Panel2.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel2.Controls.Add(this.guna2ControlBox2);
@@ -569,6 +572,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(1248, 750);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);

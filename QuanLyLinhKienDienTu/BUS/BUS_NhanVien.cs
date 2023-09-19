@@ -24,7 +24,6 @@ namespace BUS
             }
             return builder.ToString();
         }
-
         public bool ThemAnhNhanVien(DTO_NhanVien nhanvien)
         {
             return dalEmployee.ThemAnhNhanVien(nhanvien);
@@ -46,7 +45,6 @@ namespace BUS
         {
             return dalEmployee.DanhSachNhanVien();
         }
-
         public bool CapNhatMatKhauNhanVien(string email, string password)
         {
             password = Encrytion(password);
@@ -61,7 +59,6 @@ namespace BUS
         {
             return dalEmployee.LayAnhNhanVien(name);
         }
-
         public bool LayChucVuNhanVien(string email)
         {
             return dalEmployee.LayChucVuNhanVien(email);
@@ -104,6 +101,11 @@ namespace BUS
         {
             return dalEmployee.LayMailNhanVien(taikhoan);
         }
+
+        public string LayIdHoTenNhanVien(string email)
+        {
+            return dalEmployee.LayIdHoTenNhanVien(email);
+        }
         public string GetRandomPassword()
         {
             Random r = new Random();
@@ -113,7 +115,6 @@ namespace BUS
             builder.Append(RandomString(2, false));
             return builder.ToString();
         }
-
         private string RandomString(int size, bool lowerCase)
         {
             StringBuilder builder = new StringBuilder();

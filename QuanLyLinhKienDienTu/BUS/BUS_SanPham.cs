@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DTO;
 using System.Data;
+using System.Xml.Linq;
 
 namespace BUS
 {
@@ -12,7 +13,6 @@ namespace BUS
         {
             return dalsanpham.DanhSachSanPham();
         }
-
         public bool ThemSanPham(DTO_SanPham sp)
         {
             return dalsanpham.ThemSanPham(sp);
@@ -29,6 +29,19 @@ namespace BUS
         {
             return dalsanpham.TimKiemSanPham(hoten);
         }
+        public string[] DanhSachSLNameSP()
+        {
+            return dalsanpham.DanhSachSLNameSP();
+        }
+        public double LayGiaSP(string name)
+        {
+            return dalsanpham.LayGiaSP(name);
+        }
+        public int GetProductId(string name) 
+        {
+            return dalsanpham.GetProductId(name);
+        }
+            
 
     }
 }

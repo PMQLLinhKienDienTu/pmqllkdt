@@ -1,5 +1,6 @@
 ﻿using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL
@@ -136,6 +137,67 @@ namespace DAL
                 DataTable data = new DataTable();
                 data.Load(cmd.ExecuteReader());
                 return data;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        // Danh sách số lượng, Name of sản phẩm 
+        public string[] DanhSachSLNameSP()
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DanhSachSLNameSP";
+                List<string> list = new List<string>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader[0].ToString());
+                }
+                return list.ToArray();
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        // Lấy đơn vị giá
+        public double LayGiaSP(string name)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayGiaSP";
+                cmd.Parameters.AddWithValue("name", name);
+                return Convert.ToDouble(cmd.ExecuteScalar());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+        //Lấy ID sản phẩm
+        public int GetProductId(string name)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetProductId";
+                cmd.Parameters.AddWithValue("name", name);
+                return Convert.ToInt32(cmd.ExecuteScalar());
             }
             finally
             {

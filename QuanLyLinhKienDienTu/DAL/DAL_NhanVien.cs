@@ -1,5 +1,6 @@
 ﻿using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL
@@ -471,6 +472,25 @@ namespace DAL
                 _conn.Close();
             }
             return false;
+        }
+
+        // Lấy ID, Name in Nhân viên theo email ->>>> email duy nhất 
+        public string LayIdHoTenNhanVien(string email)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayIdHoTenNhanVien";
+                cmd.Parameters.AddWithValue("email", email);
+                return Convert.ToString(cmd.ExecuteScalar());
+            }
+            finally
+            {
+                _conn.Close();
+            }
         }
     }
 }

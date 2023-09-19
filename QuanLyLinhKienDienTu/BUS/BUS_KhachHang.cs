@@ -11,7 +11,6 @@ namespace BUS
         {
             return dalKhachHang.DanhSachKhachHang();
         }
-
         public bool ThemKhachHang(DTO_KhachHang khachHang)
         {
             return dalKhachHang.ThemKhachHang(khachHang);
@@ -27,6 +26,10 @@ namespace BUS
         public DataTable TimKiemKhachHang(string hoten)
         {
             return dalKhachHang.TimKiemKhachHang(hoten);
+        }
+        public string[] DanhSachKHtheoIDName()
+        {
+            return dalKhachHang.DanhSachKHtheoIDName();
         }
     }
 }

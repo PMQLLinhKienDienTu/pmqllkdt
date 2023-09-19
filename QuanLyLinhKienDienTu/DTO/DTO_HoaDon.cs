@@ -7,7 +7,7 @@ namespace DTO
     {
         private int _maHoaDon;
         private DateTime _ngayTaoHD;
-        private float _tongTienHoaDon;
+        private double _tongTienHoaDon;
         private int _maNhanVien;
         private int _maKhachHang;
 
@@ -23,7 +23,7 @@ namespace DTO
             set { _ngayTaoHD = value; }
         }
 
-        public float TongTienHoaDon
+        public double TongTienHoaDon
         {
             get { return _tongTienHoaDon; }
             set { _tongTienHoaDon = value; }
@@ -39,6 +39,13 @@ namespace DTO
         {
             get { return _maKhachHang; }
             set { _maKhachHang = value; }
+        }
+        public DTO_HoaDon() { }
+        public DTO_HoaDon(int manv, int makh, double thanhtien ) 
+        {
+            this.MaNhanVien= manv;
+            this.MaKhachHang= makh;    
+            this.TongTienHoaDon= thanhtien;
         }
     }
 }

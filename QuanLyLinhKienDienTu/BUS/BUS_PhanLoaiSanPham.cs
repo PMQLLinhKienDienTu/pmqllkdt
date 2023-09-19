@@ -14,7 +14,6 @@ namespace BUS
         {
             return dalphanloaisp.DanhSachLoaiSP();
         }
-
         public bool ThemLoaiSP(DTO_PhanLoaiSanPham loai)
         {
             return dalphanloaisp.ThemLoaiSP(loai);
@@ -27,7 +26,6 @@ namespace BUS
         {
             return dalphanloaisp.XoaLoaiSP(id);
         }
-
         public int LayIDLoaiSP(string name)
         {
             return dalphanloaisp.LayIDLoaiSP(name);
