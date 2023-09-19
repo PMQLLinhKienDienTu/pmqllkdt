@@ -35,11 +35,12 @@ namespace GUI
         FrmQuanLyKhachHang FrmQuanLyKhachHang = new FrmQuanLyKhachHang();
         FrmQuanLyDonDatHang FrmQuanLyDonDatHang = new FrmQuanLyDonDatHang();
         FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe();
-        FrmBanHang FrmBanHang = new FrmBanHang();
+ 
+        FrmQuanLyLoaiSanPham FrmQuanLyLoai = new FrmQuanLyLoaiSanPham();
         FrmThongTinTaiKhoan FrmThongTinTaiKhoan;
 
         DTO_NhanVien dtonhanvien;
-
+        
 
         public FrmMain(string taikhoan)
         {
@@ -148,6 +149,7 @@ namespace GUI
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
+            FrmBanHang FrmBanHang = new FrmBanHang(email);
             pnlBody.Controls.Clear();
             FrmBanHang.TopLevel = false;
             pnlBody.Controls.Add(FrmBanHang);
@@ -320,7 +322,7 @@ namespace GUI
             {
                 NewColor = newColor;
             }
-        }
+        }      
 
     }
 }

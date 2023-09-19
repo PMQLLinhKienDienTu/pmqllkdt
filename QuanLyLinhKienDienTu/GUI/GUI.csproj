@@ -228,6 +228,14 @@
     <Content Include="ImagesShop\%24this.Icon.ico" />
     <Content Include="ImagesShop\icon_shop.ico" />
     <Content Include="ImagesShop\icon_shop.jpg" />
+    <None Include="Resources\refresh_8771454 %281%29.png" />
+    <None Include="Resources\reload_6711483.png" />
+    <None Include="Resources\sync_6711500.png" />
+    <None Include="Resources\plus_1828817.png" />
+    <None Include="Resources\cancel_753345.png" />
+    <None Include="Resources\canned-food_3038135.png" />
+    <None Include="Resources\icons8-pay-100 %281%29.png" />
+    <None Include="Resources\icons8-pay-100.png" />
     <None Include="Resources\icons8-add-image-48 %282%29.png" />
     <None Include="Resources\icons8-add-image-48 %281%29.png" />
     <None Include="Resources\icons8-add-image-48.png" />

@@ -1,5 +1,6 @@
 ﻿using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL
@@ -130,6 +131,30 @@ namespace DAL
                 DataTable data = new DataTable();
                 data.Load(cmd.ExecuteReader());
                 return data;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        // Danh sách khách hàng lấy theo trường ID, Name
+        public string[] DanhSachKHtheoIDName()
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DanhSachKHtheoIDName";
+                List<string> list = new List<string>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader[0].ToString());
+                }
+                return list.ToArray();
             }
             finally
             {

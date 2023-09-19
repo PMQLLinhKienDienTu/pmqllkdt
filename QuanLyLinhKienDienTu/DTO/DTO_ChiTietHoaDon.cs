@@ -4,9 +4,8 @@ namespace DTO
     public class DTO_ChiTietHoaDon
     {
         private int _maChiTietHoaDon;
-        private float _tongTien;
-        private float _giamGia;
-        private int _maHoaDon;
+        private int _soluong;
+        private double _gia;
         private int _maSP;
 
         public int MaChiTietHoaDon
@@ -14,23 +13,16 @@ namespace DTO
             get { return _maChiTietHoaDon; }
             set { _maChiTietHoaDon = value; }
         }
-
-        public float TongTien
+        public double Gia
         {
-            get { return _tongTien; }
-            set { _tongTien = value; }
+            get { return _gia; }
+            set { _gia = value; }
         }
 
-        public float GiamGia
+        public int SoLuong
         {
-            get { return _giamGia; }
-            set { _giamGia = value; }
-        }
-
-        public int MaHoaDon
-        {
-            get { return _maHoaDon; }
-            set { _maHoaDon = value; }
+            get { return _soluong; }
+            set { _soluong = value; }
         }
 
         public int MaSP
@@ -38,5 +30,15 @@ namespace DTO
             get { return _maSP; }
             set { _maSP = value; }
         }
+
+        public DTO_ChiTietHoaDon() { }
+
+        public DTO_ChiTietHoaDon(int masp, int soluong, double gia)
+        {
+            this.MaSP= masp;
+            this.SoLuong= soluong;
+            this.Gia= gia;
+        }
+
     }
 }

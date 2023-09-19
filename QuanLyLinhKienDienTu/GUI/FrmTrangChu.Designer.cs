@@ -47,11 +47,11 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_body.SuspendLayout();
             this.guna2Panel_body.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -287,6 +287,36 @@
             this.guna2Panel6.Size = new System.Drawing.Size(594, 100);
             this.guna2Panel6.TabIndex = 13;
             // 
+            // label8
+            // 
+            this.label8.AutoEllipsis = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label8.Location = new System.Drawing.Point(129, 63);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label8.Size = new System.Drawing.Size(216, 32);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Thể hiện đẳng cấp";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label8.UseCompatibleTextRendering = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoEllipsis = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label6.Location = new System.Drawing.Point(12, 14);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(288, 43);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "PS4 chơi game thả ga";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.UseCompatibleTextRendering = true;
+            // 
             // guna2PictureBox7
             // 
             this.guna2PictureBox7.FillColor = System.Drawing.Color.Transparent;
@@ -323,36 +353,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1015, 40);
             this.guna2Panel1.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoEllipsis = true;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label8.Location = new System.Drawing.Point(129, 63);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(216, 32);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Thể hiện đẳng cấp";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.UseCompatibleTextRendering = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoEllipsis = true;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label6.Location = new System.Drawing.Point(12, 14);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(288, 43);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "PS4 chơi game thả ga";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.UseCompatibleTextRendering = true;
             // 
             // FrmTrangChu
             // 

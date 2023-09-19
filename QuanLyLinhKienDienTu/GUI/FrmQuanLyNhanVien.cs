@@ -45,7 +45,7 @@ namespace GUI
             gvNhanVien.DataSource = busEmployee.DanhSachNhanVien();
             LoadGridView();
             SetValue(true, false);
-            txtHoTen.Focus();
+            txtHoTen.Focus();          
         }
         private void LoadGridView()
         {
