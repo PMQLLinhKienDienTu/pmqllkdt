@@ -31,7 +31,7 @@ namespace GUI
         private string tensanpham, email, str;
         private char separator = '|';
         private string[] strlist;
-
+        private Color savedColor;
         private Timer timer = new Timer();
         
 
@@ -52,17 +52,13 @@ namespace GUI
                 panel.BackColor = e.NewColor;
             }
             guna2TabControlBanHang.TabMenuBackColor = e.NewColor;
-
         }
 
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
             BanHangLoad();
             HoaDonLoad();
-
-            NhapHangLoad();
-
-         
+            NhapHangLoad();      
         }
 
 
