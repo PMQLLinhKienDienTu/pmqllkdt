@@ -228,6 +228,7 @@
     <Content Include="ImagesShop\%24this.Icon.ico" />
     <Content Include="ImagesShop\icon_shop.ico" />
     <Content Include="ImagesShop\icon_shop.jpg" />
+    <None Include="Resources\loadmail.gif" />
     <None Include="Resources\refresh_8771454 %281%29.png" />
     <None Include="Resources\reload_6711483.png" />
     <None Include="Resources\sync_6711500.png" />

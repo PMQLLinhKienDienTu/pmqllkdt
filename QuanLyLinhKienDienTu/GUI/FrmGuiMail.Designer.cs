@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGuiMail));
             this.pcbLoader = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLoader)).BeginInit();
             this.SuspendLayout();
@@ -37,7 +36,7 @@
             // 
             this.pcbLoader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pcbLoader.FillColor = System.Drawing.Color.Transparent;
-            this.pcbLoader.Image = ((System.Drawing.Image)(resources.GetObject("pcbLoader.Image")));
+            this.pcbLoader.Image = global::GUI.Properties.Resources.loadmail;
             this.pcbLoader.ImageRotate = 0F;
             this.pcbLoader.Location = new System.Drawing.Point(0, 0);
             this.pcbLoader.Margin = new System.Windows.Forms.Padding(4);
