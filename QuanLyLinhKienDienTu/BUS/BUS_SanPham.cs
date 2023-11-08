@@ -37,6 +37,10 @@ namespace BUS
         {
             return dalsanpham.LayGiaSP(name);
         }
+        public double LayGiaNhapSP(string name)
+        {
+            return dalsanpham.LayGiaNhapSP(name);
+        }
         public int GetProductId(string name) 
         {
             return dalsanpham.GetProductId(name);

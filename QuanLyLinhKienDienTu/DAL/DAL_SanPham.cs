@@ -168,7 +168,7 @@ namespace DAL
             }
         }
 
-        // Lấy đơn vị giá
+        // Lấy đơn vị giá bán
         public double LayGiaSP(string name)
         {
             try
@@ -178,6 +178,25 @@ namespace DAL
                 cmd.Connection = _conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "LayGiaSP";
+                cmd.Parameters.AddWithValue("name", name);
+                return Convert.ToDouble(cmd.ExecuteScalar());
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        // Lấy đơn vị giá nhập
+        public double LayGiaNhapSP(string name)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayGiaSPNhap";
                 cmd.Parameters.AddWithValue("name", name);
                 return Convert.ToDouble(cmd.ExecuteScalar());
             }

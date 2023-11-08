@@ -12,9 +12,9 @@ namespace BUS
         {
             return dalchitiethoadon.DanhSachCTHoaDon();
         }
-        public bool ThemCTHoaDon(DTO_ChiTietHoaDon billInfo, int quantity)
+        public bool ThemCTHoaDon(DTO_ChiTietHoaDon billInfo)
         {
-            return dalchitiethoadon.ThemCTHoaDon(billInfo, quantity);
+            return dalchitiethoadon.ThemCTHoaDon(billInfo);
         }
         public double GetTotalPrice()
         {

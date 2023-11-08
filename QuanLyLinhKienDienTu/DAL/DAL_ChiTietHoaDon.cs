@@ -27,7 +27,7 @@ namespace DAL
         }
         // Thêm chi tiết hóa đơn
 
-        public bool ThemCTHoaDon(DTO_ChiTietHoaDon chiTietHoaDon, int soluong)
+        public bool ThemCTHoaDon(DTO_ChiTietHoaDon chiTietHoaDon)
         {
 
             try
@@ -38,7 +38,7 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "ThemCTHoaDon";
                 cmd.Parameters.AddWithValue("productId", chiTietHoaDon.MaSP);
-                cmd.Parameters.AddWithValue("quantity", soluong);
+                cmd.Parameters.AddWithValue("quantity", chiTietHoaDon.SoLuong);
                 cmd.Parameters.AddWithValue("unitPrice", chiTietHoaDon.Gia);
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;

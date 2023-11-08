@@ -82,7 +82,7 @@
             this.gvDondathang.RowHeadersVisible = false;
             this.gvDondathang.RowHeadersWidth = 51;
             this.gvDondathang.RowTemplate.Height = 35;
-            this.gvDondathang.Size = new System.Drawing.Size(1015, 377);
+            this.gvDondathang.Size = new System.Drawing.Size(1486, 615);
             this.gvDondathang.TabIndex = 1;
             this.gvDondathang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gvDondathang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -149,7 +149,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1015, 750);
+            this.guna2Panel1.Size = new System.Drawing.Size(1486, 988);
             this.guna2Panel1.TabIndex = 2;
             // 
             // guna2Panel2
@@ -158,7 +158,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1015, 373);
+            this.guna2Panel2.Size = new System.Drawing.Size(1486, 373);
             this.guna2Panel2.TabIndex = 0;
             // 
             // FrmQuanLyDonDatHang
@@ -166,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1015, 750);
+            this.ClientSize = new System.Drawing.Size(1486, 988);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmQuanLyDonDatHang";

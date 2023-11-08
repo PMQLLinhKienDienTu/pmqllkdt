@@ -10,21 +10,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using static GUI.FrmMain;
+using DAL;
 
 namespace GUI
 {
     public partial class FrmBanHang : Form
     {
+
         BUS_ChiTietHoaDon buscthoadon = new BUS_ChiTietHoaDon();
         BUS_KhachHang buskhachhang = new BUS_KhachHang();
         BUS_SanPham bussanpham = new BUS_SanPham();
         BUS_NhanVien BUS_NhanVien= new BUS_NhanVien();
         BUS_HoaDon bushoadon  = new BUS_HoaDon();
-
+        BUS_NhaCungCap busnhacungcap = new BUS_NhaCungCap();
+        BUS_ChiTietNhapHang busctnhaphang = new BUS_ChiTietNhapHang();
+        BUS_NhapHang busnhanhang = new BUS_NhapHang();
         DTO_HoaDon dtoHoadon;
+        DTO_NhapHang dtonhanhang;
+        DTO_ChiTietNhapHang dtoctnhaphang;
         DTO_ChiTietHoaDon dtoChitiethoadon;
+
+        //Lin Q
+        QLLKDTDataContext qllkdt = new QLLKDTDataContext();
+
 
         private string[] danhsachKH, danhsachSP;
         private DateTime dateTime = new DateTime();
@@ -33,7 +42,10 @@ namespace GUI
         private string[] strlist;
         private Color savedColor;
         private Timer timer = new Timer();
-        
+
+
+       
+
 
         public FrmBanHang(string email)
         {
@@ -58,7 +70,12 @@ namespace GUI
         {
             BanHangLoad();
             HoaDonLoad();
-            NhapHangLoad();      
+            NhapHangLoad();
+            LoadSanPhamBanCham();
+            SetValueBanHang(true, false);
+            SetValueNhapHang(true, false);
+
+            LoadSanPhamBanCham();
         }
 
 
@@ -72,16 +89,29 @@ namespace GUI
             LoadGVCTHoaDon();
             LoadData();
         }
+       
 
+        private void LoadSanPhamBanCham()
+        {
+           
+        }
         private void HoaDonLoad()
         {
-            // Hóa đơn 
+            // load giv
             gvHoaDon.DataSource = bushoadon.DanhSachHoaDon();
             LoadGVHoaDon();
+            LoadData();
         }
         private void NhapHangLoad()
         {
-          
+          // Load combobox
+          cbbNhaCungCap.DataSource = busnhacungcap.LoadNhaCungCap();
+            cbbNhaCungCap.DisplayMember= "TenNCC";
+            cbbNhaCungCap.ValueMember= "MaNCC";
+
+            //Load giv
+            gvnhaphang.DataSource = busctnhaphang.DanhSachCTNhapHang();
+            LoadData();
         }
         // load dữ liệu 
         private void LoadData()
@@ -100,19 +130,84 @@ namespace GUI
 
             danhsachSP = bussanpham.DanhSachSLNameSP();
             cboProductNameQuantity.Items.Clear();
+            cbbSanPhamTonKho.Items.Clear();
             foreach (string item in danhsachSP)
             {
                 cboProductNameQuantity.Items.Add(item);
+                cbbSanPhamTonKho.Items.Add(item);
             }
 
             txtEmployeeIdName.Text = BUS_NhanVien.LayIdHoTenNhanVien(email);
+            txtNhanVienNhapKho.Text = BUS_NhanVien.LayIdHoTenNhanVien(email);
         }
+
+        //Thiết lặt thao tác cho bán hàng
+        private void SetValueBanHang(bool param, bool isLoad)
+        {
+            btnThem.Enabled = param;
+
+            txtUnitPrice.Text = null;
+            txtQuantity.Text = null;
+            txtQuantity.Focus();
+
+            if (isLoad) // true
+            {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+            else // false
+            {
+                btnSua.Enabled = !param;// !param == true
+                btnXoa.Enabled = !param;// !param == true
+            } 
+        }
+        //Thiết lặt thao tác nhập hàng
+        private void SetValueNhapHang(bool param, bool isLoad)
+        {
+     
+
+            btnThemNhap.Enabled = param;
+
+            txtSoLuongNhap.Text = null;
+            txtDonGiaNhap.Text = null;
+
+            if (isLoad) // true
+            {
+                btnSuaNhap.Enabled = false;
+                btnXoaNhap.Enabled = false;
+            }
+            else // false
+            {
+                btnSuaNhap.Enabled = !param;// !param == true
+                btnXoaNhap.Enabled = !param;// !param == true
+            }
+        }
+
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
-            txtQuantity.Text = null;
-            txtUnitPrice.Text = null; 
-            LoadData();
+            SetValueBanHang(true, false);
+           
+        }
+        private void loadtongtien()
+        {
+            double tongtien = buscthoadon.GetTotalPrice();
+
+            if (tongtien != null)
+            {
+                txtTotalPrice.Text = Convert.ToString(tongtien);
+            }    
+           
+        }
+        private void loadtongtiennhap()
+        {
+            double tongtiens = busctnhaphang.GetTongTienNhapHang();
+
+            if (tongtiens  != null)
+            {
+                txtThanhTienNhap.Text = Convert.ToString(tongtiens);
+            }
+
         }
 
         private void cboProductNameQuantity_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,20 +229,22 @@ namespace GUI
                 tensanpham = strlist[0].Trim();
 
                 if (txtQuantity.Text != "")
-                {
+                {       
                     int id_sp = bussanpham.GetProductId(tensanpham);
                     int soluong = int.Parse(txtQuantity.Text);
                     double gia = double.Parse(txtUnitPrice.Text);
 
+
                     dtoChitiethoadon = new DTO_ChiTietHoaDon(id_sp, soluong, gia);                 
                     
-                    if (buscthoadon.ThemCTHoaDon(dtoChitiethoadon, soluong))
+                    if (buscthoadon.ThemCTHoaDon(dtoChitiethoadon))
                     {
-                        danhsachSP = bussanpham.DanhSachSLNameSP();
-
-                        BanHangLoad();
+                        danhsachSP = bussanpham.DanhSachSLNameSP();       
                         txtTotalPrice.Text = buscthoadon.GetTotalPrice().ToString();
                         MsgBox("Thêm hóa đơn thành công");
+                        BanHangLoad();
+                        loadtongtien();
+                        SetValueBanHang(true, false);
                     }
                     else
                         MsgBox("Thêm không thành công", true);
@@ -163,15 +260,21 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int id = bussanpham.GetProductId(tensanpham);
+
+            string masp = gvCTHoaDon.CurrentRow.Cells[1].Value.ToString();
+            int id= bussanpham.GetProductId(masp);
             int soluong = int.Parse(txtQuantity.Text);
-            str = cboProductNameQuantity.SelectedItem.ToString();
-            strlist = str.Split(separator);
+
+            //str = cboProductNameQuantity.SelectedItem.ToString();
+            //strlist = str.Split(separator);
+
             if (buscthoadon.SuaSanPhamCTHoaDon(id, soluong))
             {
-                BanHangLoad();
                 txtTotalPrice.Text = buscthoadon.GetTotalPrice().ToString();
                 MsgBox("Sửa sản phẩm thành công!");
+                BanHangLoad();
+                loadtongtien();
+                SetValueBanHang(true, false);
             }
             else
             {
@@ -181,13 +284,16 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int id = bussanpham.GetProductId(tensanpham);
+            string masp = gvCTHoaDon.CurrentRow.Cells[1].Value.ToString();
+            int id = bussanpham.GetProductId(masp);
             if (MessageBox.Show("Bạn có chắc muốn xóa", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (buscthoadon.XoaSanPhamCTHoaDon(id))
                 {
                     MsgBox("Xóa thành công");
                     BanHangLoad();
+                    loadtongtien();
+                    SetValueBanHang(true, false);
                 }
                 else
                     MsgBox("Không xóa được", true);
@@ -204,13 +310,15 @@ namespace GUI
 
                 str = cboCustomerIdName.SelectedItem.ToString();
                 strlist = str.Split(separator);
-                string customerId = strlist[0].Trim();
 
+
+                string customerId = strlist[0].Trim();
+                double gia = buscthoadon.GetTotalPrice();
                 dtoHoadon = new DTO_HoaDon
                 (
                     int.Parse(employeeId),
                     int.Parse(customerId),
-                    double.Parse(txtTotalPrice.Text)
+                  gia
                 );
                 if (bushoadon.ThemHoaDon(dtoHoadon))
                 {
@@ -222,7 +330,7 @@ namespace GUI
             }
             catch
             {
-                MsgBox("Chọn khách hàng cần thanh toán!!!", true);
+
             }
         }
 
@@ -242,10 +350,195 @@ namespace GUI
             txtDateTime.Text = dateTime.ToString("dd/MM/yyyy") + " " + dateTime.ToString("HH:mm:ss"); // định dạnh ngày/tháng/năm
         }
 
+        private void picNhaCungCap_Click(object sender, EventArgs e)
+        {
+            new FrmQuanLyNhaCungCap().ShowDialog();
+        }
+
+        private void cbbSanPhamTonKho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = cbbSanPhamTonKho.SelectedItem.ToString();
+            char separator = '|';
+            String[] strlist = str.Split(separator);
+            tensanpham = strlist[0].Trim();
+            txtDonGiaNhap.Text = bussanpham.LayGiaNhapSP(tensanpham).ToString();
+        }
+
+        private void btnThemNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                str = cbbSanPhamTonKho.SelectedItem.ToString();
+                strlist = str.Split(separator);
+                tensanpham = strlist[0].Trim();
+
+                if (txtSoLuongNhap.Text != "")
+                {
+
+                    int id_sp = bussanpham.GetProductId(tensanpham);
+                    int soluong = int.Parse(txtSoLuongNhap.Text);
+                    float gia = float.Parse(txtDonGiaNhap.Text);
+
+                    dtoctnhaphang = new DTO_ChiTietNhapHang(id_sp, soluong, gia);
+
+                    if (busctnhaphang.ThemCTNhapHang(dtoctnhaphang))
+                    {
+                        danhsachSP = bussanpham.DanhSachSLNameSP();
+                        MsgBox("Nhập hàng thành công");
+                        NhapHangLoad();
+                        loadtongtiennhap();
+                        SetValueNhapHang(true, false);
+                    }
+                    else
+                        MsgBox("Nhập hàng không thành công", true);
+                }
+                else
+                    MsgBox("Vui lòng kiểm tra lại dữ liệu", true);
+            }
+            catch
+            {
+                MsgBox("Nhập hàng không thành công", true);
+            }
+        }
+
+        private void btnSuaNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strmasp = gvnhaphang.CurrentRow.Cells[1].Value.ToString();
+                int id = bussanpham.GetProductId(strmasp);
+                int soluong = int.Parse(txtSoLuongNhap.Text);
+
+
+                dtoctnhaphang = new DTO_ChiTietNhapHang(id, soluong);
+
+                if (busctnhaphang.SuaCTNhapHang(dtoctnhaphang))
+                {
+                  
+                    MsgBox("Sửa thành công!");
+                    NhapHangLoad();
+                    loadtongtiennhap();
+                    SetValueNhapHang(true, false);
+                }
+                else
+                {
+                    MsgBox("Sửa không được", true);
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }   
+        }
+        private void btnXoaNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strmasp = gvnhaphang.CurrentRow.Cells[1].Value.ToString();
+
+                int id = bussanpham.GetProductId(strmasp);
+
+                if (MessageBox.Show("Bạn có chắc muốn xóa", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (busctnhaphang.XoaCTNhapHang(id))
+                    {
+                        MsgBox("Xóa thành công");
+                        NhapHangLoad();
+                        loadtongtiennhap();
+                        SetValueNhapHang(true, false);
+                    }
+                    else
+                        MsgBox("Không xóa được", true);
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+          
+        }
+
+        private void gvnhaphang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                btnSuaNhap.Enabled = btnXoaNhap.Enabled = true;
+                if(gvnhaphang.Rows.Count > 0)
+                {
+                    txtSoLuongNhap.Text = gvnhaphang.CurrentRow.Cells[2].Value.ToString();
+                    txtDonGiaNhap.Text = gvnhaphang.CurrentRow.Cells[3].Value.ToString();
+                }    
+            }
+            catch (Exception)
+            {
+
+              
+            }
+        }
+
+        private void gvCTHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                btnSua.Enabled = btnXoa.Enabled = true;
+
+                if(gvCTHoaDon.Rows.Count > 0)
+                {
+                    txtQuantity.Text = gvCTHoaDon.CurrentRow.Cells[2].Value.ToString();
+                    txtUnitPrice.Text = gvCTHoaDon.CurrentRow.Cells[3].Value.ToString();
+                }    
+            }
+            catch (Exception)
+            {
+
+                
+            }
+        }
+
+        private void btnLamMoiNhap_Click(object sender, EventArgs e)
+        {
+            SetValueNhapHang(true, false);
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                str = txtNhanVienNhapKho.Text.Trim();
+                strlist = str.Split(separator);
+                string employeeId = strlist[0].Trim();
+                string product = cbbNhaCungCap.SelectedValue.ToString();
+                double gia = busctnhaphang.GetTongTienNhapHang();
+                dtonhanhang = new DTO_NhapHang
+                (
+                    int.Parse(employeeId),
+                    int.Parse(product),
+                  gia
+                );
+                if (busnhanhang.ThemPhieuNhap(dtonhanhang))
+                {
+                    MsgBox("Nhập hàng thành công", false);
+                    NhapHangLoad();
+                    SetValueNhapHang(true, false);
+                }
+                else
+                    MsgBox("Nhập hàng không thành công", true);
+
+            }
+            catch (Exception)
+            {
+
+            }
+                
+        }
+
         private void btnlammoihoadon_Click(object sender, EventArgs e)
         {
             //FrmBanHang_Load(sender,e);
              HoaDonLoad();
+            loadtongtiennhap();
         }
 
         private void LoadGVCTHoaDon()
@@ -289,6 +582,6 @@ namespace GUI
 
         }
 
-     
+
     }
 }

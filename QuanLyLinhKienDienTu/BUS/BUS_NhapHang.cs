@@ -10,5 +10,11 @@ namespace BUS
    public class BUS_NhapHang
     {
        DAL_NhapHang nhaphang = new DAL_NhapHang();
+
+
+        public bool ThemPhieuNhap(DTO_NhapHang nhanhangs)
+        {
+            return nhaphang.ThemPhieuNhap(nhanhangs);
+        }
     }
 }

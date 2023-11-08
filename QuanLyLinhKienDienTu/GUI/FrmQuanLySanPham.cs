@@ -78,6 +78,12 @@ namespace GUI
             {
                 item.DividerWidth = 1;
             }
+           
+
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            imgCol = (DataGridViewImageColumn)gvSanpham.Columns[5];
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
             gvSanpham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvSanpham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvSanpham.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -315,6 +321,12 @@ namespace GUI
             }
         }
 
+        private void btnLammoi_Click(object sender, EventArgs e)
+        {
+            SetValue(true, false);
+            FrmQuanLySanPham_Load(sender, e);
+        }
+
         private void gvSanpham_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (gvSanpham.Rows.Count > 0)
@@ -336,10 +348,5 @@ namespace GUI
             }
         }
 
-        private void btnLammoi_Click(object sender, EventArgs e)
-        {
-            SetValue(true, false);
-            FrmQuanLySanPham_Load(sender, e);
-        }
     }
 }

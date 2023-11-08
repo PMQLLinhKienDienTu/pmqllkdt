@@ -67,7 +67,7 @@
             this.btnRefresh.FillColor2 = System.Drawing.Color.Aqua;
             this.btnRefresh.Font = new System.Drawing.Font("Lucida Sans Unicode", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(329, 615);
+            this.btnRefresh.Location = new System.Drawing.Point(565, 615);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(180, 63);
@@ -82,7 +82,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(494, 511);
+            this.label2.Location = new System.Drawing.Point(730, 511);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 28);
@@ -105,7 +105,7 @@
             this.btnChangePassword.FillColor2 = System.Drawing.Color.Aqua;
             this.btnChangePassword.Font = new System.Drawing.Font("Lucida Sans Unicode", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(741, 615);
+            this.btnChangePassword.Location = new System.Drawing.Point(977, 615);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(241, 62);
@@ -130,7 +130,7 @@
             this.txtOldPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtOldPassword.ForeColor = System.Drawing.Color.White;
             this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Location = new System.Drawing.Point(741, 305);
+            this.txtOldPassword.Location = new System.Drawing.Point(977, 305);
             this.txtOldPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
@@ -156,7 +156,7 @@
             this.txtRepeatPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtRepeatPassword.ForeColor = System.Drawing.Color.White;
             this.txtRepeatPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRepeatPassword.Location = new System.Drawing.Point(742, 496);
+            this.txtRepeatPassword.Location = new System.Drawing.Point(978, 496);
             this.txtRepeatPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtRepeatPassword.Name = "txtRepeatPassword";
             this.txtRepeatPassword.PasswordChar = '*';
@@ -172,7 +172,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(525, 417);
+            this.label3.Location = new System.Drawing.Point(761, 417);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 28);
@@ -186,7 +186,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(539, 321);
+            this.label4.Location = new System.Drawing.Point(775, 321);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 28);
@@ -210,7 +210,7 @@
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtNewPassword.ForeColor = System.Drawing.Color.White;
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(741, 402);
+            this.txtNewPassword.Location = new System.Drawing.Point(977, 402);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
@@ -234,7 +234,7 @@
             this.btnUpdate.FillColor2 = System.Drawing.Color.Aqua;
             this.btnUpdate.Font = new System.Drawing.Font("Lucida Sans Unicode", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(72, 615);
+            this.btnUpdate.Location = new System.Drawing.Point(308, 615);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(180, 63);
@@ -260,7 +260,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtName.ForeColor = System.Drawing.Color.Aqua;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(170, 165);
+            this.txtName.Location = new System.Drawing.Point(406, 165);
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -276,7 +276,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(35, 179);
+            this.label7.Location = new System.Drawing.Point(271, 179);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 28);
@@ -290,7 +290,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(21, 284);
+            this.label8.Location = new System.Drawing.Point(257, 284);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 28);
@@ -314,7 +314,7 @@
             this.txtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtTaiKhoan.ForeColor = System.Drawing.Color.Aqua;
             this.txtTaiKhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(170, 272);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(406, 272);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(5);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.PasswordChar = '\0';
@@ -341,7 +341,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtEmail.ForeColor = System.Drawing.Color.Aqua;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(170, 496);
+            this.txtEmail.Location = new System.Drawing.Point(406, 496);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -357,7 +357,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(49, 399);
+            this.label9.Location = new System.Drawing.Point(285, 399);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 28);
@@ -371,7 +371,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(35, 511);
+            this.label10.Location = new System.Drawing.Point(271, 511);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 28);
@@ -395,7 +395,7 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Aqua;
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(170, 387);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(406, 387);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
@@ -410,7 +410,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Aqua;
-            this.label6.Location = new System.Drawing.Point(210, 73);
+            this.label6.Location = new System.Drawing.Point(446, 73);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(620, 61);
@@ -442,7 +442,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1015, 750);
+            this.guna2Panel1.Size = new System.Drawing.Size(1486, 988);
             this.guna2Panel1.TabIndex = 61;
             // 
             // pic_profile
@@ -450,7 +450,7 @@
             this.pic_profile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pic_profile.BackColor = System.Drawing.Color.Black;
             this.pic_profile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_profile.Location = new System.Drawing.Point(815, 179);
+            this.pic_profile.Location = new System.Drawing.Point(1051, 179);
             this.pic_profile.Margin = new System.Windows.Forms.Padding(4);
             this.pic_profile.Name = "pic_profile";
             this.pic_profile.Size = new System.Drawing.Size(115, 103);
@@ -463,7 +463,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(1015, 750);
+            this.ClientSize = new System.Drawing.Size(1486, 988);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmThongTinTaiKhoan";

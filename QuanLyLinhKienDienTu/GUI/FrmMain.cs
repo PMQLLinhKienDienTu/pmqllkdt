@@ -81,6 +81,7 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            
             //this.WindowState = FormWindowState.Maximized;
             loadanh();
             loadthongtinnhanvien();

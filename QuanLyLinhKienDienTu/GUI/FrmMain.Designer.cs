@@ -79,7 +79,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(222, 750);
+            this.guna2Panel1.Size = new System.Drawing.Size(222, 988);
             this.guna2Panel1.TabIndex = 10;
             // 
             // guna2Panel4
@@ -234,7 +234,7 @@
             this.btnthongtintk.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.btnthongtintk.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthongtintk.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.btnthongtintk.Location = new System.Drawing.Point(0, 665);
+            this.btnthongtintk.Location = new System.Drawing.Point(-7, 667);
             this.btnthongtintk.Margin = new System.Windows.Forms.Padding(4);
             this.btnthongtintk.Name = "btnthongtintk";
             this.btnthongtintk.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -299,7 +299,7 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnLogout.Location = new System.Drawing.Point(0, 701);
+            this.btnLogout.Location = new System.Drawing.Point(0, 939);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedColor = System.Drawing.Color.BlueViolet;
@@ -494,7 +494,7 @@
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.Location = new System.Drawing.Point(222, 0);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1026, 750);
+            this.guna2Panel3.Size = new System.Drawing.Size(1486, 988);
             this.guna2Panel3.TabIndex = 12;
             // 
             // guna2Panel2
@@ -510,7 +510,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1026, 36);
+            this.guna2Panel2.Size = new System.Drawing.Size(1486, 36);
             this.guna2Panel2.TabIndex = 5;
             this.guna2Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel2_MouseDown);
             // 
@@ -523,7 +523,7 @@
             this.btnExit.FillColor = System.Drawing.Color.Transparent;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(966, 0);
+            this.btnExit.Location = new System.Drawing.Point(1426, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 36);
@@ -538,7 +538,7 @@
             this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(846, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1306, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
@@ -552,7 +552,7 @@
             this.guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(906, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1366, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(60, 36);
@@ -565,7 +565,7 @@
             this.pnlBody.Location = new System.Drawing.Point(0, 0);
             this.pnlBody.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1026, 750);
+            this.pnlBody.Size = new System.Drawing.Size(1486, 988);
             this.pnlBody.TabIndex = 12;
             // 
             // FrmMain
@@ -573,7 +573,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(1248, 750);
+            this.ClientSize = new System.Drawing.Size(1708, 988);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
