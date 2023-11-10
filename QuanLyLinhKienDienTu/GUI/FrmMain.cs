@@ -31,13 +31,14 @@ namespace GUI
 
         FrmTrangChu frmTrangChu = new FrmTrangChu();
         FrmQuanLyNhanVien FrmQuanLyNhanVien = new FrmQuanLyNhanVien();
-        FrmQuanLySanPham frmQuanLySanPham = new FrmQuanLySanPham();
+        FrmQuanLySanPham frmQuanLySanPham;
         FrmQuanLyKhachHang FrmQuanLyKhachHang = new FrmQuanLyKhachHang();
         FrmQuanLyDonDatHang FrmQuanLyDonDatHang = new FrmQuanLyDonDatHang();
         FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe();
- 
+
         FrmQuanLyLoaiSanPham FrmQuanLyLoai = new FrmQuanLyLoaiSanPham();
         FrmThongTinTaiKhoan FrmThongTinTaiKhoan;
+        FrmQuanLySanPham FrmQuanLySanPham;
 
         DTO_NhanVien dtonhanvien;
         
@@ -75,7 +76,7 @@ namespace GUI
             ///
             email = busEmployee.LayMailNhanVien(taikhoan);
             FrmThongTinTaiKhoan = new FrmThongTinTaiKhoan(email,taikhoan);
-
+            frmQuanLySanPham = new FrmQuanLySanPham(taikhoan);
             //fBill = new frmHoadon(email);
         }
 
@@ -110,6 +111,9 @@ namespace GUI
             pnlBody.Controls.Add(frmTrangChu);
             frmTrangChu.Dock = DockStyle.Fill;
             frmTrangChu.Show();
+
+            // Làm mới lại form
+            frmTrangChu.RefreshForm();
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
@@ -119,6 +123,7 @@ namespace GUI
             pnlBody.Controls.Add(frmQuanLySanPham);
             frmQuanLySanPham.Dock = DockStyle.Fill;
             frmQuanLySanPham.Show();
+
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
