@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using static GUI.FrmMain;
 using DAL;
 
@@ -37,12 +38,13 @@ namespace GUI
 
         private string[] danhsachKH, danhsachSP;
         private DateTime dateTime = new DateTime();
+
         private string tensanpham, email, str;
         private char separator = '|';
         private string[] strlist;
         private Color savedColor;
         private Timer timer = new Timer();
-
+        
 
        
 
@@ -76,6 +78,7 @@ namespace GUI
             SetValueNhapHang(true, false);
 
             LoadSanPhamBanCham();
+
         }
 
 
@@ -330,7 +333,7 @@ namespace GUI
             }
             catch
             {
-
+                MessageBox.Show("Lỗi XD:");
             }
         }
 
@@ -534,11 +537,31 @@ namespace GUI
                 
         }
 
+    
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+            DateTime selectedDate = dateTimePicker1.Value;
+
+            string ngay = selectedDate.ToString("yyyy/MM/dd");
+
+            if (ngay == "")
+            {
+                FrmBanHang_Load(sender, e);
+                txtSearch.Focus();
+            }
+            else
+            {
+                DataTable data = bushoadon.TimKiemNgayHoaDon(ngay);
+                gvHoaDon.DataSource = data;
+            }
+        }
+
         private void btnlammoihoadon_Click(object sender, EventArgs e)
         {
             //FrmBanHang_Load(sender,e);
              HoaDonLoad();
-            loadtongtiennhap();
+    
         }
 
         private void LoadGVCTHoaDon()

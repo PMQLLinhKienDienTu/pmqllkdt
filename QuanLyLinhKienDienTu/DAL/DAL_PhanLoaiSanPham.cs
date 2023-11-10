@@ -7,6 +7,8 @@ namespace DAL
 {
     public class DAL_PhanLoaiSanPham :DbConnect
     {
+
+
         // Danh sách loại sản phẩm
         public DataTable DanhSachLoaiSP()
         {

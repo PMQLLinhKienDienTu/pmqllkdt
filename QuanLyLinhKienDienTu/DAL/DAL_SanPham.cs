@@ -8,6 +8,9 @@ namespace DAL
     public class DAL_SanPham :DbConnect
 
     {
+        
+
+
         // Danh sách Sản phẩm 
         public DataTable DanhSachSanPham()
         {
@@ -133,6 +136,26 @@ namespace DAL
                 cmd.Connection = _conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "TimKiemSanPham";
+                cmd.Parameters.AddWithValue("name", hoten);
+                DataTable data = new DataTable();
+                data.Load(cmd.ExecuteReader());
+                return data;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+        // Tìm kiếm sản phẩm theo loai
+        public DataTable TimKiemSanPhamTheoLoai(string hoten)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "TimKiemSanPhamTheoLoai";
                 cmd.Parameters.AddWithValue("name", hoten);
                 DataTable data = new DataTable();
                 data.Load(cmd.ExecuteReader());

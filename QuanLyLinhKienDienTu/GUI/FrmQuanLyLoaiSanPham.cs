@@ -19,9 +19,11 @@ namespace GUI
         private string name;
 
         BUS_PhanLoaiSanPham busphanloaisp = new BUS_PhanLoaiSanPham();
+
         public FrmQuanLyLoaiSanPham()
         {
             InitializeComponent();
+          
             ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
@@ -99,6 +101,7 @@ namespace GUI
            
 
         }
+      
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             SetValue(true, false);

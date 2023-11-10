@@ -29,6 +29,10 @@ namespace BUS
         {
             return dalsanpham.TimKiemSanPham(hoten);
         }
+        public DataTable TimKiemSanPhamTheoLoai(string loai)
+        {
+            return dalsanpham.TimKiemSanPhamTheoLoai(loai);
+        }
         public string[] DanhSachSLNameSP()
         {
             return dalsanpham.DanhSachSLNameSP();

@@ -15,12 +15,13 @@ using System.Management.Instrumentation;
 using DTO;
 using System.Xml.Linq;
 using static GUI.FrmMain;
+using DAL;
 
 namespace GUI
 {
     public partial class FrmQuanLySanPham : Form
     {
-
+        
 
         private string fileAddress;
         private byte[] img; // mã hóa hình ảnh lưu trử
@@ -28,16 +29,22 @@ namespace GUI
         BUS_PhanLoaiSanPham busloai = new BUS_PhanLoaiSanPham();
         DTO_SanPham dtosanpham;
 
+        BUS_NhanVien busEmployee = new BUS_NhanVien();
+
+
         private string[] Danhsachloaisp;
+        private string[] DanhsachloaispSearh;
         private string tenloaisp, str;
         private int id;
         private string name;
+        private string taikhoan;
+        private char separator = '|';
+        private string[] strlist;
 
-
-
-        public FrmQuanLySanPham()
+        public FrmQuanLySanPham(string taikhoan)
         {
             InitializeComponent();
+            this.taikhoan = taikhoan;
             ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
@@ -58,8 +65,8 @@ namespace GUI
             LoadGridView();
             loadanh();
             txtName.Focus();
-           
-
+            LoadComboBoxTK();
+            loadthongtinnhanvien();
         }
 
         private void LoadGridView()
@@ -101,6 +108,18 @@ namespace GUI
 
 
             
+        }
+        private void loadthongtinnhanvien()
+        {
+            str = busEmployee.LayNameChucVuNhanVien(taikhoan);
+            strlist = str.Split(separator);
+         
+            string chucvu = strlist[1].Trim();
+
+            if (chucvu == "1")
+            {
+                btnLoaiLK.Visible = true;
+            }         
         }
 
         // thiết lặp giá trị
@@ -189,6 +208,20 @@ namespace GUI
             {
                 cbbLoai.Items.Add(item);
             }
+
+           
+
+        }
+        private void LoadComboBoxTK()
+        {
+            DanhsachloaispSearh = busloai.DanhsachNameIDLoai();
+            cbbTimKiemLoai.Items.Clear();
+
+            foreach (string item in DanhsachloaispSearh)
+            {
+                cbbTimKiemLoai.Items.Add(item);
+            }
+
 
         }
 
@@ -325,6 +358,26 @@ namespace GUI
         {
             SetValue(true, false);
             FrmQuanLySanPham_Load(sender, e);
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbTimKiemLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string loaiyk = cbbTimKiemLoai.SelectedItem.ToString();
+            if (loaiyk == "")
+            {
+                FrmQuanLySanPham_Load(sender, e);
+                txtSearch.Focus();
+            }
+            else
+            {
+                DataTable data = bus_sanpham.TimKiemSanPhamTheoLoai(loaiyk);
+                gvSanpham.DataSource = data;
+            }
         }
 
         private void gvSanpham_CellClick_1(object sender, DataGridViewCellEventArgs e)
