@@ -1,15 +1,8 @@
 ﻿using BUS;
 using DTO;
-using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GUI.FrmMain;
 
@@ -19,9 +12,8 @@ namespace GUI
     {
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
         DTO_NhanVien dtoNhanVien;
-        private byte[] img; // mã hóa hình ảnh lưu trử
 
-        private string fileAddress;
+        private byte[] img; // mã hóa hình ảnh lưu trử
         private string email, str;
         private char separator = '|';
         private string[] strlist;
@@ -85,7 +77,6 @@ namespace GUI
                 MessageBox.Show("Không sửa được thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             if (txtOldPassword.Text != "")
@@ -108,12 +99,10 @@ namespace GUI
                 else MessageBox.Show("Mật khẩu mới không trùng nhau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Vui lòng nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-     
+        }    
         private void loadanh()
         {
             img = busNhanVien.LayAnhNhanVien(taikhoan);
-
 
             if (img == null)
             {               
@@ -124,7 +113,6 @@ namespace GUI
                 pic_profile.Image = Image.FromStream(memoryStream);
             }
         }
-
         private void FrmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadData(); // Load dữ liệu lên form

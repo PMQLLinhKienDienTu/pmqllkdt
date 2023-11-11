@@ -1,16 +1,9 @@
 ﻿using BUS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.Charts.WinForms;
 using static GUI.FrmMain;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
@@ -35,7 +28,6 @@ namespace GUI
             {
                 panel.BackColor = e.NewColor;
             }
-
         }
         public void Bar(GunaChart chart)
         {
@@ -46,7 +38,6 @@ namespace GUI
                 //Tạo dữ liệu mới
                 var dataset = new GunaBarDataset();
                 chtImportProduct.Datasets.Clear();
-
 
                 if (cbbQuy.SelectedValue.ToString() == "1")
                 {
@@ -87,22 +78,13 @@ namespace GUI
                     dataset.DataPoints.Add("Tháng 11", hoadon.HoaDonThang11()).ToString("C");
                     dataset.DataPoints.Add("Tháng 12", hoadon.HoaDonThang12()).ToString("C");
                 }
-
-
                 dataset.Label = "Tổng tiền";
-
-
-
                 // Thêm tập dữ liệu mới vào biểu đồ.Datasets
                 chart.Datasets.Add(dataset);
                 // Một bản cập nhật đã được thực hiện để hiển thị lại biểu đồ
                 chart.Update();
             }
-            catch (Exception)
-            {
-
-
-            }
+            catch (Exception){}
         }
         public void Barload(GunaChart chart)
         {
@@ -117,59 +99,40 @@ namespace GUI
             LoadDoanhThu();
             LoadTongDoanhThu();
             LoadComBobox();
-            Bar(chtImportProduct);
-           
+            Bar(chtImportProduct);      
         }
         private void LoadComBobox()
         {
             try
             {
-                // Tạo DataTable
                 DataTable quyTable = new DataTable();
-
-                // Thêm cột "Mã quý"
                 quyTable.Columns.Add("MaQuy", typeof(int));
-
-                // Thêm cột "Tên quý"
                 quyTable.Columns.Add("TenQuy", typeof(string));
 
-                // Thêm dữ liệu vào DataTable (giả sử có 4 quý)
                 quyTable.Rows.Add(0, "All");
                 quyTable.Rows.Add(1, "Quý 1");
                 quyTable.Rows.Add(2, "Quý 2");
                 quyTable.Rows.Add(3, "Quý 3");
                 quyTable.Rows.Add(4, "Quý 4");
 
-                // Tạo DataView từ DataTable
                 DataView quyDataView = new DataView(quyTable);
-
-                // Gán DataView làm nguồn dữ liệu cho ComboBox
                 cbbQuy.DataSource = quyDataView;
 
-                // Thiết lập giá trị hiển thị và giá trị thực tế
                 cbbQuy.DisplayMember = "TenQuy";
                 cbbQuy.ValueMember = "MaQuy";
                 cbbQuy.SelectedIndex = 0;
             }
-            catch (Exception)
-            {
-
-               
-            }
-           
+            catch (Exception) { }        
         }
-
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             Barload(chtImportProduct);
             FrmBaoCaoThongKe_Load(sender,e);
         }
-
         private void cbbQuy_SelectedIndexChanged(object sender, EventArgs e)
         {
             Bar(chtImportProduct);
         }
-
         private void LoadTopKhachHang()
         {
             try
@@ -187,10 +150,7 @@ namespace GUI
                     label_tenKH.Text = "Chưa cập nhập";
                 }
             }
-            catch (Exception)
-            {
-
-            }        
+            catch (Exception) { }        
         }
         private void loadNhanVien()
         {
@@ -209,15 +169,10 @@ namespace GUI
                     label_tennhanvien.Text = "Chưa cập nhập";
                 }
             }
-            catch (Exception)
-            {
-          
-            }
-            
+            catch (Exception) { }          
         }
         private void LoadDoanhThu()
         {
-
             try
             {
                 strthongke = hoadon.TinhTongDoanhThuSoVoiThangTruoc();
@@ -240,9 +195,7 @@ namespace GUI
                     label_doanhthuthangnay.Text = Convert.ToString(danhthusovoithangtruoc.ToString("C"));
                 }
             }
-            catch (Exception)
-            {  
-            }
+            catch (Exception) { }
         }
         private void LoadTongDoanhThu()
         {
@@ -251,10 +204,7 @@ namespace GUI
                 double tongdoanhthu = double.Parse(hoadon.TinhTongDoanhThu());
                 label_tongdoanhthu.Text = Convert.ToString(tongdoanhthu.ToString("C"));
             }
-            catch (Exception)
-            {
-            }
-           
+            catch (Exception) { }
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 namespace GUI
@@ -14,19 +7,16 @@ namespace GUI
     {
         BUS_HoaDon hoadon = new BUS_HoaDon();
 
-     
         public FrmTrangChu()
         {
             InitializeComponent();
       
         }
-
         private void FrmTrangChu_Load(object sender, EventArgs e)
         {
             LoadTrangChu();
         }
 
- 
         public void RefreshForm()
         {
             LoadTrangChu();
@@ -45,7 +35,6 @@ namespace GUI
            
         }
         private int number = 1;
-
         private void loadanh()
         {
             if(number == 6)
@@ -59,7 +48,5 @@ namespace GUI
         {
             loadanh();
         }
-
-       
     }
 }

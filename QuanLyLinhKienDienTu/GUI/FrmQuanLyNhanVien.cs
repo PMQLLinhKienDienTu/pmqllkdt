@@ -1,19 +1,10 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using static GUI.FrmMain;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
@@ -38,18 +29,16 @@ namespace GUI
             {
                 panel.BackColor = e.NewColor;
             }
-
         }
         private void FrmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
             gvNhanVien.DataSource = busEmployee.DanhSachNhanVien();
             LoadGridView();
             SetValue(true, false);
-            txtHoTen.Focus();          
+            txtHoTen.Focus();
         }
         private void LoadGridView()
         {
-
             gvNhanVien.Columns[0].HeaderText = "Mã NV";
             gvNhanVien.Columns[1].HeaderText = "Họ tên NV";
             gvNhanVien.Columns[2].HeaderText = "Tài khoản";
@@ -62,6 +51,7 @@ namespace GUI
             {
                 item.DividerWidth = 1;
             }
+
             gvNhanVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvNhanVien.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvNhanVien.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -118,13 +108,9 @@ namespace GUI
                 btnSua.Enabled = !param;// !param == true
                 btnXoa.Enabled = !param;// !param == true
             }
-
             radNhanVien.Checked = true;
             radLam.Checked = true;
         }
-    
-       
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             SetValue(true, false);
@@ -144,7 +130,6 @@ namespace GUI
                 gvNhanVien.DataSource = data;
             }
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txtTaiKhoan.Text != "" && txtEmail.Text != "" && txtHoTen.Text != ""
@@ -172,7 +157,6 @@ namespace GUI
             }
             else MsgBox("Thiếu trường thông tin!", true);
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (txtTaiKhoan.Text != "" && txtEmail.Text != "" && txtHoTen.Text != ""
@@ -210,7 +194,6 @@ namespace GUI
                     MsgBox("Xóa nhân viên không thành công", true);
             }
         }
-
         private void gvNhanVien_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             btnSua.Enabled = btnXoa.Enabled = radLam.Enabled = true;

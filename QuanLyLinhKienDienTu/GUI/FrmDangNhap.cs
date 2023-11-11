@@ -1,12 +1,6 @@
 ﻿using BUS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -19,7 +13,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
             panel_login.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -32,9 +25,7 @@ namespace GUI
                 strpass = Properties.Settings.Default.mạtkhau;
                 tglRememberMe.Checked = true;
             }
-
         }
-
         // Di chuyển tùy ý khung đăng nhập cho panel 
         private void panel_login_MouseDown(object sender, MouseEventArgs e)
         {
@@ -49,7 +40,6 @@ namespace GUI
                 this.DefWndProc(ref msg);
             }
         }
-
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_taikhoan.Text) && String.IsNullOrEmpty(txt_matkhau.Text))
@@ -57,24 +47,18 @@ namespace GUI
                 MessageBox.Show("TÀI KHOẢN VÀ MẬT KHẨU KHÔNG ĐƯỢC ĐỂ TRỐNG");
                 return;
             }
-
             if (String.IsNullOrEmpty(txt_taikhoan.Text))
             {
                 MessageBox.Show("TÀI KHOẢN KHÔNG ĐƯỢC ĐỂ TRỐNG");
                 return;
-            }    
-                
-
+            }              
             if (String.IsNullOrEmpty(txt_matkhau.Text))
             {
                 MessageBox.Show("MẬT KHẨU KHÔNG ĐƯỢC ĐỂ TRỐNG");
                 return;
-            }
-
-           
+            }       
             if (txt_taikhoan.Text != "" && txt_matkhau.Text != "")
             {
-
                 if (busEmployee.Login(txt_taikhoan.Text, txt_matkhau.Text))
                 {
                     Properties.Settings.Default.isSave = tglRememberMe.Checked;
@@ -98,8 +82,6 @@ namespace GUI
                     txt_taikhoan.Focus();
                 }
             }
-        }
-
-       
+        }     
     }
 }
