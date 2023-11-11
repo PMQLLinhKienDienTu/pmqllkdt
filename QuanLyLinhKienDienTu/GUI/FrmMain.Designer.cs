@@ -197,20 +197,22 @@
             // lb_name
             // 
             this.lb_name.AutoSize = true;
+            this.lb_name.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_name.ForeColor = System.Drawing.Color.Yellow;
             this.lb_name.Location = new System.Drawing.Point(3, 133);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(49, 16);
+            this.lb_name.Size = new System.Drawing.Size(61, 19);
             this.lb_name.TabIndex = 0;
             this.lb_name.Text = "Họ tên:";
             // 
             // lb_chucvu
             // 
             this.lb_chucvu.AutoSize = true;
+            this.lb_chucvu.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_chucvu.ForeColor = System.Drawing.Color.Yellow;
             this.lb_chucvu.Location = new System.Drawing.Point(3, 161);
             this.lb_chucvu.Name = "lb_chucvu";
-            this.lb_chucvu.Size = new System.Drawing.Size(57, 16);
+            this.lb_chucvu.Size = new System.Drawing.Size(59, 16);
             this.lb_chucvu.TabIndex = 1;
             this.lb_chucvu.Text = "Chức vụ:";
             // 
@@ -297,7 +299,6 @@
             this.btnLogout.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogout.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(30, 30);
             this.btnLogout.Location = new System.Drawing.Point(0, 939);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);

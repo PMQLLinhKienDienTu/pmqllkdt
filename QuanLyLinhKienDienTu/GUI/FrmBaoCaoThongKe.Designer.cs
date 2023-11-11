@@ -29,59 +29,59 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.Charts.WinForms.ChartFont chartFont121 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont122 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont123 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont124 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid46 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick46 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont125 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid47 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick47 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont126 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid48 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel16 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont127 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick48 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont128 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label_tennhanvien = new System.Windows.Forms.Label();
+            this.label_manhanvien = new System.Windows.Forms.Label();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.giam = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label_doanhthuthangnay = new System.Windows.Forms.Label();
+            this.tang = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label_tenKH = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label_maKH = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbbQuy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.chtImportProduct = new Guna.Charts.WinForms.GunaChart();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnlammoi = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label_tongdoanhthu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label_manhanvien = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label_doanhthuthangnay = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label_maKH = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label_tenKH = new System.Windows.Forms.Label();
-            this.label_tennhanvien = new System.Windows.Forms.Label();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.giam = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tang = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnlammoi = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbbQuy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
-            this.guna2GradientPanel3.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tang)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -95,105 +95,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1486, 243);
             this.guna2Panel2.TabIndex = 0;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.cbbQuy);
-            this.guna2Panel1.Controls.Add(this.chtImportProduct);
-            this.guna2Panel1.Controls.Add(this.guna2Panel5);
-            this.guna2Panel1.Controls.Add(this.guna2Panel4);
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1486, 988);
-            this.guna2Panel1.TabIndex = 1;
-            // 
-            // chtImportProduct
-            // 
-            this.chtImportProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            chartFont121.FontName = "Arial";
-            this.chtImportProduct.Legend.LabelFont = chartFont121;
-            this.chtImportProduct.Location = new System.Drawing.Point(10, 243);
-            this.chtImportProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.chtImportProduct.Name = "chtImportProduct";
-            this.chtImportProduct.Size = new System.Drawing.Size(1456, 642);
-            this.chtImportProduct.TabIndex = 4;
-            chartFont122.FontName = "Arial";
-            chartFont122.Size = 30;
-            chartFont122.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chtImportProduct.Title.Font = chartFont122;
-            this.chtImportProduct.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.chtImportProduct.Title.Text = "DANH THU THEO THÁNG";
-            chartFont123.FontName = "Arial";
-            this.chtImportProduct.Tooltips.BodyFont = chartFont123;
-            chartFont124.FontName = "Arial";
-            chartFont124.Size = 9;
-            chartFont124.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chtImportProduct.Tooltips.TitleFont = chartFont124;
-            this.chtImportProduct.XAxes.GridLines = grid46;
-            chartFont125.FontName = "Arial";
-            tick46.Font = chartFont125;
-            this.chtImportProduct.XAxes.Ticks = tick46;
-            this.chtImportProduct.YAxes.GridLines = grid47;
-            chartFont126.FontName = "Arial";
-            tick47.Font = chartFont126;
-            this.chtImportProduct.YAxes.Ticks = tick47;
-            this.chtImportProduct.ZAxes.GridLines = grid48;
-            chartFont127.FontName = "Arial";
-            pointLabel16.Font = chartFont127;
-            this.chtImportProduct.ZAxes.PointLabels = pointLabel16;
-            chartFont128.FontName = "Arial";
-            tick48.Font = chartFont128;
-            this.chtImportProduct.ZAxes.Ticks = tick48;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
-            this.guna2Panel5.Controls.Add(this.btnlammoi);
-            this.guna2Panel5.Controls.Add(this.label_tongdoanhthu);
-            this.guna2Panel5.Controls.Add(this.label1);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel5.Location = new System.Drawing.Point(10, 885);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(1456, 103);
-            this.guna2Panel5.TabIndex = 3;
-            // 
-            // label_tongdoanhthu
-            // 
-            this.label_tongdoanhthu.AutoSize = true;
-            this.label_tongdoanhthu.BackColor = System.Drawing.Color.Transparent;
-            this.label_tongdoanhthu.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tongdoanhthu.ForeColor = System.Drawing.Color.Red;
-            this.label_tongdoanhthu.Location = new System.Drawing.Point(304, 46);
-            this.label_tongdoanhthu.Name = "label_tongdoanhthu";
-            this.label_tongdoanhthu.Size = new System.Drawing.Size(35, 38);
-            this.label_tongdoanhthu.TabIndex = 0;
-            this.label_tongdoanhthu.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(30, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng doanh thu: ";
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel4.Location = new System.Drawing.Point(1466, 243);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(20, 745);
-            this.guna2Panel4.TabIndex = 2;
             // 
             // guna2GradientPanel2
             // 
@@ -211,6 +112,18 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(342, 176);
             this.guna2GradientPanel2.TabIndex = 5;
             // 
+            // label_tennhanvien
+            // 
+            this.label_tennhanvien.BackColor = System.Drawing.Color.Transparent;
+            this.label_tennhanvien.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tennhanvien.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_tennhanvien.Location = new System.Drawing.Point(3, 124);
+            this.label_tennhanvien.Name = "label_tennhanvien";
+            this.label_tennhanvien.Size = new System.Drawing.Size(230, 52);
+            this.label_tennhanvien.TabIndex = 6;
+            this.label_tennhanvien.Text = "Nguyễn Thành Thiện";
+            this.label_tennhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label_manhanvien
             // 
             this.label_manhanvien.BackColor = System.Drawing.Color.Transparent;
@@ -222,6 +135,19 @@
             this.label_manhanvien.TabIndex = 4;
             this.label_manhanvien.Text = "XYZ";
             this.label_manhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::GUI.Properties.Resources.new_employee;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(223, 75);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(119, 91);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 3;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -251,6 +177,32 @@
             this.guna2GradientPanel3.Size = new System.Drawing.Size(342, 176);
             this.guna2GradientPanel3.TabIndex = 6;
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(18, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 44);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "VNĐ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // giam
+            // 
+            this.giam.BackColor = System.Drawing.Color.Transparent;
+            this.giam.FillColor = System.Drawing.Color.Transparent;
+            this.giam.Image = global::GUI.Properties.Resources.decrease;
+            this.giam.ImageRotate = 0F;
+            this.giam.Location = new System.Drawing.Point(234, 71);
+            this.giam.Name = "giam";
+            this.giam.Size = new System.Drawing.Size(105, 101);
+            this.giam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.giam.TabIndex = 5;
+            this.giam.TabStop = false;
+            this.giam.Visible = false;
+            // 
             // label_doanhthuthangnay
             // 
             this.label_doanhthuthangnay.BackColor = System.Drawing.Color.Transparent;
@@ -262,6 +214,20 @@
             this.label_doanhthuthangnay.TabIndex = 4;
             this.label_doanhthuthangnay.Text = "4,000,000";
             this.label_doanhthuthangnay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tang
+            // 
+            this.tang.BackColor = System.Drawing.Color.Transparent;
+            this.tang.FillColor = System.Drawing.Color.Transparent;
+            this.tang.Image = global::GUI.Properties.Resources.trend;
+            this.tang.ImageRotate = 0F;
+            this.tang.Location = new System.Drawing.Point(234, 71);
+            this.tang.Name = "tang";
+            this.tang.Size = new System.Drawing.Size(98, 101);
+            this.tang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tang.TabIndex = 3;
+            this.tang.TabStop = false;
+            this.tang.Visible = false;
             // 
             // label6
             // 
@@ -290,6 +256,32 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(342, 176);
             this.guna2GradientPanel1.TabIndex = 4;
             // 
+            // label_tenKH
+            // 
+            this.label_tenKH.BackColor = System.Drawing.Color.Transparent;
+            this.label_tenKH.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tenKH.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_tenKH.Location = new System.Drawing.Point(3, 114);
+            this.label_tenKH.Name = "label_tenKH";
+            this.label_tenKH.Size = new System.Drawing.Size(216, 52);
+            this.label_tenKH.TabIndex = 5;
+            this.label_tenKH.Text = "Nguyễn Thành Thiện";
+            this.label_tenKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.customer;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(225, 71);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 87);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // label_maKH
             // 
             this.label_maKH.BackColor = System.Drawing.Color.Transparent;
@@ -313,128 +305,33 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "TOP KHÁCH HÀNG";
             // 
-            // label_tenKH
+            // guna2Panel1
             // 
-            this.label_tenKH.BackColor = System.Drawing.Color.Transparent;
-            this.label_tenKH.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tenKH.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_tenKH.Location = new System.Drawing.Point(3, 114);
-            this.label_tenKH.Name = "label_tenKH";
-            this.label_tenKH.Size = new System.Drawing.Size(216, 52);
-            this.label_tenKH.TabIndex = 5;
-            this.label_tenKH.Text = "Nguyễn Thành Thiện";
-            this.label_tenKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.cbbQuy);
+            this.guna2Panel1.Controls.Add(this.chtImportProduct);
+            this.guna2Panel1.Controls.Add(this.guna2Panel5);
+            this.guna2Panel1.Controls.Add(this.guna2Panel4);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1486, 988);
+            this.guna2Panel1.TabIndex = 1;
             // 
-            // label_tennhanvien
+            // label2
             // 
-            this.label_tennhanvien.BackColor = System.Drawing.Color.Transparent;
-            this.label_tennhanvien.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tennhanvien.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_tennhanvien.Location = new System.Drawing.Point(3, 124);
-            this.label_tennhanvien.Name = "label_tennhanvien";
-            this.label_tennhanvien.Size = new System.Drawing.Size(230, 52);
-            this.label_tennhanvien.TabIndex = 6;
-            this.label_tennhanvien.Text = "Nguyễn Thành Thiện";
-            this.label_tennhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::GUI.Properties.Resources.new_employee;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(223, 75);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(119, 91);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 3;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // giam
-            // 
-            this.giam.BackColor = System.Drawing.Color.Transparent;
-            this.giam.FillColor = System.Drawing.Color.Transparent;
-            this.giam.Image = global::GUI.Properties.Resources.decrease;
-            this.giam.ImageRotate = 0F;
-            this.giam.Location = new System.Drawing.Point(234, 71);
-            this.giam.Name = "giam";
-            this.giam.Size = new System.Drawing.Size(105, 101);
-            this.giam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.giam.TabIndex = 5;
-            this.giam.TabStop = false;
-            this.giam.Visible = false;
-            // 
-            // tang
-            // 
-            this.tang.BackColor = System.Drawing.Color.Transparent;
-            this.tang.FillColor = System.Drawing.Color.Transparent;
-            this.tang.Image = global::GUI.Properties.Resources.trend;
-            this.tang.ImageRotate = 0F;
-            this.tang.Location = new System.Drawing.Point(234, 71);
-            this.tang.Name = "tang";
-            this.tang.Size = new System.Drawing.Size(98, 101);
-            this.tang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tang.TabIndex = 3;
-            this.tang.TabStop = false;
-            this.tang.Visible = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.customer;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(225, 71);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 87);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 2;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(18, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 44);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "VNĐ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnlammoi
-            // 
-            this.btnlammoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnlammoi.Animated = true;
-            this.btnlammoi.BorderRadius = 10;
-            this.btnlammoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnlammoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnlammoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnlammoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnlammoi.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnlammoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnlammoi.FillColor = System.Drawing.Color.Fuchsia;
-            this.btnlammoi.FillColor2 = System.Drawing.Color.Aqua;
-            this.btnlammoi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnlammoi.ForeColor = System.Drawing.Color.White;
-            this.btnlammoi.Location = new System.Drawing.Point(1198, 29);
-            this.btnlammoi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnlammoi.Name = "btnlammoi";
-            this.btnlammoi.Size = new System.Drawing.Size(180, 55);
-            this.btnlammoi.TabIndex = 42;
-            this.btnlammoi.Text = "Làm mới";
-            this.btnlammoi.Click += new System.EventHandler(this.btnlammoi_Click);
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 243);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(10, 745);
-            this.guna2Panel3.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(78, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 26);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Theo quý:";
             // 
             // cbbQuy
             // 
@@ -452,17 +349,122 @@
             this.cbbQuy.TabIndex = 5;
             this.cbbQuy.SelectedIndexChanged += new System.EventHandler(this.cbbQuy_SelectedIndexChanged);
             // 
-            // label2
+            // chtImportProduct
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(78, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 26);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Theo quý:";
+            this.chtImportProduct.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chtImportProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            chartFont1.FontName = "Arial";
+            this.chtImportProduct.Legend.LabelFont = chartFont1;
+            this.chtImportProduct.Location = new System.Drawing.Point(34, 243);
+            this.chtImportProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.chtImportProduct.Name = "chtImportProduct";
+            this.chtImportProduct.Size = new System.Drawing.Size(1418, 642);
+            this.chtImportProduct.TabIndex = 4;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 30;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chtImportProduct.Title.Font = chartFont2;
+            this.chtImportProduct.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.chtImportProduct.Title.Text = "DANH THU THEO THÁNG";
+            chartFont3.FontName = "Arial";
+            this.chtImportProduct.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chtImportProduct.Tooltips.TitleFont = chartFont4;
+            this.chtImportProduct.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chtImportProduct.XAxes.Ticks = tick1;
+            this.chtImportProduct.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chtImportProduct.YAxes.Ticks = tick2;
+            this.chtImportProduct.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chtImportProduct.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chtImportProduct.ZAxes.Ticks = tick3;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel5.Controls.Add(this.btnlammoi);
+            this.guna2Panel5.Controls.Add(this.label_tongdoanhthu);
+            this.guna2Panel5.Controls.Add(this.label1);
+            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel5.Location = new System.Drawing.Point(34, 885);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(1418, 103);
+            this.guna2Panel5.TabIndex = 3;
+            // 
+            // btnlammoi
+            // 
+            this.btnlammoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnlammoi.Animated = true;
+            this.btnlammoi.BorderRadius = 10;
+            this.btnlammoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnlammoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnlammoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnlammoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnlammoi.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnlammoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnlammoi.FillColor = System.Drawing.Color.Red;
+            this.btnlammoi.FillColor2 = System.Drawing.Color.Blue;
+            this.btnlammoi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnlammoi.ForeColor = System.Drawing.Color.White;
+            this.btnlammoi.Location = new System.Drawing.Point(1160, 29);
+            this.btnlammoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlammoi.Name = "btnlammoi";
+            this.btnlammoi.Size = new System.Drawing.Size(180, 55);
+            this.btnlammoi.TabIndex = 42;
+            this.btnlammoi.Text = "Làm mới";
+            this.btnlammoi.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.btnlammoi.Click += new System.EventHandler(this.btnlammoi_Click);
+            // 
+            // label_tongdoanhthu
+            // 
+            this.label_tongdoanhthu.AutoSize = true;
+            this.label_tongdoanhthu.BackColor = System.Drawing.Color.Transparent;
+            this.label_tongdoanhthu.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tongdoanhthu.ForeColor = System.Drawing.Color.Red;
+            this.label_tongdoanhthu.Location = new System.Drawing.Point(304, 46);
+            this.label_tongdoanhthu.Name = "label_tongdoanhthu";
+            this.label_tongdoanhthu.Size = new System.Drawing.Size(35, 38);
+            this.label_tongdoanhthu.TabIndex = 0;
+            this.label_tongdoanhthu.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(30, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tổng doanh thu: ";
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel4.Location = new System.Drawing.Point(1452, 243);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(34, 745);
+            this.guna2Panel4.TabIndex = 2;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(2)))), ((int)(((byte)(22)))));
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 243);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(34, 745);
+            this.guna2Panel3.TabIndex = 1;
             // 
             // FrmBaoCaoThongKe
             // 
@@ -476,17 +478,17 @@
             this.Text = "FrmBaoCaoThongKe";
             this.Load += new System.EventHandler(this.FrmBaoCaoThongKe_Load);
             this.guna2Panel2.ResumeLayout(false);
+            this.guna2GradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.guna2GradientPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.giam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tang)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
-            this.guna2GradientPanel2.ResumeLayout(false);
-            this.guna2GradientPanel3.ResumeLayout(false);
-            this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

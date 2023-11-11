@@ -200,7 +200,7 @@
             this.btn_dangnhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_dangnhap.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_dangnhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_dangnhap.FillColor = System.Drawing.Color.Aqua;
+            this.btn_dangnhap.FillColor = System.Drawing.Color.Red;
             this.btn_dangnhap.FillColor2 = System.Drawing.Color.Blue;
             this.btn_dangnhap.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btn_dangnhap.ForeColor = System.Drawing.Color.White;

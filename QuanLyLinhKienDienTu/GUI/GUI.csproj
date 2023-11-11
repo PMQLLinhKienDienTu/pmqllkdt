@@ -137,12 +137,6 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQuanLyDonDatHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQuanLyDonDatHang.Designer.cs">
-      <DependentUpon>FrmQuanLyDonDatHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuanLyDonDatHang.resx">
-      <DependentUpon>FrmQuanLyDonDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyKhachHang.resx">
       <DependentUpon>FrmQuanLyKhachHang.cs</DependentUpon>
@@ -300,6 +291,8 @@
     <Content Include="ImageTrangChu\4.jpg" />
     <Content Include="ImageTrangChu\5.jpg" />
     <Content Include="ImageTrangChu\6.jpg" />
+    <None Include="Resources\refresh-arrow.png" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\decrease.png" />
     <None Include="Resources\customer.png" />
     <None Include="Resources\trend.png" />

@@ -1,36 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.IO;
 using BUS;
-using System.Management.Instrumentation;
 using DTO;
-using System.Xml.Linq;
 using static GUI.FrmMain;
-using DAL;
 
 namespace GUI
 {
     public partial class FrmQuanLySanPham : Form
     {
-        
 
-        private string fileAddress;
-        private byte[] img; // mã hóa hình ảnh lưu trử
         BUS_SanPham bus_sanpham = new BUS_SanPham();
         BUS_PhanLoaiSanPham busloai = new BUS_PhanLoaiSanPham();
-        DTO_SanPham dtosanpham;
-
         BUS_NhanVien busEmployee = new BUS_NhanVien();
 
+        DTO_SanPham dtosanpham;
 
         private string[] Danhsachloaisp;
         private string[] DanhsachloaispSearh;
@@ -40,6 +26,8 @@ namespace GUI
         private string taikhoan;
         private char separator = '|';
         private string[] strlist;
+        private string fileAddress;
+        private byte[] img; // mã hóa hình ảnh lưu trử
 
         public FrmQuanLySanPham(string taikhoan)
         {
@@ -49,13 +37,12 @@ namespace GUI
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
-            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2, guna2Panel3, guna2Panel4,guna2Panel5 };
+            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2, guna2Panel3, guna2Panel4, guna2Panel5 };
 
             foreach (var panel in panels)
             {
                 panel.BackColor = e.NewColor;
-            }     
-
+            }
         }
 
         private void FrmQuanLySanPham_Load(object sender, EventArgs e)
@@ -68,7 +55,6 @@ namespace GUI
             LoadComboBoxTK();
             loadthongtinnhanvien();
         }
-
         private void LoadGridView()
         {
 
@@ -85,7 +71,6 @@ namespace GUI
             {
                 item.DividerWidth = 1;
             }
-           
 
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             imgCol = (DataGridViewImageColumn)gvSanpham.Columns[5];
@@ -105,21 +90,18 @@ namespace GUI
         //Load ảnh mặt định
         private void loadanh()
         {
-
-
-            
         }
         private void loadthongtinnhanvien()
         {
             str = busEmployee.LayNameChucVuNhanVien(taikhoan);
             strlist = str.Split(separator);
-         
+
             string chucvu = strlist[1].Trim();
 
             if (chucvu == "1")
             {
                 btnLoaiLK.Visible = true;
-            }         
+            }
         }
 
         // thiết lặp giá trị
@@ -146,8 +128,6 @@ namespace GUI
                 btnXoa.Enabled = !param;
             }
         }
-
-
         private void MsgBox(string message, bool isError = false)
         {
             if (isError)
@@ -155,14 +135,12 @@ namespace GUI
             else
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         // Kiểm tra số
         private bool CheckIsNummber(string text)
         {
             int s;
             return int.TryParse(text, out s);
         }
-
         //Copy ảnh 
         private Image CloneImage(string path)
         {
@@ -198,19 +176,14 @@ namespace GUI
                 img = ImageToByteArray(pcbProduct);
             }
         }
-
         private void LoadComboBox()
         {
-
             Danhsachloaisp = busloai.DanhsachNameIDLoai();
             cbbLoai.Items.Clear();
             foreach (string item in Danhsachloaisp)
             {
                 cbbLoai.Items.Add(item);
             }
-
-           
-
         }
         private void LoadComboBoxTK()
         {
@@ -221,8 +194,6 @@ namespace GUI
             {
                 cbbTimKiemLoai.Items.Add(item);
             }
-
-
         }
 
         private void btnLoaiLK_Click(object sender, EventArgs e)
@@ -230,12 +201,10 @@ namespace GUI
             FrmQuanLyLoaiSanPham loai = new FrmQuanLyLoaiSanPham();
             loai.Show();
         }
-
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!CheckIsNummber(txtQuantity.Text) || !CheckIsNummber(txtUnitPrice.Text) || !CheckIsNummber(txtImportUnitPrice.Text))
@@ -246,7 +215,6 @@ namespace GUI
                 MsgBox("Vui lòng chọn hình cho sản phẩm!", true);
             else
             {
-
                 tenloaisp = cbbLoai.SelectedItem.ToString();
                 int maloai = busloai.LayIDLoaiSP(tenloaisp);
                 dtosanpham = new DTO_SanPham
@@ -255,10 +223,8 @@ namespace GUI
                     int.Parse(txtQuantity.Text),
                     int.Parse(txtImportUnitPrice.Text),
                     int.Parse(txtUnitPrice.Text),
-
                     ImageToByteArray(pcbProduct),
-                          maloai
-                  ,
+                          maloai,
                     txtNote.Text
                 );
                 if (bus_sanpham.ThemSanPham(dtosanpham))
@@ -281,7 +247,6 @@ namespace GUI
         {
 
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn sửa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -294,7 +259,6 @@ namespace GUI
                     MsgBox("Vui lòng chọn hình!", true);
                 else
                 {
-
                     tenloaisp = cbbLoai.SelectedItem.ToString();
                     int maloai = busloai.LayIDLoaiSP(tenloaisp);
                     dtosanpham = new DTO_SanPham
@@ -306,9 +270,8 @@ namespace GUI
                         int.Parse(txtUnitPrice.Text),
 
                         ImageToByteArray(pcbProduct),
-                              maloai
-                      ,
-                        txtNote.Text
+                              maloai,
+                              txtNote.Text
                     );
                     if (bus_sanpham.SuaSanPham(dtosanpham))
                     {
@@ -323,7 +286,6 @@ namespace GUI
                 }
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa không ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -338,7 +300,6 @@ namespace GUI
                     MsgBox("Xóa không thành công!");
             }
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             name = txtSearch.Text.Trim();
@@ -353,18 +314,15 @@ namespace GUI
                 gvSanpham.DataSource = data;
             }
         }
-
         private void btnLammoi_Click(object sender, EventArgs e)
         {
             SetValue(true, false);
             FrmQuanLySanPham_Load(sender, e);
         }
-
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void cbbTimKiemLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
             string loaiyk = cbbTimKiemLoai.SelectedItem.ToString();
@@ -379,15 +337,14 @@ namespace GUI
                 gvSanpham.DataSource = data;
             }
         }
-
         private void gvSanpham_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (gvSanpham.Rows.Count > 0)
             {
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
-
                 txtId.ReadOnly = true;
+
                 txtId.Text = gvSanpham.CurrentRow.Cells[0].Value.ToString();
                 txtName.Text = gvSanpham.CurrentRow.Cells[1].Value.ToString();
                 txtQuantity.Text = gvSanpham.CurrentRow.Cells[2].Value.ToString();
@@ -397,7 +354,6 @@ namespace GUI
                 pcbProduct.Image = Image.FromStream(memoryStream);
                 cbbLoai.SelectedItem = gvSanpham.CurrentRow.Cells[6].Value.ToString();
                 txtNote.Text = gvSanpham.CurrentRow.Cells[7].Value.ToString();
-
             }
         }
 

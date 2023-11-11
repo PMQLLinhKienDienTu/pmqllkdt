@@ -1,18 +1,10 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
 using static GUI.FrmMain;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
@@ -36,7 +28,6 @@ namespace GUI
             {
                 panel.BackColor = e.NewColor;
             }
-
         }
 
         private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
@@ -45,7 +36,6 @@ namespace GUI
             LoadGridView();
             SetValue(true, false);
             txtHoTen.Focus();
-
         }
         private void LoadGridView()
         {
@@ -55,7 +45,6 @@ namespace GUI
             gvKhachhang.Columns[2].HeaderText = "Địa chỉ";
             gvKhachhang.Columns[3].HeaderText = "Email";
             gvKhachhang.Columns[4].HeaderText = "Số điện thoại";
-
 
             foreach (DataGridViewColumn item in gvKhachhang.Columns)
             {
@@ -76,7 +65,6 @@ namespace GUI
             else
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         //Thiết lặt thao tác
         private void SetValue(bool param, bool isLoad)
         {
@@ -97,10 +85,8 @@ namespace GUI
             {
                 btnSua.Enabled = !param;// !param == true
                 btnXoa.Enabled = !param;// !param == true
-            }
-     
+            }  
         }
-
         // kiểm tra Email có giá trị
         private bool IsValidEmail(string email)
         {
@@ -114,10 +100,9 @@ namespace GUI
                 return false;
             }
         }      
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            SetValue(true, false);
+           
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -142,7 +127,6 @@ namespace GUI
             }
             else MsgBox("Thiếu trường thông tin!", true);
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa khách hàng này không", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -159,7 +143,6 @@ namespace GUI
                     MsgBox("Xóa khách hàng không thành công", true);
             }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (txtDiaChi.Text != "" && txtEmail.Text != "" && txtHoTen.Text != ""
@@ -178,7 +161,6 @@ namespace GUI
             }
             else MsgBox("Thiếu trường thông tin!", true);
         }
-
         private void txtTimKiemKhachHang_TextChanged(object sender, EventArgs e)
         {
             name = txtTimKiemKhachHang.Text.Trim();
@@ -193,7 +175,6 @@ namespace GUI
                 gvKhachhang.DataSource = data;
             }
         }
-
         private void gvKhachhang_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             btnSua.Enabled = btnXoa.Enabled = true;
@@ -201,6 +182,11 @@ namespace GUI
             txtDiaChi.Text = gvKhachhang.CurrentRow.Cells[2].Value.ToString();
             txtEmail.Text = gvKhachhang.CurrentRow.Cells[3].Value.ToString();
             txtSoDienThoai.Text = gvKhachhang.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            SetValue(true, false);
         }
     }
 }

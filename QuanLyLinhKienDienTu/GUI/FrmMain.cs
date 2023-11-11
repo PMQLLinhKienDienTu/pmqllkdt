@@ -1,19 +1,9 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using TheArtOfDevHtmlRenderer.Adapters;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -22,23 +12,18 @@ namespace GUI
         string email = "";
         string taikhoan;
         private string fileAddress, str;
-
         private char separator = '|';
         private string[] strlist;
-
         private byte[] img; // mã hóa hình ảnh lưu trử
+
         BUS_NhanVien busEmployee = new BUS_NhanVien();
 
         FrmTrangChu frmTrangChu = new FrmTrangChu();
         FrmQuanLyNhanVien FrmQuanLyNhanVien = new FrmQuanLyNhanVien();
         FrmQuanLySanPham frmQuanLySanPham;
         FrmQuanLyKhachHang FrmQuanLyKhachHang = new FrmQuanLyKhachHang();
-        FrmQuanLyDonDatHang FrmQuanLyDonDatHang = new FrmQuanLyDonDatHang();
         FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe();
-
-        FrmQuanLyLoaiSanPham FrmQuanLyLoai = new FrmQuanLyLoaiSanPham();
         FrmThongTinTaiKhoan FrmThongTinTaiKhoan;
-        FrmQuanLySanPham FrmQuanLySanPham;
 
         DTO_NhanVien dtonhanvien;
         
@@ -54,9 +39,7 @@ namespace GUI
             {
                 btnNhanVien.Visible = false;
                 btnDoanhThu.Visible = false;
-
                 btn_TrangChu.Checked = true;
-
                 frmTrangChu.TopLevel = false;
                 pnlBody.Controls.Add(frmTrangChu);
                 frmTrangChu.Dock = DockStyle.Fill;
@@ -65,7 +48,6 @@ namespace GUI
             else
             {
                 btn_TrangChu.Checked = true;
-
                 frmTrangChu.TopLevel = false;
                 pnlBody.Controls.Add(frmTrangChu);
                 frmTrangChu.Dock = DockStyle.Fill;
@@ -73,11 +55,10 @@ namespace GUI
 
             }
             ////Khởi tạo tài khoản accout và Bán hoàng
-            ///
             email = busEmployee.LayMailNhanVien(taikhoan);
             FrmThongTinTaiKhoan = new FrmThongTinTaiKhoan(email,taikhoan);
             frmQuanLySanPham = new FrmQuanLySanPham(taikhoan);
-            //fBill = new frmHoadon(email);
+
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -95,8 +76,6 @@ namespace GUI
             {
                 this.Close();
             }
-
-
         }
         // Thoát phần mềm 
         private void btnExit_Click(object sender, EventArgs e)
@@ -115,7 +94,6 @@ namespace GUI
             // Làm mới lại form
             frmTrangChu.RefreshForm();
         }
-
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             pnlBody.Controls.Clear();
@@ -125,7 +103,6 @@ namespace GUI
             frmQuanLySanPham.Show();
 
         }
-
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             pnlBody.Controls.Clear();
@@ -134,7 +111,6 @@ namespace GUI
             FrmQuanLyKhachHang.Dock = DockStyle.Fill;
             FrmQuanLyKhachHang.Show();
         }
-
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
             pnlBody.Controls.Clear();
@@ -155,7 +131,7 @@ namespace GUI
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            FrmBanHang FrmBanHang = new FrmBanHang(email);
+            FrmBanHang FrmBanHang = new FrmBanHang(email,taikhoan);
             pnlBody.Controls.Clear();
             FrmBanHang.TopLevel = false;
             pnlBody.Controls.Add(FrmBanHang);
@@ -170,7 +146,6 @@ namespace GUI
             FrmThongTinTaiKhoan.Dock = DockStyle.Fill;
             FrmThongTinTaiKhoan.Show();
         }
-
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát phầm mềm không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -199,7 +174,7 @@ namespace GUI
         {
             str = busEmployee.LayNameChucVuNhanVien(taikhoan);
             strlist = str.Split(separator);
-            lb_name.Text = "Họ tên: " + strlist[0].Trim();
+            lb_name.Text = strlist[0].Trim();
             string chucvu = strlist[1].Trim();
 
             if (chucvu == "1")
@@ -211,7 +186,6 @@ namespace GUI
                 chucvu = "Nhân viên";
             }
             lb_chucvu.Text = "Chức vụ: " + chucvu;
-
         }
 
         //Copy ảnh 
@@ -248,7 +222,6 @@ namespace GUI
                 img = ImageToByteArray(pic_profile);
             }
         }
-
         private void MsgBox(string message, bool isError = false)
         {
             if (isError)
@@ -256,7 +229,6 @@ namespace GUI
             else
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void sw_nen_CheckedChanged(object sender, EventArgs e)
         {
             Color dark = Color.FromArgb(9, 2, 22);
@@ -271,15 +243,13 @@ namespace GUI
                 ColorChangeEventProvider.OnColorChanged(orin);
             }
             else
-            {
-               
+            { 
                 guna2Panel1.BackColor = dark;
                 guna2Panel2.BackColor = dark;
                 ColorChangeEventProvider.OnColorChanged(dark);
             }
 
         }
-
         private void pic_edit_Click(object sender, EventArgs e)
         {
             OpenImage();
@@ -305,7 +275,6 @@ namespace GUI
                 ColorChanged?.Invoke(null, new ColorChangedEventArgs(newColor));
             }
         }
-
         private void guna2Panel2_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -319,11 +288,9 @@ namespace GUI
                 this.DefWndProc(ref msg);
             }
         }
-
         public class ColorChangedEventArgs : EventArgs
         {
             public Color NewColor { get; }
-
             public ColorChangedEventArgs(Color newColor)
             {
                 NewColor = newColor;

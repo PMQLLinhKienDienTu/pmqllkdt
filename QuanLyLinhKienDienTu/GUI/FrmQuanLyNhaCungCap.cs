@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 namespace GUI
@@ -17,7 +10,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-
         private void FrmQuanLyNhaCungCap_Load(object sender, EventArgs e)
         {
             this.LoadData();
@@ -45,7 +37,6 @@ namespace GUI
             {
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
-
             }
             else
             {
@@ -53,7 +44,6 @@ namespace GUI
                 btnXoa.Enabled = !param;// !param == true
             }
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
@@ -68,11 +58,8 @@ namespace GUI
                 else
                     MessageBox.Show("Thêm thất bại");
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -93,15 +80,13 @@ namespace GUI
                 }
 
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
+
         }
 
         private void gvNhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnSua.Enabled = btnXoa.Enabled = true;
-
             try
             {
                 if (gvNhaCungCap.Rows.Count > 0)
@@ -113,11 +98,8 @@ namespace GUI
                     txtSDT.Text = gvNhaCungCap.CurrentRow.Cells[4].Value.ToString();
                 }
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
@@ -135,16 +117,12 @@ namespace GUI
                 else
                     MessageBox.Show("Sửa thất bại");
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             SetValue(true, false);
         }
-
         private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

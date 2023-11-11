@@ -1,16 +1,8 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using static GUI.FrmMain;
 using DAL;
 
@@ -27,6 +19,7 @@ namespace GUI
         BUS_NhaCungCap busnhacungcap = new BUS_NhaCungCap();
         BUS_ChiTietNhapHang busctnhaphang = new BUS_ChiTietNhapHang();
         BUS_NhapHang busnhanhang = new BUS_NhapHang();
+
         DTO_HoaDon dtoHoadon;
         DTO_NhapHang dtonhanhang;
         DTO_ChiTietNhapHang dtoctnhaphang;
@@ -35,25 +28,20 @@ namespace GUI
         //Lin Q
         QLLKDTDataContext qllkdt = new QLLKDTDataContext();
 
-
         private string[] danhsachKH, danhsachSP;
         private DateTime dateTime = new DateTime();
-
         private string tensanpham, email, str;
         private char separator = '|';
         private string[] strlist;
-        private Color savedColor;
         private Timer timer = new Timer();
-        
+        private string taikhoan;
 
-       
-
-
-        public FrmBanHang(string email)
+        public FrmBanHang(string email, string taikhoan)
         {
             InitializeComponent();
             ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
             this.email = email;
+            this.taikhoan = taikhoan;
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
@@ -67,21 +55,17 @@ namespace GUI
             }
             guna2TabControlBanHang.TabMenuBackColor = e.NewColor;
         }
-
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
             BanHangLoad();
             HoaDonLoad();
             NhapHangLoad();
             LoadSanPhamBanCham();
-            SetValueBanHang(true, false);
-            SetValueNhapHang(true, false);
-
+            loadthongtinnhanvien();
             LoadSanPhamBanCham();
-
+            SetValueBanHang(true, false);
+            SetValueNhapHang(true, false);      
         }
-
-
         private void BanHangLoad()
         {
             txtQuantity.Text = null;
@@ -92,8 +76,18 @@ namespace GUI
             LoadGVCTHoaDon();
             LoadData();
         }
-       
+        private void loadthongtinnhanvien()
+        {
+            str = BUS_NhanVien.LayNameChucVuNhanVien(taikhoan);
+            strlist = str.Split(separator);
 
+            string chucvu = strlist[1].Trim();
+
+            if (chucvu == "1")
+            {
+                picNhaCungCap.Visible = true;
+            }
+        }
         private void LoadSanPhamBanCham()
         {
            
@@ -185,8 +179,6 @@ namespace GUI
                 btnXoaNhap.Enabled = !param;// !param == true
             }
         }
-
-
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             SetValueBanHang(true, false);
@@ -206,13 +198,12 @@ namespace GUI
         {
             double tongtiens = busctnhaphang.GetTongTienNhapHang();
 
-            if (tongtiens  != null)
+            if (tongtiens != null)
             {
                 txtThanhTienNhap.Text = Convert.ToString(tongtiens);
             }
 
         }
-
         private void cboProductNameQuantity_SelectedIndexChanged(object sender, EventArgs e)
         {
             string str = cboProductNameQuantity.SelectedItem.ToString();
@@ -260,7 +251,6 @@ namespace GUI
                 MsgBox("Thêm không thành công", true);
             }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
 
@@ -284,7 +274,6 @@ namespace GUI
                 MsgBox("Sửa sản phẩm không được", true);
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string masp = gvCTHoaDon.CurrentRow.Cells[1].Value.ToString();
@@ -429,9 +418,7 @@ namespace GUI
                 }
             }
             catch (Exception)
-            {
-
-               
+            {              
             }   
         }
         private void btnXoaNhap_Click(object sender, EventArgs e)
@@ -456,13 +443,10 @@ namespace GUI
                 }
             }
             catch (Exception)
-            {
-
-                
+            {              
             }
           
         }
-
         private void gvnhaphang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -475,12 +459,9 @@ namespace GUI
                 }    
             }
             catch (Exception)
-            {
-
-              
+            {          
             }
         }
-
         private void gvCTHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -494,17 +475,13 @@ namespace GUI
                 }    
             }
             catch (Exception)
-            {
-
-                
+            {               
             }
         }
-
         private void btnLamMoiNhap_Click(object sender, EventArgs e)
         {
             SetValueNhapHang(true, false);
         }
-
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
             try
@@ -528,7 +505,6 @@ namespace GUI
                 }
                 else
                     MsgBox("Nhập hàng không thành công", true);
-
             }
             catch (Exception)
             {
@@ -536,9 +512,6 @@ namespace GUI
             }
                 
         }
-
-    
-
         private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
             DateTime selectedDate = dateTimePicker1.Value;
@@ -556,14 +529,12 @@ namespace GUI
                 gvHoaDon.DataSource = data;
             }
         }
-
         private void btnlammoihoadon_Click(object sender, EventArgs e)
         {
             //FrmBanHang_Load(sender,e);
              HoaDonLoad();
     
         }
-
         private void LoadGVCTHoaDon()
         {
             gvCTHoaDon.Columns[0].HeaderText = "Mã CTHD";
@@ -581,7 +552,6 @@ namespace GUI
             gvCTHoaDon.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTHoaDon.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
         }
         private void LoadGVHoaDon()
         {
@@ -602,9 +572,7 @@ namespace GUI
             gvHoaDon.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
         }
-
 
     }
 }
