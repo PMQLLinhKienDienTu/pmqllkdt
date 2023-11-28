@@ -33,5 +33,16 @@ namespace DAL.Properties {
                 return ((string)(this["QL_LINHKIENDIENTUConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ED5PBNKM;Initial Catalog=QL_LINHKIENDIENTU;Persist Security In" +
+            "fo=True;User ID=sa;Password=sa123")]
+        public string QL_LINHKIENDIENTUConnectionString1 {
+            get {
+                return ((string)(this["QL_LINHKIENDIENTUConnectionString1"]));
+            }
+        }
     }
 }

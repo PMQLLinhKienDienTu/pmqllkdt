@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using Guna.Charts.WinForms;
 using static GUI.FrmMain;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -14,11 +15,12 @@ namespace GUI
         private string str, strnv, strthongke;
 
         BUS_HoaDon hoadon = new BUS_HoaDon();
-
-        public FrmBaoCaoThongKe()
+        private string taikhoan;
+        public FrmBaoCaoThongKe(string taikhoan)
         {
             InitializeComponent();
             ColorChangeEventProvider.ColorChanged += ColorChangeEventProvider_ColorChanged;
+            this.taikhoan = taikhoan;
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
@@ -133,6 +135,15 @@ namespace GUI
         {
             Bar(chtImportProduct);
         }
+
+        private void btnInBaoCao_Click(object sender, EventArgs e)
+        {
+            string index = cbbQuy.SelectedValue.ToString();
+            BaoCaoTong bc = new BaoCaoTong(taikhoan, index);
+            bc.CreateDocument();
+            bc.ShowPreview();
+        }
+
         private void LoadTopKhachHang()
         {
             try
