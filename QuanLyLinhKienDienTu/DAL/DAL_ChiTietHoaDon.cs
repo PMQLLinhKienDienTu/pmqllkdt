@@ -126,5 +126,44 @@ namespace DAL
             }
             return false;
         }
+
+        public DataTable LayThongTinChiTietHoaDonSanPham(int ma_cthd)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayThongTinChiTietHoaDonSanPham";
+                cmd.Parameters.AddWithValue("ma_cthd", ma_cthd);
+                DataTable data = new DataTable();
+                data.Load(cmd.ExecuteReader());
+                return data;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+        public DataTable ThongTinNhapKho(int ma)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayThongTinChiTietNhapHangSanPham";
+                cmd.Parameters.AddWithValue("ma", ma);
+                DataTable data = new DataTable();
+                data.Load(cmd.ExecuteReader());
+                return data;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
     }
 }

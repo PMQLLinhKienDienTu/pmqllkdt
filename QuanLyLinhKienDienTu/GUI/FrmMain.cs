@@ -22,7 +22,7 @@ namespace GUI
         FrmQuanLyNhanVien FrmQuanLyNhanVien = new FrmQuanLyNhanVien();
         FrmQuanLySanPham frmQuanLySanPham;
         FrmQuanLyKhachHang FrmQuanLyKhachHang = new FrmQuanLyKhachHang();
-        FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe();
+        
         FrmThongTinTaiKhoan FrmThongTinTaiKhoan;
 
         DTO_NhanVien dtonhanvien;
@@ -113,6 +113,7 @@ namespace GUI
         }
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
+            FrmBaoCaoThongKe FrmBaoCaoThongKe = new FrmBaoCaoThongKe(taikhoan);
             pnlBody.Controls.Clear();
             FrmBaoCaoThongKe.TopLevel = false;
             pnlBody.Controls.Add(FrmBaoCaoThongKe);

@@ -60,7 +60,7 @@ namespace DAL
     #endregion
 		
 		public QLLKDTDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_LINHKIENDIENTUConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_LINHKIENDIENTUConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -178,6 +178,10 @@ namespace DAL
 		
 		private System.Nullable<int> _mahoadon;
 		
+		private System.Nullable<bool> _TrangThai;
+		
+		private System.Nullable<System.DateTime> _NgayTH;
+		
 		private EntityRef<HoaDon> _HoaDon;
 		
 		private EntityRef<SanPham> _SanPham;
@@ -196,6 +200,10 @@ namespace DAL
     partial void OnMaSpChanged();
     partial void OnmahoadonChanging(System.Nullable<int> value);
     partial void OnmahoadonChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
+    partial void OnNgayTHChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayTHChanged();
     #endregion
 		
 		public ChiTietHoaDon()
@@ -313,6 +321,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTH", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayTH
+		{
+			get
+			{
+				return this._NgayTH;
+			}
+			set
+			{
+				if ((this._NgayTH != value))
+				{
+					this.OnNgayTHChanging(value);
+					this.SendPropertyChanging();
+					this._NgayTH = value;
+					this.SendPropertyChanged("NgayTH");
+					this.OnNgayTHChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_ChiTietHoaDon", Storage="_HoaDon", ThisKey="mahoadon", OtherKey="MaHoaDon", IsForeignKey=true)]
 		public HoaDon HoaDon
 		{
@@ -414,7 +462,7 @@ namespace DAL
 		
 		private System.Nullable<int> _SoLuongNhap;
 		
-		private System.Nullable<double> _GiaNhap;
+		private double _GiaNhap;
 		
 		private System.Nullable<int> _MaNhapHang;
 		
@@ -432,7 +480,7 @@ namespace DAL
     partial void OnMaSanPhamChanged();
     partial void OnSoLuongNhapChanging(System.Nullable<int> value);
     partial void OnSoLuongNhapChanged();
-    partial void OnGiaNhapChanging(System.Nullable<double> value);
+    partial void OnGiaNhapChanging(double value);
     partial void OnGiaNhapChanged();
     partial void OnMaNhapHangChanging(System.Nullable<int> value);
     partial void OnMaNhapHangChanged();
@@ -509,8 +557,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaNhap", DbType="Float")]
-		public System.Nullable<double> GiaNhap
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaNhap", DbType="Float NOT NULL")]
+		public double GiaNhap
 		{
 			get
 			{

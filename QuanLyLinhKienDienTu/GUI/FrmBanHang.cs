@@ -5,6 +5,8 @@ using System.Data;
 using System.Windows.Forms;
 using static GUI.FrmMain;
 using DAL;
+using GUI.Report;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -529,6 +531,24 @@ namespace GUI
                 gvHoaDon.DataSource = data;
             }
         }
+
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            int ma_cthd = int.Parse(gvCTHoaDon.CurrentRow.Cells[0].Value.ToString());
+            BaoCaoBanHang bc = new BaoCaoBanHang(ma_cthd, taikhoan);
+            bc.CreateDocument();
+            bc.ShowPreview();
+        }
+
+        private void btnBaoCaoNhapKho_Click(object sender, EventArgs e)
+        {
+            int ma = int.Parse(gvnhaphang.CurrentRow.Cells[0].Value.ToString());
+            string ncc = cbbNhaCungCap.Text;
+            BaoCaoNhapKho bc = new BaoCaoNhapKho(ma, taikhoan, ncc);
+            bc.CreateDocument();
+            bc.ShowPreview();
+        }
+
         private void btnlammoihoadon_Click(object sender, EventArgs e)
         {
             //FrmBanHang_Load(sender,e);
