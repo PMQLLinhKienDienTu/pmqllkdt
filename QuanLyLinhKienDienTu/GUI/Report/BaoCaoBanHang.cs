@@ -1,8 +1,11 @@
 ﻿using BUS;
+using DAL;
+using DevExpress.Utils.Extensions;
 using DevExpress.XtraCharts;
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -14,10 +17,11 @@ namespace GUI.Report
     public partial class BaoCaoBanHang : DevExpress.XtraReports.UI.XtraReport
     {
         BUS_ChiTietHoaDon cthd = new BUS_ChiTietHoaDon();
+        BUS_HoaDon hoadon = new BUS_HoaDon();
         BUS_NhanVien busEmployee = new BUS_NhanVien();
         private char separator = '|';
         private string[] strlist;
-        private string strnv, taikhoan;
+        private string strnv, strkh, kh, taikhoan, time;
         private int ma_cthd;
         public BaoCaoBanHang(int ma_cthd, string taikhoan)
         {
@@ -27,32 +31,73 @@ namespace GUI.Report
             load_BaoCao();
             
         }
+        public BaoCaoBanHang(string taikhoan, string kh, string time)
+        {
+            this.taikhoan = taikhoan;
+            this.kh = kh;
+            this.time = time;
+            InitializeComponent();
+            load_BaoCao();
+
+        }
         private void load_BaoCao()
         {
-            DataTable data = cthd.LayThongTinChiTietHoaDonSanPham(ma_cthd);
-            DataRow row = data.Rows[0];
+            DataTable data = cthd.LayThongTinChiTietHoaDonSanPham();
+            //DataRow row = data.Rows[0];
+            List<string> tenSanPhamList = new List<string>();
+            List<int> soLuongList = new List<int>();
+            List<double> donGiaList = new List<double>();
+            List<double> thanhTienList = new List<double>();
+            double sum = 0;
+            int taoma = 0;
+            foreach (DataRow row in data.Rows)
+            {
+                string tenSanPham = row["TenSP"].ToString();
+                int soluong = int.Parse(row["SoLuong"].ToString());
+                int ma_hd = int.Parse(row["MaChiTietHoaDon"].ToString());
+                double dongia = double.Parse(row["GiaBan"].ToString());
+                double thanhtien = double.Parse(row["Gia"].ToString());
+                sum += thanhtien;
+                taoma += ma_hd;
+                
 
+                tenSanPhamList.Add(tenSanPham);
+                soLuongList.Add(soluong);
+                donGiaList.Add(dongia);
+                thanhTienList.Add(thanhtien);
+            }
+            
+            this.Parameters["TenSanPham"].Value = tenSanPhamList.ToArray();
+            this.Parameters["SoLuong"].Value = soLuongList.ToArray();
+            this.Parameters["DonGia"].Value = donGiaList.ToArray();
+            this.Parameters["ThanhTien"].Value = thanhTienList.ToArray();
+            this.Parameters["TienThanhToan"].Value = sum.ToString("C");
+            this.Parameters["NgayTH"].Value = time.ToString();
+            this.Parameters["SoHD"].Value = taoma;
+
+            strkh = kh;
+            if (strkh != null)
+            {
+
+                strlist = strkh.Split(separator);
+                //label_maKH.Text = "KH: " + strlist[0];
+                //label_tenKH.Text = strlist[1];
+                this.Parameters["KhachHang"].Value = strlist[1];
+            }
             // Lấy dữ liệu từ các cột trong hàng đầu tiên
             // Ví dụ: giả sử có một cột "TenSanPham" trong DataTable
-            string tenSanPham = row["TenSP"].ToString();
-            int soluong = int.Parse(row["SoLuong"].ToString());
-            double dongia = double.Parse(row["GiaBan"].ToString());
-            double thanhtien = double.Parse(row["Gia"].ToString());
-            int mahd = int.Parse(row["MaChiTietHoaDon"].ToString());
+
+            //int mahd = int.Parse(row["MaChiTietHoaDon"].ToString());
 
             string rootDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // Thư mục gốc hiện tại
             rootDir = Directory.GetParent(rootDir).Parent.FullName; // Lấy thư mục cha của thư mục cha, tức thư mục GUI
             string relativePath = @"ImagesShop\icon_shop.jpg"; // Đường dẫn tương đối
             string path = Path.Combine(rootDir, relativePath); // Đường dẫn đích
 
-            DateTime ngayth = (DateTime)row["NgayTH"]; // Chuyển đổi từ object sang DateTime
-            string ngay = ngayth.ToString("dd/MM/yyyy");
-            this.Parameters["TenSanPham"].Value = tenSanPham;
-            this.Parameters["SoLuong"].Value = soluong;
-            this.Parameters["DonGia"].Value = dongia.ToString("C");
-            this.Parameters["ThanhTien"].Value = thanhtien.ToString("C");
-            this.Parameters["SoHD"].Value = mahd;
-            this.Parameters["NgayTH"].Value = ngay;
+            
+            
+            
+            
             this.Parameters["LogoShop"].Value = path;
 
             strnv = busEmployee.LayNameChucVuNhanVien(taikhoan);

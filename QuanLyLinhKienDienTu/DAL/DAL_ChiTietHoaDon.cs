@@ -127,7 +127,7 @@ namespace DAL
             return false;
         }
 
-        public DataTable LayThongTinChiTietHoaDonSanPham(int ma_cthd)
+        public DataTable LayThongTinChiTietHoaDonSanPham()
         {
             try
             {
@@ -136,7 +136,6 @@ namespace DAL
                 cmd.Connection = _conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "LayThongTinChiTietHoaDonSanPham";
-                cmd.Parameters.AddWithValue("ma_cthd", ma_cthd);
                 DataTable data = new DataTable();
                 data.Load(cmd.ExecuteReader());
                 return data;
@@ -146,7 +145,7 @@ namespace DAL
                 _conn.Close();
             }
         }
-        public DataTable ThongTinNhapKho(int ma)
+        public DataTable ThongTinNhapKho()
         {
             try
             {
@@ -155,7 +154,6 @@ namespace DAL
                 cmd.Connection = _conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "LayThongTinChiTietNhapHangSanPham";
-                cmd.Parameters.AddWithValue("ma", ma);
                 DataTable data = new DataTable();
                 data.Load(cmd.ExecuteReader());
                 return data;
@@ -165,5 +163,31 @@ namespace DAL
                 _conn.Close();
             }
         }
+        //up date trạng thái ct hóa đơn sau khi thanh toán
+        public bool UpdateTrangThaiCTHoaDon()
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "UpdateTrangThaiCTHD";
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
     }
 }

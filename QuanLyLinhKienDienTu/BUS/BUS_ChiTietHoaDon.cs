@@ -28,13 +28,17 @@ namespace BUS
         {
             return dalchitiethoadon.SuaSanPhamCTHoaDon(id, quantity);
         }
-        public DataTable LayThongTinChiTietHoaDonSanPham(int ma_cthd)
+        public DataTable LayThongTinChiTietHoaDonSanPham()
         {
-            return dalchitiethoadon.LayThongTinChiTietHoaDonSanPham(ma_cthd);
+            return dalchitiethoadon.LayThongTinChiTietHoaDonSanPham();
         }
-        public DataTable ThongTinNhapKho(int ma)
+        public DataTable ThongTinNhapKho()
         {
-            return dalchitiethoadon.ThongTinNhapKho(ma);
+            return dalchitiethoadon.ThongTinNhapKho();
+        }
+        public bool UpdateTrangThaiCTHoaDon()
+        {
+            return dalchitiethoadon.UpdateTrangThaiCTHoaDon();
         }
     }
 }
