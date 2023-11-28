@@ -2,6 +2,7 @@
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -26,10 +27,39 @@ namespace GUI.Report
             InitializeComponent();
             load_BaoCao();
         }
+        public BaoCaoNhapKho( string taikhoan, string ncc)
+        {
+            this.taikhoan = taikhoan;
+            this.ncc = ncc;
+            InitializeComponent();
+            load_BaoCao();
+        }
         private void load_BaoCao()
         {
-            DataTable data = cthd.ThongTinNhapKho(ma);
-            DataRow row = data.Rows[0];
+            DataTable data = cthd.ThongTinNhapKho();
+
+            List<string> tenSanPhamList = new List<string>();
+            List<int> soLuongList = new List<int>();
+            List<double> donGiaList = new List<double>();
+            List<double> thanhTienList = new List<double>();
+            double sum = 0;
+            int taoma = 0;
+            foreach (DataRow row in data.Rows)
+            {
+                string tenSanPham = row["TenSP"].ToString();
+                int soluongnhap = int.Parse(row["SoLuongNhap"].ToString());
+                double dongia = double.Parse(row["GiaNhap"].ToString());
+                double tongtien = double.Parse(soluongnhap.ToString()) * dongia;
+                int manhap = int.Parse(row["MaNhap"].ToString());
+                sum += tongtien;
+                taoma += manhap;
+
+
+                tenSanPhamList.Add(tenSanPham);
+                soLuongList.Add(soluongnhap);
+                donGiaList.Add(dongia);
+                thanhTienList.Add(tongtien);
+            }
 
             // Lấy dữ liệu từ các cột trong hàng đầu tiên
             // Ví dụ: giả sử có một cột "TenSanPham" trong DataTable
@@ -41,22 +71,21 @@ namespace GUI.Report
                 this.Parameters["TenNhanVien"].Value = strlist[0].Trim();
             }
 
-            string tenSanPham = row["TenSP"].ToString();
-            int soluongnhap = int.Parse(row["SoLuongNhap"].ToString());
-            double dongia = double.Parse(row["GiaNhap"].ToString());
-            int mahd = int.Parse(row["MaNhap"].ToString());
-            double tongtien = double.Parse(soluongnhap.ToString()) * dongia;
+            
+            //int mahd = int.Parse(row["MaNhap"].ToString());
+            
 
             string rootDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // Thư mục gốc hiện tại
             rootDir = Directory.GetParent(rootDir).Parent.FullName; // Lấy thư mục cha của thư mục cha, tức thư mục GUI
             string relativePath = @"ImagesShop\icon_shop.jpg"; // Đường dẫn tương đối
             string path = Path.Combine(rootDir, relativePath); // Đường dẫn đích
 
-            this.Parameters["TenSanPham"].Value = tenSanPham;
-            this.Parameters["SoLuong"].Value = soluongnhap;
-            this.Parameters["DonGia"].Value = dongia.ToString("C");
-            this.Parameters["ThanhTien"].Value = tongtien.ToString("C");
-            this.Parameters["SoHD"].Value = mahd;
+            this.Parameters["TenSanPham"].Value = tenSanPhamList.ToArray();
+            this.Parameters["SoLuong"].Value = soLuongList.ToArray();
+            this.Parameters["DonGia"].Value = donGiaList.ToArray();
+            this.Parameters["ThanhTien"].Value = thanhTienList.ToArray();
+            this.Parameters["Sum"].Value = sum.ToString("C");
+            this.Parameters["SoHD"].Value = taoma;
             this.Parameters["TenNhaCC"].Value = ncc;
             this.Parameters["LogoShop"].Value = path;
 

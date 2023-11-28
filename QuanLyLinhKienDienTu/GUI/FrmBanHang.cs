@@ -16,8 +16,8 @@ namespace GUI
         BUS_ChiTietHoaDon buscthoadon = new BUS_ChiTietHoaDon();
         BUS_KhachHang buskhachhang = new BUS_KhachHang();
         BUS_SanPham bussanpham = new BUS_SanPham();
-        BUS_NhanVien BUS_NhanVien= new BUS_NhanVien();
-        BUS_HoaDon bushoadon  = new BUS_HoaDon();
+        BUS_NhanVien BUS_NhanVien = new BUS_NhanVien();
+        BUS_HoaDon bushoadon = new BUS_HoaDon();
         BUS_NhaCungCap busnhacungcap = new BUS_NhaCungCap();
         BUS_ChiTietNhapHang busctnhaphang = new BUS_ChiTietNhapHang();
         BUS_NhapHang busnhanhang = new BUS_NhapHang();
@@ -47,7 +47,7 @@ namespace GUI
         }
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
-            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2, guna2Panel4, 
+            Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2, guna2Panel4,
                 guna2Panel5, guna2Panel6, guna2Panel7, guna2Panel8, guna2Panel9, guna2Panel10,
                 guna2Panel11 ,guna2Panel12, guna2Panel13, guna2Panel14 };
 
@@ -66,7 +66,8 @@ namespace GUI
             loadthongtinnhanvien();
             LoadSanPhamBanCham();
             SetValueBanHang(true, false);
-            SetValueNhapHang(true, false);      
+            SetValueNhapHang(true, false);
+            cboCustomerIdName.SelectedIndex = 0;
         }
         private void BanHangLoad()
         {
@@ -92,7 +93,7 @@ namespace GUI
         }
         private void LoadSanPhamBanCham()
         {
-           
+
         }
         private void HoaDonLoad()
         {
@@ -103,10 +104,10 @@ namespace GUI
         }
         private void NhapHangLoad()
         {
-          // Load combobox
-          cbbNhaCungCap.DataSource = busnhacungcap.LoadNhaCungCap();
-            cbbNhaCungCap.DisplayMember= "TenNCC";
-            cbbNhaCungCap.ValueMember= "MaNCC";
+            // Load combobox
+            cbbNhaCungCap.DataSource = busnhacungcap.LoadNhaCungCap();
+            cbbNhaCungCap.DisplayMember = "TenNCC";
+            cbbNhaCungCap.ValueMember = "MaNCC";
 
             //Load giv
             gvnhaphang.DataSource = busctnhaphang.DanhSachCTNhapHang();
@@ -123,7 +124,7 @@ namespace GUI
                 cboCustomerIdName.Items.Add(item);
             }
 
-            timer.Interval = 10; 
+            timer.Interval = 10;
             timer.Tick += new EventHandler(timer_hienhanh_Tick); // Đặt sự kiện tick cho timer
             timer.Start(); // Bắt đầu chạy timer
 
@@ -158,12 +159,12 @@ namespace GUI
             {
                 btnSua.Enabled = !param;// !param == true
                 btnXoa.Enabled = !param;// !param == true
-            } 
+            }
         }
         //Thiết lặt thao tác nhập hàng
         private void SetValueNhapHang(bool param, bool isLoad)
         {
-     
+
 
             btnThemNhap.Enabled = param;
 
@@ -184,7 +185,7 @@ namespace GUI
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             SetValueBanHang(true, false);
-           
+
         }
         private void loadtongtien()
         {
@@ -193,8 +194,8 @@ namespace GUI
             if (tongtien != null)
             {
                 txtTotalPrice.Text = Convert.ToString(tongtien);
-            }    
-           
+            }
+
         }
         private void loadtongtiennhap()
         {
@@ -225,17 +226,17 @@ namespace GUI
                 tensanpham = strlist[0].Trim();
 
                 if (txtQuantity.Text != "")
-                {       
+                {
                     int id_sp = bussanpham.GetProductId(tensanpham);
                     int soluong = int.Parse(txtQuantity.Text);
                     double gia = double.Parse(txtUnitPrice.Text);
 
 
-                    dtoChitiethoadon = new DTO_ChiTietHoaDon(id_sp, soluong, gia);                 
-                    
+                    dtoChitiethoadon = new DTO_ChiTietHoaDon(id_sp, soluong, gia);
+
                     if (buscthoadon.ThemCTHoaDon(dtoChitiethoadon))
                     {
-                        danhsachSP = bussanpham.DanhSachSLNameSP();       
+                        danhsachSP = bussanpham.DanhSachSLNameSP();
                         txtTotalPrice.Text = buscthoadon.GetTotalPrice().ToString();
                         MsgBox("Thêm hóa đơn thành công");
                         BanHangLoad();
@@ -257,7 +258,7 @@ namespace GUI
         {
 
             string masp = gvCTHoaDon.CurrentRow.Cells[1].Value.ToString();
-            int id= bussanpham.GetProductId(masp);
+            int id = bussanpham.GetProductId(masp);
             int soluong = int.Parse(txtQuantity.Text);
 
             //str = cboProductNameQuantity.SelectedItem.ToString();
@@ -298,6 +299,12 @@ namespace GUI
         {
             try
             {
+                string kh = cboCustomerIdName.Text;
+                string time = txtDateTime.Text;
+                BaoCaoBanHang bc = new BaoCaoBanHang(taikhoan, kh, time);
+                bc.CreateDocument();
+                bc.ShowPreview();
+
                 str = txtEmployeeIdName.Text.Trim();
                 strlist = str.Split(separator);
                 string employeeId = strlist[0].Trim();
@@ -408,7 +415,7 @@ namespace GUI
 
                 if (busctnhaphang.SuaCTNhapHang(dtoctnhaphang))
                 {
-                  
+
                     MsgBox("Sửa thành công!");
                     NhapHangLoad();
                     loadtongtiennhap();
@@ -420,8 +427,8 @@ namespace GUI
                 }
             }
             catch (Exception)
-            {              
-            }   
+            {
+            }
         }
         private void btnXoaNhap_Click(object sender, EventArgs e)
         {
@@ -445,23 +452,23 @@ namespace GUI
                 }
             }
             catch (Exception)
-            {              
+            {
             }
-          
+
         }
         private void gvnhaphang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 btnSuaNhap.Enabled = btnXoaNhap.Enabled = true;
-                if(gvnhaphang.Rows.Count > 0)
+                if (gvnhaphang.Rows.Count > 0)
                 {
                     txtSoLuongNhap.Text = gvnhaphang.CurrentRow.Cells[2].Value.ToString();
                     txtDonGiaNhap.Text = gvnhaphang.CurrentRow.Cells[3].Value.ToString();
-                }    
+                }
             }
             catch (Exception)
-            {          
+            {
             }
         }
         private void gvCTHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -470,14 +477,14 @@ namespace GUI
             {
                 btnSua.Enabled = btnXoa.Enabled = true;
 
-                if(gvCTHoaDon.Rows.Count > 0)
+                if (gvCTHoaDon.Rows.Count > 0)
                 {
                     txtQuantity.Text = gvCTHoaDon.CurrentRow.Cells[2].Value.ToString();
                     txtUnitPrice.Text = gvCTHoaDon.CurrentRow.Cells[3].Value.ToString();
-                }    
+                }
             }
             catch (Exception)
-            {               
+            {
             }
         }
         private void btnLamMoiNhap_Click(object sender, EventArgs e)
@@ -488,6 +495,11 @@ namespace GUI
         {
             try
             {
+                string ncc = cbbNhaCungCap.Text;
+                BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc);
+                bc.CreateDocument();
+                bc.ShowPreview();
+
                 str = txtNhanVienNhapKho.Text.Trim();
                 strlist = str.Split(separator);
                 string employeeId = strlist[0].Trim();
@@ -512,7 +524,7 @@ namespace GUI
             {
 
             }
-                
+
         }
         private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
@@ -534,17 +546,19 @@ namespace GUI
 
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
-            int ma_cthd = int.Parse(gvCTHoaDon.CurrentRow.Cells[0].Value.ToString());
-            BaoCaoBanHang bc = new BaoCaoBanHang(ma_cthd, taikhoan);
+            //int ma_cthd = int.Parse(gvCTHoaDon.CurrentRow.Cells[0].Value.ToString());
+            string kh = cboCustomerIdName.Text;
+            string time = txtDateTime.Text;
+            BaoCaoBanHang bc = new BaoCaoBanHang(taikhoan, kh, time);
             bc.CreateDocument();
             bc.ShowPreview();
         }
 
         private void btnBaoCaoNhapKho_Click(object sender, EventArgs e)
         {
-            int ma = int.Parse(gvnhaphang.CurrentRow.Cells[0].Value.ToString());
+            //int ma = int.Parse(gvnhaphang.CurrentRow.Cells[0].Value.ToString());
             string ncc = cbbNhaCungCap.Text;
-            BaoCaoNhapKho bc = new BaoCaoNhapKho(ma, taikhoan, ncc);
+            BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc);
             bc.CreateDocument();
             bc.ShowPreview();
         }
@@ -552,8 +566,8 @@ namespace GUI
         private void btnlammoihoadon_Click(object sender, EventArgs e)
         {
             //FrmBanHang_Load(sender,e);
-             HoaDonLoad();
-    
+            HoaDonLoad();
+
         }
         private void LoadGVCTHoaDon()
         {
@@ -561,7 +575,7 @@ namespace GUI
             gvCTHoaDon.Columns[1].HeaderText = "Tên sản phẩm";
             gvCTHoaDon.Columns[2].HeaderText = "Số lượng";
             gvCTHoaDon.Columns[3].HeaderText = "Giá";
-           
+
 
             foreach (DataGridViewColumn item in gvCTHoaDon.Columns)
             {
@@ -581,7 +595,7 @@ namespace GUI
             gvHoaDon.Columns[3].HeaderText = "Ngày GD";
             gvHoaDon.Columns[4].HeaderText = "Thành tiền";
 
-            gvHoaDon.Columns[0].Width= 70;
+            gvHoaDon.Columns[0].Width = 70;
             foreach (DataGridViewColumn item in gvHoaDon.Columns)
             {
                 item.DividerWidth = 1;
