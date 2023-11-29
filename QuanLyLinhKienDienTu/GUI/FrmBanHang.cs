@@ -7,6 +7,10 @@ using static GUI.FrmMain;
 using DAL;
 using GUI.Report;
 using DevExpress.XtraReports.UI;
+using System.Linq;
+using Microsoft.ML;
+using System.Collections.Generic;
+using Microsoft.ML.Data;
 
 namespace GUI
 {
@@ -39,6 +43,7 @@ namespace GUI
         private Timer timer = new Timer();
         private Timer timer2 = new Timer();
         private string taikhoan;
+        private MLContext mlContext;
 
         public FrmBanHang(string email, string taikhoan)
         {
@@ -95,7 +100,23 @@ namespace GUI
         }
         private void LoadSanPhamBanCham()
         {
+            try
+            {
+                var sanphams = qllkdt.SanPhams.Select(p => new ProductSalex { ProductId = p.MaSP, Name = p.TenSP, Features = (int)p.SoLuong }).ToList();
 
+                var slowSellingProducts = sanphams.Where(p => p.Features >= 30).ToList();
+
+                databancham.DataSource = slowSellingProducts;
+
+                int soluongsanphambancham = slowSellingProducts.Count( p => p.Features >= 30);
+                label_sosanphambancham.Text = Convert.ToString(soluongsanphambancham);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
         private void HoaDonLoad()
         {
@@ -562,7 +583,10 @@ namespace GUI
             bc.CreateDocument();
             bc.ShowPreview();
         }
-
+        private void LoadNgam()
+        {
+            LoadSanPhamBanChamTheoSL();
+        }
         private void btnBaoCaoNhapKho_Click(object sender, EventArgs e)
         {
             //int ma = int.Parse(gvnhaphang.CurrentRow.Cells[0].Value.ToString());
@@ -583,6 +607,13 @@ namespace GUI
         {
             //FrmBanHang_Load(sender,e);
             HoaDonLoad();
+
+        }
+        public class ProductSalex
+        {
+            public int ProductId { get; set; }
+            public int Features { get; set; }
+            public string Name { get; set; }
 
         }
         private void LoadGVCTHoaDon()
@@ -622,6 +653,87 @@ namespace GUI
             gvHoaDon.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+      
+        // Class để lưu trữ dữ liệu sản phẩm
+        public class ProductSale
+        {
+            public int ProductId { get; set; }
+            public float[] Features { get; set; }
+            public string Name { get; set; }
+
+        }
+      
+        public class ProductSalePrediction
+        {
+            [ColumnName("PredictedLabel")]
+            public bool Prediction { get; set; }
+            // Các thuộc tính khác của dự đoán
+        }
+
+        private void LoadSanPhamBanChamTheoSL()
+        {
+            try
+            {
+                mlContext = new MLContext();
+
+                // Chuyển đổi dữ liệu SoLuong thành mảng các số
+                var sanphams = qllkdt.SanPhams.Select(p => new ProductSale
+                {
+                    ProductId = p.MaSP,
+                    Name = p.TenSP,
+                    Features = new float[] { p.SoLuong.GetValueOrDefault() }
+                }).ToList();
+
+                var data = mlContext.Data.LoadFromEnumerable<ProductSale>(sanphams);
+
+                var trainedModel = TrainModel(data);
+
+                var predictions = Predict(trainedModel, data);
+
+                var slowSellingProducts = predictions.Where(p => p.Prediction).ToList();
+
+                databancham.DataSource = slowSellingProducts;
+
+                int soluongsanphambancham = slowSellingProducts.Count();
+
+                label_sosanphambancham.Text = Convert.ToString(soluongsanphambancham);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private IEnumerable<ProductSalePrediction> Predict(ITransformer trainedModel, IDataView data)
+        {
+            throw new NotImplementedException();
+        }
+
+        private ITransformer TrainModel(IDataView data)
+        {
+            // Xây dựng pipeline để huấn luyện mô hình
+            var pipeline = mlContext.Transforms.CopyColumns(inputColumnName: "Features", outputColumnName: "Features")
+                .Append(mlContext.BinaryClassification.Trainers.LightGbm(labelColumnName: "IsSlowSelling"));
+
+            // Huấn luyện mô hình với dữ liệu
+            var trainedModel = pipeline.Fit(data);
+
+            return trainedModel;
+        }
+        private IEnumerable<ProductSalePrediction> Predict(ITransformer model, IEnumerable<ProductSale> products)
+        {
+            // Dùng mô hình đã huấn luyện để dự đoán cho danh sách sản phẩm
+            var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductSale, ProductSalePrediction>(model);
+
+            foreach (var product in products)
+            {
+                var prediction = predictionEngine.Predict(product);
+                yield return prediction;
+            }
         }
 
     }

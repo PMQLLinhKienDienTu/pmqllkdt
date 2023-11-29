@@ -19,6 +19,7 @@ namespace GUI.Report
         BUS_ChiTietHoaDon cthd = new BUS_ChiTietHoaDon();
         BUS_HoaDon hoadon = new BUS_HoaDon();
         BUS_NhanVien busEmployee = new BUS_NhanVien();
+
         private char separator = '|';
         private string[] strlist;
         private string strnv, strkh, kh, taikhoan, time;
