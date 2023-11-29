@@ -17,7 +17,7 @@ namespace GUI.Report
         BUS_NhanVien busEmployee = new BUS_NhanVien();
         private char separator = '|';
         private string[] strlist;
-        private string strnv, taikhoan, ncc;
+        private string strnv, taikhoan, ncc, time;
         private int ma;
         public BaoCaoNhapKho(int ma, string taikhoan, string ncc)
         {
@@ -27,10 +27,11 @@ namespace GUI.Report
             InitializeComponent();
             load_BaoCao();
         }
-        public BaoCaoNhapKho( string taikhoan, string ncc)
+        public BaoCaoNhapKho( string taikhoan, string ncc, string time)
         {
             this.taikhoan = taikhoan;
             this.ncc = ncc;
+            this.time = time;
             InitializeComponent();
             load_BaoCao();
         }
@@ -80,15 +81,27 @@ namespace GUI.Report
             string relativePath = @"ImagesShop\icon_shop.jpg"; // Đường dẫn tương đối
             string path = Path.Combine(rootDir, relativePath); // Đường dẫn đích
 
-            this.Parameters["TenSanPham"].Value = tenSanPhamList.ToArray();
-            this.Parameters["SoLuong"].Value = soLuongList.ToArray();
-            this.Parameters["DonGia"].Value = donGiaList.ToArray();
-            this.Parameters["ThanhTien"].Value = thanhTienList.ToArray();
+            string tenSanPhamString = String.Join(",", tenSanPhamList.ToArray());
+            tenSanPhamString = tenSanPhamString.Replace(",", "\n\n");
+
+            string soluongstring = String.Join(",", soLuongList.ToArray());
+            soluongstring = soluongstring.Replace(",", "\n\n");
+
+            string dongiastring = String.Join(",", donGiaList.ToArray());
+            dongiastring = dongiastring.Replace(",", "\n\n");
+
+            string thanhtienstring = String.Join(",", thanhTienList.ToArray());
+            thanhtienstring = thanhtienstring.Replace(",", "\n\n");
+
+            this.Parameters["TenSanPham"].Value = tenSanPhamString;
+            this.Parameters["SoLuong"].Value = soluongstring;
+            this.Parameters["DonGia"].Value = dongiastring;
+            this.Parameters["ThanhTien"].Value = thanhtienstring;
             this.Parameters["Sum"].Value = sum.ToString("C");
             this.Parameters["SoHD"].Value = taoma;
             this.Parameters["TenNhaCC"].Value = ncc;
             this.Parameters["LogoShop"].Value = path;
-
+            this.Parameters["NgayTH"].Value = time;
         }
 
     }

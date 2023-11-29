@@ -32,10 +32,12 @@ namespace GUI
 
         private string[] danhsachKH, danhsachSP;
         private DateTime dateTime = new DateTime();
+        private DateTime dateTime2 = new DateTime();
         private string tensanpham, email, str;
         private char separator = '|';
         private string[] strlist;
         private Timer timer = new Timer();
+        private Timer timer2 = new Timer();
         private string taikhoan;
 
         public FrmBanHang(string email, string taikhoan)
@@ -127,6 +129,10 @@ namespace GUI
             timer.Interval = 10;
             timer.Tick += new EventHandler(timer_hienhanh_Tick); // Đặt sự kiện tick cho timer
             timer.Start(); // Bắt đầu chạy timer
+
+            timer2.Interval = 10;
+            timer2.Tick += new EventHandler(timer_hienhanh_1_Tick);
+            timer2.Start(); // Bắt đầu chạy timer
 
             danhsachSP = bussanpham.DanhSachSLNameSP();
             cboProductNameQuantity.Items.Clear();
@@ -299,6 +305,7 @@ namespace GUI
         {
             try
             {
+                //MsgBox("Thanh toán thành công", false);
                 string kh = cboCustomerIdName.Text;
                 string time = txtDateTime.Text;
                 BaoCaoBanHang bc = new BaoCaoBanHang(taikhoan, kh, time);
@@ -323,7 +330,7 @@ namespace GUI
                 );
                 if (bushoadon.ThemHoaDon(dtoHoadon))
                 {
-                    MsgBox("Thanh toán thành công", false);
+                    
                     BanHangLoad();
                 }
                 else
@@ -349,6 +356,7 @@ namespace GUI
             // lấy thời gian hiện tại
             dateTime = DateTime.Now;
             txtDateTime.Text = dateTime.ToString("dd/MM/yyyy") + " " + dateTime.ToString("HH:mm:ss"); // định dạnh ngày/tháng/năm
+        
         }
 
         private void picNhaCungCap_Click(object sender, EventArgs e)
@@ -496,7 +504,8 @@ namespace GUI
             try
             {
                 string ncc = cbbNhaCungCap.Text;
-                BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc);
+                string time = guna2TextBox4.Text;
+                BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc, time);
                 bc.CreateDocument();
                 bc.ShowPreview();
 
@@ -513,7 +522,7 @@ namespace GUI
                 );
                 if (busnhanhang.ThemPhieuNhap(dtonhanhang))
                 {
-                    MsgBox("Nhập hàng thành công", false);
+                    //MsgBox("Nhập hàng thành công", false);
                     NhapHangLoad();
                     SetValueNhapHang(true, false);
                 }
@@ -558,9 +567,16 @@ namespace GUI
         {
             //int ma = int.Parse(gvnhaphang.CurrentRow.Cells[0].Value.ToString());
             string ncc = cbbNhaCungCap.Text;
-            BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc);
+            string time = guna2TextBox4.Text;
+            BaoCaoNhapKho bc = new BaoCaoNhapKho(taikhoan, ncc, time);
             bc.CreateDocument();
             bc.ShowPreview();
+        }
+
+        private void timer_hienhanh_1_Tick(object sender, EventArgs e)
+        {
+            dateTime2 = DateTime.Now;
+            guna2TextBox4.Text = dateTime2.ToString("dd/MM/yyyy") + " " + dateTime2.ToString("HH:mm:ss"); // định dạnh ngày/tháng/năm
         }
 
         private void btnlammoihoadon_Click(object sender, EventArgs e)

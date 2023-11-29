@@ -327,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_shop.ico" />
+    <Content Include="ImageSIUUUUUU\heart.png" />
     <Content Include="ImagesShop\%24this.Icon.ico" />
     <Content Include="ImagesShop\icon_shop.ico" />
     <Content Include="ImagesShop\icon_shop.jpg" />
