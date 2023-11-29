@@ -131,6 +131,9 @@ namespace GUI
             string path = Path.Combine(rootDir, relativePath); // Đường dẫn đích
 
             this.Parameters["LogoShop"].Value = path;
+            System.DateTime date = System.DateTime.Now;
+            this.Parameters["time"].Value = date.ToString("dd/MM/yyyy") + " " + date.ToString("HH:mm:ss");
+            this.Parameters["LogoShop"].Visible = false;
         }
     }
 }

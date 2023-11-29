@@ -66,11 +66,22 @@ namespace GUI.Report
                 donGiaList.Add(dongia);
                 thanhTienList.Add(thanhtien);
             }
-            
-            this.Parameters["TenSanPham"].Value = tenSanPhamList.ToArray();
-            this.Parameters["SoLuong"].Value = soLuongList.ToArray();
-            this.Parameters["DonGia"].Value = donGiaList.ToArray();
-            this.Parameters["ThanhTien"].Value = thanhTienList.ToArray();
+            string tenSanPhamString = String.Join(",", tenSanPhamList.ToArray());
+            tenSanPhamString = tenSanPhamString.Replace(",", "\n\n");
+
+            string soluongstring = String.Join(",", soLuongList.ToArray());
+            soluongstring = soluongstring.Replace(",", "\n\n");
+
+            string dongiastring = String.Join(",", donGiaList.ToArray());
+            dongiastring = dongiastring.Replace(",", "\n\n");
+
+            string thanhtienstring = String.Join(",", thanhTienList.ToArray());
+            thanhtienstring = thanhtienstring.Replace(",", "\n\n");
+
+            this.Parameters["TenSanPham"].Value = tenSanPhamString;
+            this.Parameters["SoLuong"].Value = soluongstring;
+            this.Parameters["DonGia"].Value = dongiastring;
+            this.Parameters["ThanhTien"].Value = thanhtienstring;
             this.Parameters["TienThanhToan"].Value = sum.ToString("C");
             this.Parameters["NgayTH"].Value = time.ToString();
             this.Parameters["SoHD"].Value = taoma;
@@ -94,11 +105,15 @@ namespace GUI.Report
             string relativePath = @"ImagesShop\icon_shop.jpg"; // Đường dẫn tương đối
             string path = Path.Combine(rootDir, relativePath); // Đường dẫn đích
 
-            
-            
-            
-            
+            string rootDir2 = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // Thư mục gốc hiện tại
+            rootDir2 = Directory.GetParent(rootDir2).Parent.FullName; // Lấy thư mục cha của thư mục cha, tức thư mục GUI
+            string relativePath2 = @"ImageSIUUUUUU\heart.png"; // Đường dẫn tương đối
+            string path2 = Path.Combine(rootDir2, relativePath2);
+
+
+
             this.Parameters["LogoShop"].Value = path;
+            this.Parameters["icon"].Value = path2;
 
             strnv = busEmployee.LayNameChucVuNhanVien(taikhoan);
 
