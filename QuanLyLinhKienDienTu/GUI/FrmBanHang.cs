@@ -74,7 +74,7 @@ namespace GUI
             LoadSanPhamBanCham();
             SetValueBanHang(true, false);
             SetValueNhapHang(true, false);
-            cboCustomerIdName.SelectedIndex = 0;
+            //cboCustomerIdName.SelectedIndex = 0;
         }
         private void BanHangLoad()
         {
@@ -576,12 +576,20 @@ namespace GUI
 
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
-            //int ma_cthd = int.Parse(gvCTHoaDon.CurrentRow.Cells[0].Value.ToString());
-            string kh = cboCustomerIdName.Text;
-            string time = txtDateTime.Text;
-            BaoCaoBanHang bc = new BaoCaoBanHang(taikhoan, kh, time);
-            bc.CreateDocument();
-            bc.ShowPreview();
+            try
+            {
+                //int ma_cthd = int.Parse(gvCTHoaDon.CurrentRow.Cells[0].Value.ToString());
+                string kh = cboCustomerIdName.Text;
+                string time = txtDateTime.Text;
+                BaoCaoBanHang bc = new BaoCaoBanHang(taikhoan, kh, time);
+                bc.CreateDocument();
+                bc.ShowPreview();
+            }
+            catch
+            {
+
+                MessageBox.Show("Vui lòng chọn khách hàng cần thanh toán!");
+            }
         }
         private void LoadNgam()
         {
