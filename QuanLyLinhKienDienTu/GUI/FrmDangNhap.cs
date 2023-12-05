@@ -17,6 +17,8 @@ namespace GUI
         {
             panel_login.BackColor = Color.FromArgb(100, 0, 0, 0);
 
+            txt_taikhoan.Text = "ngocthien";
+            txt_matkhau.Text = "ngocthien";
             if (Properties.Settings.Default.isSave)
             {
                 string srtmail = txt_taikhoan.Text.Trim();

@@ -55,7 +55,7 @@ namespace GUI
         private void ColorChangeEventProvider_ColorChanged(object sender, ColorChangedEventArgs e)
         {
             Guna.UI2.WinForms.Guna2Panel[] panels = { guna2Panel1, guna2Panel2, guna2Panel4,
-                guna2Panel5, guna2Panel6, guna2Panel7, guna2Panel8, guna2Panel9, guna2Panel10,
+                guna2Panel5, btnDuyetDon, guna2Panel7, guna2Panel8, guna2Panel9, guna2Panel10,
                 guna2Panel11 ,guna2Panel12, guna2Panel13, guna2Panel14 };
 
             foreach (var panel in panels)
@@ -714,6 +714,17 @@ namespace GUI
                 throw;
             }
 
+        }
+
+        private void btnDuyetDonDatHang_Click(object sender, EventArgs e)
+        {
+            str = txtEmployeeIdName.Text.Trim();
+            strlist = str.Split(separator);
+            string employeeId = strlist[0].Trim();
+
+            FrmDonDatHang frm = new FrmDonDatHang(employeeId);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
         }
 
         private IEnumerable<ProductSalePrediction> Predict(ITransformer trainedModel, IDataView data)

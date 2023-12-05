@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="DAL_ChiTietHoaDon.cs" />
     <Compile Include="DAL_ChiTietNhapHang.cs" />
+    <Compile Include="DAL_DatHang.cs" />
     <Compile Include="DAL_HoaDon.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_NhaCungCap.cs" />
