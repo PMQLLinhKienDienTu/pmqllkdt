@@ -192,6 +192,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmChiTietDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChiTietDonDatHang.Designer.cs">
+      <DependentUpon>FrmChiTietDonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDonDatHang.Designer.cs">
+      <DependentUpon>FrmDonDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\BaoCaoBanHang.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -290,6 +302,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmChiTietDonDatHang.resx">
+      <DependentUpon>FrmChiTietDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDonDatHang.resx">
+      <DependentUpon>FrmDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\BaoCaoBanHang.resx">
       <DependentUpon>BaoCaoBanHang.cs</DependentUpon>
     </EmbeddedResource>

@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="BUS_ChiTietHoaDon.cs" />
     <Compile Include="BUS_ChiTietNhapHang.cs" />
+    <Compile Include="BUS_DatHang.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_Mail.cs" />
