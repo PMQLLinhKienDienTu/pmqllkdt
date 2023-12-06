@@ -35,5 +35,9 @@ namespace BUS
         {
             return ctnhaphang.GetTongTienNhapHang();
         }
+        public bool KiemTraNhapHangTrung(int id, int soluong)
+        {
+            return ctnhaphang.KiemTraNhapHangTrung(id,soluong);
+        }
     }
 }

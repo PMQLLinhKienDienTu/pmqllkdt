@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using DTO;
 namespace DAL
 {
-  public  class DAL_ChiTietNhapHang: DbConnect
+    public class DAL_ChiTietNhapHang : DbConnect
     {
         // Danh sách khách hàng 
         public DataTable DanhSachCTNhapHang()
@@ -43,7 +43,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("ma", ctnhaphang.Masanpham);
                 cmd.Parameters.AddWithValue("sl", ctnhaphang.Soluongnhap);
                 cmd.Parameters.AddWithValue("gianhap", ctnhaphang.Gianhap);
-        
+
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
                 else
@@ -99,7 +99,7 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "XoaPhieuNhapHang";
                 cmd.Parameters.AddWithValue("ma", masp);
-              
+
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
                 else
@@ -132,6 +132,34 @@ namespace DAL
             {
                 _conn.Close();
             }
+        }
+
+        // kiểm tra trùng sản phẩm trong bảng chi tiết nhập hàng
+        public bool KiemTraNhapHangTrung(int id, int soluong)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "KiemTraNhapHangTrung";
+                cmd.Parameters.AddWithValue("id_hanghoa", id);
+                cmd.Parameters.AddWithValue("soluongnhap", soluong);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
         }
 
     }

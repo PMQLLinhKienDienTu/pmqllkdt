@@ -20,8 +20,22 @@
       <Column Name="SoLuongNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GiaNhap" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="MaNhapHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="NhapHang_ChiTietNhapHang" Member="NhapHang" ThisKey="MaNhapHang" OtherKey="MaNhap" Type="NhapHang" IsForeignKey="true" />
       <Association Name="SanPham_ChiTietNhapHang" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatHang" Member="DatHangs">
+    <Type Name="DatHang">
+      <Column Name="MaDatHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongDat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="JsonSanPham" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="KhachHang_DatHang" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDon" Member="HoaDons">
@@ -47,6 +61,7 @@
       <Column Name="NgayTaoThe" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KhachHang_DatHang" Member="DatHangs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DatHang" />
       <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="HoaDon" />
     </Type>
   </Table>
