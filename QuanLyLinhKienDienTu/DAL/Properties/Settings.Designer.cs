@@ -55,5 +55,16 @@ namespace DAL.Properties {
                 return ((string)(this["QL_LINHKIENDIENTUConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DA92CAH\\SQLEXPRESS01;Initial Catalog=QL_LINHKIENDIENTU;Persis" +
+            "t Security Info=True;User ID=sa;Password=123")]
+        public string QL_LINHKIENDIENTUConnectionString3 {
+            get {
+                return ((string)(this["QL_LINHKIENDIENTUConnectionString3"]));
+            }
+        }
     }
 }

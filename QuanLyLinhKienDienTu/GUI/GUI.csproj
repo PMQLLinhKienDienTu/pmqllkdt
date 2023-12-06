@@ -204,6 +204,12 @@
     <Compile Include="FrmDonDatHang.Designer.cs">
       <DependentUpon>FrmDonDatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThongTinNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongTinNhapHang.Designer.cs">
+      <DependentUpon>FrmThongTinNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\BaoCaoBanHang.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDonDatHang.resx">
       <DependentUpon>FrmDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongTinNhapHang.resx">
+      <DependentUpon>FrmThongTinNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BaoCaoBanHang.resx">
       <DependentUpon>BaoCaoBanHang.cs</DependentUpon>

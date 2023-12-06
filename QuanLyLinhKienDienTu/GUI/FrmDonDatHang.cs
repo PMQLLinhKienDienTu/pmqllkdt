@@ -37,7 +37,7 @@ namespace GUI
         }
         private void LoadGVCTDatHang()
         {
-            gvDatHang.Columns[0].HeaderText = "Mã Đơn Đặt Hàng";
+            gvDatHang.Columns[0].HeaderText = "Mã Đặt Hàng";
             gvDatHang.Columns[1].HeaderText = "Mã Khách Hàng";
             gvDatHang.Columns[2].HeaderText = "Tên Khách Hàng";
             gvDatHang.Columns[3].HeaderText = "Số Lượng Đặt";
@@ -63,60 +63,77 @@ namespace GUI
             gvDatHang.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvDatHang.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvDatHang.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvDatHang.Columns[4].DefaultCellStyle.Format = "C";
         }
 
         private void btnDuyetDonDatHang_Click(object sender, EventArgs e)
         {
-            int madathang = int.Parse(gvDatHang.CurrentRow.Cells[0].Value.ToString());
-            double gia = double.Parse(gvDatHang.CurrentRow.Cells[4].Value.ToString());
-            int makhachhang = int.Parse(gvDatHang.CurrentRow.Cells[1].Value.ToString());
-            dtoHoadon = new DTO_HoaDon
-                (
-                    int.Parse(manhanvien),
-                    makhachhang,
-                  gia
-                );
-            if (bushoadon.ThemHoaDon(dtoHoadon))
+            try
             {
-                MessageBox.Show("Cập nhập thành công!");
-                busdathang.CapNhapTrangThaiDatHang(madathang);
-                gvDatHang.DataSource = busdathang.DanhSachCTDatHang();
-                LoadGVCTDatHang();
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn duyệt đơn hàng này không?", "Xác nhận hủy đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                int madathang = int.Parse(gvDatHang.CurrentRow.Cells[0].Value.ToString());
+                double gia = double.Parse(gvDatHang.CurrentRow.Cells[4].Value.ToString());
+                int makhachhang = int.Parse(gvDatHang.CurrentRow.Cells[1].Value.ToString());
+                dtoHoadon = new DTO_HoaDon
+                    (
+                        int.Parse(manhanvien),
+                        makhachhang,
+                      gia
+                    );
+               
+
+                if (result == DialogResult.Yes)
+                {
+                    if (bushoadon.ThemHoaDon(dtoHoadon))
+                    {
+                        MessageBox.Show("Duyệt đơn hàng thành công!");
+                        busdathang.CapNhapTrangThaiDatHang(madathang);
+                        gvDatHang.DataSource = busdathang.DanhSachCTDatHang();
+                        LoadGVCTDatHang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Duyệt đơn  thất bại!");
+                    }
+                }                  
             }
-            else
-            {
-                MessageBox.Show("Cập nhập thất bại!");
-            }
+            catch (Exception) { MessageBox.Show("Vui lòng chọn khách hàng để duyệt!!!"); }
+           
         }
 
         private void btnHuyDon_Click(object sender, EventArgs e)
         {
-            int madathang = int.Parse(gvDatHang.CurrentRow.Cells[0].Value.ToString());
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn hủy đơn hàng?", "Xác nhận hủy đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Kiểm tra xem người dùng đã chọn Yes hay No trong hộp thoại xác nhận
-            if (result == DialogResult.Yes)
+            try
             {
-                // Nếu người dùng chọn Yes, thực hiện hủy đơn hàng
-                if (busdathang.HuyDonDatHang(madathang))
+                int madathang = int.Parse(gvDatHang.CurrentRow.Cells[0].Value.ToString());
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn hủy đơn hàng?", "Xác nhận hủy đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Hủy Thành Công!");
-                    gvDatHang.DataSource = busdathang.DanhSachCTDatHang();
-                    LoadGVCTDatHang();
-                }
-                else
-                {
-                    MessageBox.Show("Hủy không thành công!");
+                    if (busdathang.HuyDonDatHang(madathang))
+                    {
+                        MessageBox.Show("Hủy Thành Công!");
+                        gvDatHang.DataSource = busdathang.DanhSachCTDatHang();
+                        LoadGVCTDatHang();
+                    }
+                    else
+                        MessageBox.Show("Hủy không thành công!");
                 }
             }
+            catch (Exception) { MessageBox.Show("Vui lòng chọn khách hàng để hủy đơn!!!"); }       
         }
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
-            string jsondathang = gvDatHang.CurrentRow.Cells[7].Value.ToString();
-            FrmChiTietDonDatHang frm = new FrmChiTietDonDatHang(jsondathang);
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.Show();
+            try
+            {
+                string jsondathang = gvDatHang.CurrentRow.Cells[7].Value.ToString();
+                FrmChiTietDonDatHang frm = new FrmChiTietDonDatHang(jsondathang);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+            catch (Exception) { MessageBox.Show("Vui lòng chọn khách hàng để xem chi tiết!!!"); }
+
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)

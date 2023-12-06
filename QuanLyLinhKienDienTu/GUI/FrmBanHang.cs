@@ -135,6 +135,7 @@ namespace GUI
 
             //Load giv
             gvnhaphang.DataSource = busctnhaphang.DanhSachCTNhapHang();
+            LoadGVCTNhapHang();
             LoadData();
         }
         // load dữ liệu 
@@ -573,7 +574,7 @@ namespace GUI
                 );
                 if (busnhanhang.ThemPhieuNhap(dtonhanhang))
                 {
-                    //MsgBox("Nhập hàng thành công", false);
+                   
                     NhapHangLoad();
                     SetValueNhapHang(true, false);
                 }
@@ -671,6 +672,26 @@ namespace GUI
             gvCTHoaDon.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTHoaDon.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvCTHoaDon.Columns[3].DefaultCellStyle.Format = "N";
+        }
+        private void LoadGVCTNhapHang()
+        {
+            gvnhaphang.Columns[0].HeaderText = "Mã CTNH";
+            gvnhaphang.Columns[1].HeaderText = "Tên sản phẩm";
+            gvnhaphang.Columns[2].HeaderText = "Số lượng";
+            gvnhaphang.Columns[3].HeaderText = "Giá";
+
+
+            foreach (DataGridViewColumn item in gvnhaphang.Columns)
+            {
+                item.DividerWidth = 1;
+            }
+            gvnhaphang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvnhaphang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvnhaphang.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvnhaphang.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvnhaphang.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvnhaphang.Columns[3].DefaultCellStyle.Format = "N";
         }
         private void LoadGVHoaDon()
         {
@@ -691,6 +712,7 @@ namespace GUI
             gvHoaDon.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvHoaDon.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvHoaDon.Columns[4].DefaultCellStyle.Format = "C";
         }
 
       
@@ -755,6 +777,11 @@ namespace GUI
             FrmDonDatHang frm = new FrmDonDatHang(employeeId);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
+        }
+
+        private void btnThongTinNhapHang_Click(object sender, EventArgs e)
+        {
+            new FrmThongTinNhapHang().ShowDialog();
         }
 
         private IEnumerable<ProductSalePrediction> Predict(ITransformer trainedModel, IDataView data)

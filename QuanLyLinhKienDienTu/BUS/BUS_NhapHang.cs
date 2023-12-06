@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace BUS
         public bool ThemPhieuNhap(DTO_NhapHang nhanhangs)
         {
             return nhaphang.ThemPhieuNhap(nhanhangs);
+        }
+        public DataTable DanhSachNhapHang()
+        {
+            return nhaphang.DanhSachNhapHang();
         }
     }
 }
