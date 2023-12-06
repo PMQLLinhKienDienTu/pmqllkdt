@@ -731,39 +731,63 @@ namespace GUI
             public bool Prediction { get; set; }
             // Các thuộc tính khác của dự đoán
         }
-
+        public class SanPhamData
+        {
+            [ColumnName("Label")]
+            public bool Label { get; set; }
+            public float SoLuong { get; set; }
+        }
+        public class SanPhamPrediction
+        {
+            [ColumnName("PredictedLabel")]
+            public bool Prediction { get; set; }
+        }
         private void LoadSanPhamBanChamTheoSL()
         {
             try
             {
-                mlContext = new MLContext();
-
-                // Chuyển đổi dữ liệu SoLuong thành mảng các số
-                var sanphams = qllkdt.SanPhams.Select(p => new ProductSale
+                // Lấy dữ liệu từ database vào danh sách SanPhamData
+                var products = qllkdt.SanPhams.Select(p => new SanPhamData
                 {
-                    ProductId = p.MaSP,
-                    Name = p.TenSP,
-                    Features = new float[] { p.SoLuong.GetValueOrDefault() }
+                    Label = p.SoLuong > 30, // Điều kiện để đánh nhãn sản phẩm bán chậm
+                    SoLuong = Convert.ToSingle(p.SoLuong)
+
+
                 }).ToList();
 
-                var data = mlContext.Data.LoadFromEnumerable<ProductSale>(sanphams);
+                // Chuẩn bị dữ liệu huấn luyện mô hình
+                var mlContext = new MLContext();
+                var trainingData = mlContext.Data.LoadFromEnumerable(products);
 
-                var trainedModel = TrainModel(data);
+                // Tiền xử lý dữ liệu và huấn luyện mô hình
+                var pipeline = mlContext.Transforms.Concatenate("Features", nameof(SanPhamData.SoLuong))
+                  .Append(mlContext.BinaryClassification.Trainers.LightGbm());
 
-                var predictions = Predict(trainedModel, data);
+                try
+                {
+                    var model = pipeline.Fit(trainingData);
 
-                var slowSellingProducts = predictions.Where(p => p.Prediction).ToList();
+                    // Dự đoán sản phẩm bán chậm
+                    var predictionEngine = mlContext.Model.CreatePredictionEngine<SanPhamData, SanPhamPrediction>(model);
 
-                databancham.DataSource = slowSellingProducts;
+                    var newData = new SanPhamData
+                    {
+                        SoLuong = 30
+                    };
 
-                int soluongsanphambancham = slowSellingProducts.Count();
+                    var prediction = predictionEngine.Predict(newData);
+                    MessageBox.Show($"Sản phẩm bán chậm: {prediction.Prediction}");
+                }
+                catch (Exception ex)
+                {
 
-                label_sosanphambancham.Text = Convert.ToString(soluongsanphambancham);
+                    MessageBox.Show($"Lỗi: {ex.Message}");
+                }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
 
         }

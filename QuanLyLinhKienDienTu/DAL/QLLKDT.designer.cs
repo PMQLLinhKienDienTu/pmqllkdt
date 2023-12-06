@@ -63,7 +63,7 @@ namespace DAL
     #endregion
 		
 		public QLLKDTDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_LINHKIENDIENTUConnectionString3, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_LINHKIENDIENTUConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
