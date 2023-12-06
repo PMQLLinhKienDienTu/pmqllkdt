@@ -41,22 +41,21 @@ namespace GUI
         }
         private void LoadGVCTDatHang()
         {
-            gvCTDatHang.Columns[0].HeaderText = "Mã Sản Phẩm";
-            gvCTDatHang.Columns[1].HeaderText = "Tên Sản Phẩm";
-            gvCTDatHang.Columns[2].HeaderText = "Số Lượng";
-            gvCTDatHang.Columns[3].HeaderText = "Đơn Giá";
-            gvCTDatHang.Columns[4].HeaderText = "Thành Tiền";
+           
 
             foreach (DataGridViewColumn item in gvCTDatHang.Columns)
             {
                 item.DividerWidth = 1;
             }
+
             gvCTDatHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTDatHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTDatHang.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTDatHang.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTDatHang.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTDatHang.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gvCTDatHang.Columns[4].DefaultCellStyle.Format = "C";
+            gvCTDatHang.Columns[3].DefaultCellStyle.Format = "N";
         }
         private void FrmChiTietDonDatHang_Load(object sender, EventArgs e)
         {
