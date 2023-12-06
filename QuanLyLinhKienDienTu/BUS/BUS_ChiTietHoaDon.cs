@@ -40,5 +40,9 @@ namespace BUS
         {
             return dalchitiethoadon.UpdateTrangThaiCTHoaDon();
         }
+        public bool KiemTraMatHangTrung(int id, int soluong)
+        {
+            return dalchitiethoadon.KiemTraMatHangTrung(id, soluong);
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace GUI
         private DateTime dateTime = new DateTime();
         private DateTime dateTime2 = new DateTime();
         private string tensanpham, email, str;
+        private int soluongsp;
         private char separator = '|';
         private string[] strlist;
         private Timer timer = new Timer();
@@ -246,39 +247,58 @@ namespace GUI
         //Thêm chi tiết hóa đơn
         private void btnThem_Click(object sender, EventArgs e)
         {
+            
             try
             {
+                int soluong = int.Parse(txtQuantity.Text);
                 str = cboProductNameQuantity.SelectedItem.ToString();
                 strlist = str.Split(separator);
                 tensanpham = strlist[0].Trim();
+                soluongsp = int.Parse(strlist[1].Trim());
+                int id_sp = bussanpham.GetProductId(tensanpham);
+                if (soluong > soluongsp)
+                {
+                    MsgBox("Số lượng thêm vượt quá tồn kho! Vui lòng nhập lại số lượng!");
+                    BanHangLoad();
+                    loadtongtien();
+                    return;
+                }
 
                 if (txtQuantity.Text != "")
                 {
-                    int id_sp = bussanpham.GetProductId(tensanpham);
-                    int soluong = int.Parse(txtQuantity.Text);
+                    
+                    
                     double gia = double.Parse(txtUnitPrice.Text);
-
-
                     dtoChitiethoadon = new DTO_ChiTietHoaDon(id_sp, soluong, gia);
-
-                    if (buscthoadon.ThemCTHoaDon(dtoChitiethoadon))
+                    if (buscthoadon.KiemTraMatHangTrung(id_sp, soluong))
                     {
-                        danhsachSP = bussanpham.DanhSachSLNameSP();
-                        txtTotalPrice.Text = buscthoadon.GetTotalPrice().ToString();
-                        MsgBox("Thêm hóa đơn thành công");
+                        MsgBox("Mặt hàng bán đã có. Tăng số lượng thêm " + soluong + "!");
                         BanHangLoad();
                         loadtongtien();
                         SetValueBanHang(true, false);
                     }
                     else
-                        MsgBox("Thêm không thành công", true);
+                    {
+                        if (buscthoadon.ThemCTHoaDon(dtoChitiethoadon))
+                        {
+                            danhsachSP = bussanpham.DanhSachSLNameSP();
+                            txtTotalPrice.Text = buscthoadon.GetTotalPrice().ToString();
+                            MsgBox("Thêm hóa đơn thành công");
+                            BanHangLoad();
+                            loadtongtien();
+                            SetValueBanHang(true, false);
+                        }
+                        else
+                            MsgBox("Thêm không thành công", true);
+                    }
+                    
                 }
                 else
                     MsgBox("Vui lòng kiểm tra lại dữ liệu", true);
             }
             catch
             {
-                MsgBox("Thêm không thành công", true);
+                //MsgBox("Thêm không thành công", true);
             }
         }
         private void btnSua_Click(object sender, EventArgs e)
@@ -410,17 +430,27 @@ namespace GUI
                     float gia = float.Parse(txtDonGiaNhap.Text);
 
                     dtoctnhaphang = new DTO_ChiTietNhapHang(id_sp, soluong, gia);
-
-                    if (busctnhaphang.ThemCTNhapHang(dtoctnhaphang))
+                    if (busctnhaphang.KiemTraNhapHangTrung(id_sp, soluong))
                     {
-                        danhsachSP = bussanpham.DanhSachSLNameSP();
-                        MsgBox("Nhập hàng thành công");
+                        MsgBox("Mặt hàng nhập đã có. Tăng số lượng thêm "+soluong+"!");
                         NhapHangLoad();
                         loadtongtiennhap();
                         SetValueNhapHang(true, false);
                     }
                     else
-                        MsgBox("Nhập hàng không thành công", true);
+                    {
+                        if (busctnhaphang.ThemCTNhapHang(dtoctnhaphang))
+                        {
+                            danhsachSP = bussanpham.DanhSachSLNameSP();
+                            MsgBox("Nhập hàng thành công");
+                            NhapHangLoad();
+                            loadtongtiennhap();
+                            SetValueNhapHang(true, false);
+                        }
+                        else
+                            MsgBox("Nhập hàng không thành công", true);
+                    }
+                    
                 }
                 else
                     MsgBox("Vui lòng kiểm tra lại dữ liệu", true);

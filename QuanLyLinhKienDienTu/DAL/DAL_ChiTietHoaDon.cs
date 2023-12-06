@@ -189,5 +189,33 @@ namespace DAL
             return false;
         }
 
+        // kiểm tra trùng sản phẩm trong bảng chi tiết hóa đơn
+        public bool KiemTraMatHangTrung(int id, int soluong)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "KiemTraMatHangTrung";
+                cmd.Parameters.AddWithValue("id_hanghoa", id);
+                cmd.Parameters.AddWithValue("soluongnhap", soluong);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
     }
 }
